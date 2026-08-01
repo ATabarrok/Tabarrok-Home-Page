@@ -20,7 +20,8 @@ import sharp from 'sharp';
 const dir = join(dirname(fileURLToPath(import.meta.url)), '../src/assets/img');
 
 // Widest rendered size × 2 for retina.
-const MAX = { 'alex-tabarrok': 1520 };
+// multiversx arrived as a 1200px og: image but renders as a ~136px logo.
+const MAX = { 'alex-tabarrok': 1520, multiversx: 480 };
 const DEFAULT_MAX = 1100;
 
 let before = 0;
@@ -36,16 +37,19 @@ for (const name of readdirSync(dir)) {
   const meta = await sharp(src).metadata();
   const target = Math.min(MAX[stem] ?? DEFAULT_MAX, meta.width);
 
+  // Idempotent: a WebP already at or under its target is done. Re-encoding it
+  // would shave a few bytes at the cost of another lossy generation — and on
+  // a Dropbox-synced folder the pointless write can fail on a sync lock.
+  if (extname(name).toLowerCase() === '.webp' && meta.width <= target) {
+    after += size;
+    console.log(`${name.padEnd(22)} left alone (already ${meta.width}px WebP)`);
+    continue;
+  }
+
   const out = await sharp(src)
     .resize({ width: target, withoutEnlargement: true })
     .webp({ quality: 82, effort: 6 })
     .toBuffer();
-
-  if (extname(name).toLowerCase() === '.webp' && out.length >= size) {
-    after += size;
-    console.log(`${name.padEnd(22)} left alone`);
-    continue;
-  }
 
   // Write the encoded buffer verbatim. Passing it back through sharp would
   // re-encode it and throw away the settings above.

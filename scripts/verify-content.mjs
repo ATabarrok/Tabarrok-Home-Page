@@ -17,12 +17,16 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const PAGES = [
-  { name: 'home', built: 'dist/index.html' },
-  { name: 'about', built: 'dist/about/index.html' },
-  { name: 'teaching', built: 'dist/teaching/index.html' },
-  { name: 'research', built: 'dist/research/index.html' },
-  { name: 'consulting', built: 'dist/consulting/index.html' },
+  { name: 'home', built: 'dist/index.html', path: '/' },
+  { name: 'about', built: 'dist/about/index.html', path: '/about/' },
+  { name: 'teaching', built: 'dist/teaching/index.html', path: '/teaching/' },
+  { name: 'research', built: 'dist/research/index.html', path: '/research/' },
+  { name: 'consulting', built: 'dist/consulting/index.html', path: '/consulting/' },
 ];
+
+// `--base https://…` checks a deployed site instead of the local dist/.
+const baseArg = process.argv.indexOf('--base');
+const BASE = baseArg > -1 ? process.argv[baseArg + 1]?.replace(/\/$/, '') : null;
 
 /**
  * Words that legitimately appear on only one side.
@@ -139,18 +143,34 @@ function missing(a, b) {
 
 let failed = false;
 
+if (BASE) console.log(`Checking deployed site at ${BASE}\n`);
+
 for (const page of PAGES) {
   const builtPath = join(root, page.built);
   const basePath = join(root, 'scripts/baseline', `${page.name}.txt`);
 
-  if (!existsSync(builtPath)) {
-    console.error(`✗ ${page.name}: missing build output ${page.built}`);
-    failed = true;
-    continue;
+  let html;
+  if (BASE) {
+    const res = await fetch(`${BASE}${page.path}`, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; content-verify)' },
+    });
+    if (!res.ok) {
+      console.error(`✗ ${page.name}: ${BASE}${page.path} returned ${res.status}`);
+      failed = true;
+      continue;
+    }
+    html = await res.text();
+  } else {
+    if (!existsSync(builtPath)) {
+      console.error(`✗ ${page.name}: missing build output ${page.built}`);
+      failed = true;
+      continue;
+    }
+    html = readFileSync(builtPath, 'utf8');
   }
 
   const oldWords = counts(words(baselineText(readFileSync(basePath, 'utf8'))));
-  const newWords = counts(words(pageText(readFileSync(builtPath, 'utf8'))));
+  const newWords = counts(words(pageText(html)));
 
   const allowed = EXPECTED_MISSING[page.name] ?? {};
   const dropped = missing(oldWords, newWords)
