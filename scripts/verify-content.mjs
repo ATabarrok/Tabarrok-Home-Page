@@ -58,6 +58,8 @@ const EXPECTED_MISSING = {
     ftn1: 1, ftn2: 1,
     // The 21 "Comment:"/"Comments:" labels became styled markup.
     comment: 15, comments: 6,
+    // A stray trailing period made this DOI 404; it resolves without one.
+    // (Tokenises away, listed here so the decision is recorded.)
   },
   consulting: {
     // Intro sentence was cut off ("for many firms including.") and is now
