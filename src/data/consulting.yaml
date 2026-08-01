@@ -1,0 +1,40 @@
+# Firms advised, most prominent first. `logo` is a filename in src/assets/img/.
+# `years` is optional — omit it for ongoing or undated engagements.
+
+- name: LBRY
+  url: https://lbry.com/
+  logo: lbry.png
+  years: "Advisor: 2015–2023"
+  description: >-
+    LBRY is YouTube on the Blockchain, a censorship-resistant, decentralized protocol that allows
+    anyone to distribute/sell and access/buy digital content. It's not a White Paper but a real
+    working product, check it out!
+
+- name: Wireline
+  url: https://www.wireline.io/
+  logo: wireline.png
+  years: "Advisor: 2018–2021"
+  description: >-
+    Wireline was a peer-to-peer operating system.
+
+- name: Bluechip
+  url: https://bluechip.org/
+  logo: bluechip.png
+  description: >-
+    Bluechip is a non-profit ratings agency for stablecoins.
+
+- name: TEAL
+  url: https://www.tealindia.in/
+  logo: teal.png
+  description: >-
+    TEAL is building an end-to-end decision support platform for land and property in India. TEAL
+    is an information and analytics tool for banks, housing finance companies, real
+    estate/infrastructure developers, retail investors and transacting parties. No more red tape!
+
+- name: MultiversX
+  url: null
+  logo: multiversx.webp
+  description: >-
+    MultiversX is a blockchain ecosystem that uses adaptive state sharding to easily handle tens of
+    thousands of transactions a second with a native wallet that makes transactions as easy as
+    Zelle or PayPal.

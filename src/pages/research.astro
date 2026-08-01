@@ -1,0 +1,332 @@
+---
+import Base from '../layouts/Base.astro';
+import Paper from '../components/Paper.astro';
+import { publications, nonrefereed } from '../data/schema';
+import { inlineMarkdown } from '../lib/inline';
+import { getCollection } from 'astro:content';
+
+// An explainer is optional per paper; the link only appears once one exists.
+const explainers = new Set(
+  (await getCollection('explainers')).map((e) => e.id.replace(/\.md$/, '')),
+);
+
+// Decade markers, computed once so an undated paper (forthcoming, or missing
+// its citation) does not split a decade in two and duplicate the anchor id.
+let lastDecade: number | null = null;
+const rows = publications.map((p) => {
+  const decade = p.year ? Math.floor(p.year / 10) * 10 : null;
+  const heading = decade !== null && decade !== lastDecade ? decade : null;
+  if (decade !== null) lastDecade = decade;
+  return { paper: p, heading };
+});
+
+const decades = rows
+  .map((r) => r.heading)
+  .filter((d): d is number => d !== null);
+---
+
+<Base
+  title="Research"
+  description="Publications by Alex Tabarrok in empirical law and economics, political economy, health economics and innovation policy."
+>
+  <p class="eyebrow">Publications</p>
+  <h1 class="page-title">Research</h1>
+
+  <div class="prose intro">
+    <p>
+      Most of my research is in the field of empirical law and economics and political
+      economy. For example, I have written on
+      <a href="https://www.journals.uchicago.edu/doi/abs/10.1086/426877">the effect of police on crime</a>,
+      <a href="https://www.journals.uchicago.edu/doi/abs/10.1086/378694">bounty hunters</a>,
+      <a href="https://academic.oup.com/aler/article-abstract/4/2/341/251508">judicial elections and tort awards</a>,
+      <a href="https://academic.oup.com/economicpolicy/article/33/93/5/4833996">regulation and declining dynamism</a>,
+      <a href="https://www.degruyter.com/view/journals/bejeap/1/1/article-bejeap.2002.1.1.1039.xml.xml">patent law</a>
+      and other topics.
+    </p>
+    <p>
+      My paper on
+      <a href="https://link.springer.com/article/10.1023/A:1004957109535">Dominant Assurance Contracts</a>
+      presents a solution to the public good problem! A follow-up
+      <a href="https://mason.gmu.edu/~atabarro/BetterCrowdfunding.pdf">stress tests the mechanism</a>
+      in the lab.
+    </p>
+    <p>
+      I have also written several papers on the theory of voting such as
+      <a href="https://journals.sagepub.com/doi/abs/10.1177/0951692899011002006">Would the Borda Count Have Avoided the Civil War?</a>
+    </p>
+    <p>
+      I have written extensively on the FDA including
+      <a href="https://www.jstor.org/stable/24562393">Assessing the FDA via the Anomaly of Off-Label Drug Prescribing</a>.
+    </p>
+    <p>
+      During COVID I was an advisor to the US government on using incentives to accelerate
+      vaccine development and production. Along with Michael Kremer and other members of the
+      Accelerating Health Technologies group, I developed a model for the US government on
+      allocating funds to a vaccine portfolio. The model is discussed in
+      <a href="https://www.aeaweb.org/articles?id=10.1257/pandp.20211103">Preparing for a Pandemic: Accelerating Vaccine Availability</a>,
+      especially the appendix. We also published
+      <a href="https://www.science.org/doi/10.1126/science.abg0889">Market design to accelerate COVID-19 vaccine supply</a>
+      and
+      <a href="https://www.pnas.org/doi/10.1073/pnas.2116932119">Testing Fractional Doses of COVID-19 Vaccines</a>.
+      Later with my students I published
+      <a href="https://academic.oup.com/oxrep/article/38/4/851/6896153">Is it Possible to Prepare for a Pandemic?</a>
+      and
+      <a href="https://academic.oup.com/oxrep/article/38/4/887/6896157">Covid in the nursing homes: the US experience</a>
+      among other papers. During COVID I was a prominent public proponent of first doses first,
+      fractional dosing, rapid tests and human challenge trials, among other policies meant to
+      accelerate our response to the crisis.
+    </p>
+    <p>
+      Here is my
+      <a href="https://scholar.google.com/citations?user=3syuONQAAAAJ&hl=en">Google Scholar page</a>
+      and my <a href="https://mason.gmu.edu/~atabarro/TabarrokCV.pdf">CV</a>. A list of
+      publications follows. <a href="mailto:Tabarrok@gmu.edu">Email me</a> if you have difficulty
+      finding a copy.
+    </p>
+    <p>
+      Where possible I have provided a link to a PDF file, preferably to the final journal version.
+      In some cases direct linking was not possible and it may take a click or two. If there is no
+      link or you have any problems reading the PDF
+      <a href="mailto:Alex.Tabarrok@gmail.com">email me</a> and I can either email you an
+      electronic copy or snail mail a hardcopy. Other publications are below.
+    </p>
+  </div>
+
+  <div class="toolbar" id="toolbar" hidden>
+    <div class="field">
+      <label class="visually-hidden" for="q">Filter publications</label>
+      <input
+        id="q"
+        type="search"
+        placeholder="Filter by title, author, journal or keyword…"
+        autocomplete="off"
+        spellcheck="false"
+      />
+    </div>
+    <div class="toolbar-actions">
+      <button type="button" id="expand" class="btn">Expand all</button>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+    <div class="jump">
+      <span class="jump-label">Jump to</span>
+      {decades.map((d) => <a href={`#d${d}`}>{d}s</a>)}
+      <a href="#other">Other</a>
+    </div>
+  </div>
+
+  <p class="section-head">Forthcoming and published papers</p>
+
+  <div id="papers">
+    {rows.map(({ paper, heading }) => (
+      <>
+        {heading !== null && (
+          <h2 class="decade" id={`d${heading}`}>{heading}s</h2>
+        )}
+        <Paper paper={paper} explainer={explainers.has(paper.id)} />
+      </>
+    ))}
+  </div>
+
+  <p class="no-results" id="empty" hidden>No publications match that filter.</p>
+
+  <h2 class="section-head" id="other">Chapters in books, other nonrefereed articles</h2>
+
+  <ul class="nonref">
+    {nonrefereed.map((item) => (
+      <li set:html={inlineMarkdown(item)} />
+    ))}
+  </ul>
+</Base>
+
+<style>
+  .intro { margin-bottom: calc(var(--step) * 1.5); }
+  .intro p { color: var(--ink-soft); }
+
+  .toolbar {
+    position: sticky;
+    top: 62px;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.1rem;
+    padding: 0.85rem 0;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .field { flex: 1 1 22rem; }
+
+  .toolbar input {
+    width: 100%;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    padding: 0.6rem 0.85rem;
+    color: var(--ink);
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+  }
+
+  .toolbar input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  .toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 560;
+    padding: 0.5rem 0.8rem;
+    color: var(--ink-soft);
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  .count {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .jump {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+  }
+
+  .jump-label { color: var(--ink-faint); }
+  .jump a { color: var(--ink-soft); text-decoration: none; }
+  .jump a:hover { color: var(--accent); }
+
+  .decade {
+    font-size: 0.78rem;
+    font-family: var(--sans);
+    font-weight: 660;
+    letter-spacing: 0.1em;
+    color: var(--citrus);
+    margin: calc(var(--step) * 1.4) 0 0.2rem;
+    scroll-margin-top: 130px;
+  }
+
+  .decade[hidden] { display: none; }
+
+  .no-results {
+    font-family: var(--sans);
+    color: var(--ink-faint);
+    padding: 2rem 0;
+  }
+
+  .nonref {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: var(--measure);
+  }
+
+  .nonref li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  #other { scroll-margin-top: 130px; }
+</style>
+
+<script>
+  // Progressive enhancement: the toolbar is hidden for non-JS visitors, who
+  // get the plain list with every abstract reachable by clicking.
+  const toolbar = document.getElementById('toolbar') as HTMLElement;
+  const input = document.getElementById('q') as HTMLInputElement;
+  const count = document.getElementById('count') as HTMLElement;
+  const empty = document.getElementById('empty') as HTMLElement;
+  const expand = document.getElementById('expand') as HTMLButtonElement;
+
+  const papers = Array.from(
+    document.querySelectorAll<HTMLElement>('#papers .paper'),
+  );
+  const decades = Array.from(
+    document.querySelectorAll<HTMLElement>('#papers .decade'),
+  );
+  const total = papers.length;
+
+  toolbar.hidden = false;
+
+  function report(n: number) {
+    count.textContent = n === total ? `${total} papers` : `${n} of ${total}`;
+    empty.hidden = n > 0;
+  }
+
+  function apply(term: string) {
+    const q = term.trim().toLowerCase();
+    let shown = 0;
+
+    for (const p of papers) {
+      const match = !q || (p.dataset.search ?? '').includes(q);
+      p.hidden = !match;
+      if (match) shown++;
+    }
+
+    // Hide a decade marker when everything under it is filtered out.
+    for (const d of decades) {
+      let visible = false;
+      let node = d.nextElementSibling;
+      while (node && !node.classList.contains('decade')) {
+        if (node.classList.contains('paper') && !(node as HTMLElement).hidden) {
+          visible = true;
+          break;
+        }
+        node = node.nextElementSibling;
+      }
+      d.hidden = !visible;
+    }
+
+    report(shown);
+  }
+
+  let timer: number;
+  input.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = window.setTimeout(() => apply(input.value), 90);
+  });
+
+  expand.addEventListener('click', () => {
+    const details = Array.from(
+      document.querySelectorAll<HTMLDetailsElement>('#papers details'),
+    );
+    // Collapse only if everything currently visible is already open.
+    const visible = details.filter((d) => !d.closest('.paper')?.hidden);
+    const allOpen = visible.length > 0 && visible.every((d) => d.open);
+    visible.forEach((d) => (d.open = !allOpen));
+    expand.textContent = allOpen ? 'Expand all' : 'Collapse all';
+  });
+
+  report(total);
+</script>

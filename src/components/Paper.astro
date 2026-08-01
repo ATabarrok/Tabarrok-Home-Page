@@ -1,0 +1,180 @@
+---
+import type { Publication } from '../data/schema';
+import { inlineMarkdown, toPlainText } from '../lib/inline';
+
+interface Props {
+  paper: Publication;
+  /** True when an explainer page exists for this paper. */
+  explainer?: boolean;
+}
+
+const { paper, explainer = false } = Astro.props;
+
+// One lowercase blob per paper drives the client-side filter without
+// needing a separate index or any JSON payload.
+const haystack = [
+  paper.title,
+  paper.citation,
+  paper.abstract,
+  paper.comment,
+  paper.year,
+]
+  .filter(Boolean)
+  .map((v) => toPlainText(String(v)))
+  .join(' ')
+  .toLowerCase();
+---
+
+<article class="paper" data-year={paper.year ?? ''} data-search={haystack}>
+  <header class="paper-head">
+    <h3 class="paper-title">
+      {paper.url ? <a href={paper.url}>{paper.title}</a> : paper.title}
+    </h3>
+    {paper.year && <span class="paper-year">{paper.year}</span>}
+  </header>
+
+  {(paper.links.length > 0 || explainer) && (
+    <p class="paper-links">
+      {explainer && (
+        <a class="chip chip-accent" href={`/research/${paper.id}/`}>Explainer</a>
+      )}
+      {paper.links.map((l) => (
+        <a class="chip" href={l.url}>{l.label}</a>
+      ))}
+    </p>
+  )}
+
+  {paper.comment && (
+    <p class="paper-comment" set:html={inlineMarkdown(paper.comment)} />
+  )}
+
+  {paper.abstract && (
+    <details class="paper-abstract">
+      <summary>Abstract</summary>
+      <div set:html={inlineMarkdown(paper.abstract)} />
+    </details>
+  )}
+
+  {paper.citation && (
+    <p class="paper-citation" set:html={inlineMarkdown(paper.citation)} />
+  )}
+</article>
+
+<style>
+  .paper {
+    padding: 1.35rem 0 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .paper[hidden] { display: none; }
+
+  .paper-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .paper-title {
+    font-size: 1.14rem;
+    font-weight: 620;
+    line-height: 1.3;
+    margin: 0 0 0.35rem;
+    max-width: 62ch;
+  }
+
+  .paper-title a { color: var(--ink); text-decoration-color: var(--rule); }
+  .paper-title a:hover { color: var(--accent); }
+
+  .paper-year {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 620;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+  }
+
+  .paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .chip {
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    font-weight: 560;
+    line-height: 1;
+    padding: 0.34rem 0.6rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    background: var(--paper-raised);
+  }
+
+  .chip:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .chip-accent {
+    background: var(--accent-soft);
+    border-color: transparent;
+    color: var(--accent-ink);
+  }
+
+  .paper-comment {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0 0 0.55rem;
+    max-width: var(--measure);
+  }
+
+  .paper-abstract {
+    margin: 0 0 0.6rem;
+    max-width: var(--measure);
+  }
+
+  .paper-abstract summary {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+    color: var(--accent);
+    cursor: pointer;
+    width: fit-content;
+    padding: 0.15rem 0;
+    list-style: none;
+  }
+
+  .paper-abstract summary::-webkit-details-marker { display: none; }
+
+  .paper-abstract summary::before {
+    content: '▸';
+    display: inline-block;
+    margin-right: 0.4rem;
+    transition: transform 0.15s ease;
+  }
+
+  .paper-abstract[open] summary::before { transform: rotate(90deg); }
+
+  .paper-abstract > div {
+    padding-top: 0.5rem;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+
+  .paper-citation {
+    font-size: 0.87rem;
+    color: var(--ink-faint);
+    margin: 0;
+    max-width: var(--measure);
+  }
+
+  .paper-citation a { color: var(--ink-faint); }
+  .paper-citation a:hover { color: var(--accent); }
+</style>

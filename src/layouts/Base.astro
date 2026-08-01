@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Omit on the home page, which carries its own hero heading. */
+  wide?: boolean;
+}
+
+const { title, description = '', wide = false } = Astro.props;
+const path = Astro.url.pathname;
+
+const nav = [
+  { href: '/about/', label: 'About' },
+  { href: '/teaching/', label: 'Teaching' },
+  { href: '/research/', label: 'Research' },
+  { href: '/consulting/', label: 'Consulting' },
+];
+
+const full = title === 'Alex Tabarrok' ? title : `${title} — Alex Tabarrok`;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{full}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <meta property="og:title" content={full} />
+    <meta property="og:type" content="website" />
+    {description && <meta property="og:description" content={description} />}
+    <meta name="theme-color" content="#fbf9f4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131317" media="(prefers-color-scheme: dark)" />
+  </head>
+
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-head">
+      <div class="wrap">
+        <a class="brand" href="/">Alex Tabarrok</a>
+        <nav class="nav" aria-label="Main">
+          {nav.map((i) => (
+            <a href={i.href} aria-current={path === i.href ? 'page' : undefined}>
+              {i.label}
+            </a>
+          ))}
+          <a class="ext" href="https://marginalrevolution.com">Blog</a>
+          <a class="ext" href="mailto:Alex.Tabarrok@gmail.com">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class={wide ? '' : 'wrap'}>
+        <slot />
+      </div>
+    </main>
+
+    <footer class="site-foot">
+      <div class="wrap">
+        <p>Alex Tabarrok · Bartley J. Madden Chair in Economics, George Mason University</p>
+        <p>
+          <a href="https://scholar.google.com/citations?user=3syuONQAAAAJ&hl=en">Google Scholar</a>
+          · <a href="https://mason.gmu.edu/~atabarro/TabarrokCV.pdf">CV</a>
+          · <a href="mailto:Alex.Tabarrok@gmail.com">Email</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

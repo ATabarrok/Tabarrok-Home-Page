@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/cv",
+      "destination": "https://mason.gmu.edu/~atabarro/TabarrokCV.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/cv/",
+      "destination": "https://mason.gmu.edu/~atabarro/TabarrokCV.pdf",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}

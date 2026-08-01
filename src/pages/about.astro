@@ -1,0 +1,126 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import portrait from '../assets/img/alex-tabarrok.jpg';
+---
+
+<Base
+  title="About"
+  description="Alex Tabarrok holds the Bartley J. Madden Chair in Economics at the Mercatus Center and is a professor of economics at George Mason University."
+>
+  <p class="eyebrow">Biography</p>
+  <h1 class="page-title">About</h1>
+
+  <div class="about-grid">
+    <div class="prose">
+      <p class="lede">
+        Alex Tabarrok holds the Bartley J. Madden Chair in Economics at the Mercatus Center and is
+        a professor of economics at George Mason University and research fellow with the
+        <a href="https://www.mercatus.org/">Mercatus Center</a>.
+      </p>
+
+      <p>
+        Tabarrok's research interests include empirical law and economics (crime, tort reform,
+        bounty hunters, judicial electoral systems etc.), voting theory and alternative political
+        institutions, health economics and more.
+      </p>
+
+      <p>
+        During COVID Tabarrok was an advisor to the US government on using incentives to accelerate
+        vaccine development and production. Along with Michael Kremer and other members of the
+        Accelerating Health Technologies group, he helped to develop a model for the US government
+        on allocating funds to a vaccine portfolio. The model is discussed in
+        <a href="https://www.aeaweb.org/articles?id=10.1257/pandp.20211103">Preparing for a Pandemic: Accelerating Vaccine Availability</a>,
+        especially the appendix. The AHT group also published
+        <a href="https://www.science.org/doi/10.1126/science.abg0889">Market design to accelerate COVID-19 vaccine supply</a>
+        and
+        <a href="https://www.pnas.org/doi/10.1073/pnas.2116932119">Testing Fractional Doses of COVID-19 Vaccines</a>.
+        Tabarrok also published
+        <a href="https://academic.oup.com/oxrep/article/38/4/851/6896153">Is it Possible to Prepare for a Pandemic?</a>
+        and
+        <a href="https://academic.oup.com/oxrep/article/38/4/887/6896157">Covid in the nursing homes: the US experience</a>
+        among other papers. During COVID, Alex Tabarrok was a prominent public proponent of first
+        doses first, fractional dosing, rapid tests and human challenge trials, among other
+        policies, meant to accelerate response to the crisis.
+      </p>
+
+      <p>
+        Alex Tabarrok is the author with Tyler Cowen of the bestselling textbook,
+        <a href="https://marginalrevolution.com/our-textbook">Modern Principles of Economics</a>,
+        and the co-founder with Tyler Cowen of
+        <a href="https://mru.org/">Marginal Revolution University</a>, an online platform for
+        learning economics. He writes regularly at the blog,
+        <a href="https://marginalrevolution.com/">Marginal Revolution</a>.
+      </p>
+
+      <p>
+        Syllabi for Professor Tabarrok's classes can be found
+        <a href="/teaching/">here</a>.
+      </p>
+
+      <p>
+        Alex Tabarrok is a consultant and advisor to firms, especially but not exclusively, in the
+        blockchain space including <a href="https://lbry.com/">LBRY</a>,
+        <a href="https://www.wireline.io/">Wireline</a>,
+        <a href="https://elrond.com/">Elrond</a> and
+        <a href="https://www.tealindia.in/">TEAL</a> among others. Please
+        <a href="mailto:Alex.Tabarrok@gmail.com">contact</a> for discussion of rates and further
+        information, or see <a href="/consulting/">consulting</a> for more detail.
+      </p>
+    </div>
+
+    <aside class="rail">
+      <Image
+        src={portrait}
+        alt="Alex Tabarrok"
+        widths={[340, 680]}
+        sizes="17rem"
+        loading="eager"
+      />
+      <ul class="quick">
+        <li><a href="https://mason.gmu.edu/~atabarro/TabarrokCV.pdf">Curriculum vitae (PDF)</a></li>
+        <li><a href="https://scholar.google.com/citations?user=3syuONQAAAAJ&hl=en">Google Scholar page</a></li>
+        <li><a href="/research/">Publications</a></li>
+        <li><a href="/teaching/">Course syllabi</a></li>
+        <li><a href="mailto:Alex.Tabarrok@gmail.com">Alex.Tabarrok@gmail.com</a></li>
+      </ul>
+    </aside>
+  </div>
+</Base>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 17rem;
+    gap: clamp(1.5rem, 5vw, 3.5rem);
+    align-items: start;
+  }
+
+  @media (max-width: 860px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .rail { order: -1; max-width: 18rem; }
+  }
+
+  .rail img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.25rem;
+  }
+
+  .quick {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--sans);
+    font-size: 0.88rem;
+  }
+
+  .quick li {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .quick li:first-child { border-top: 1px solid var(--rule); }
+  .quick a { text-decoration: none; }
+  .quick a:hover { text-decoration: underline; }
+</style>

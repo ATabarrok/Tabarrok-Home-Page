@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Page not found">
+  <div class="prose nf">
+    <p class="eyebrow">404</p>
+    <h1 class="page-title">Page not found</h1>
+    <p class="lede">
+      That page does not exist. It may have moved when this site was rebuilt.
+    </p>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/teaching/">Teaching</a></li>
+      <li><a href="/consulting/">Consulting</a></li>
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .nf ul { padding-left: 1.1rem; }
+  .nf li { margin-bottom: 0.35rem; }
+</style>

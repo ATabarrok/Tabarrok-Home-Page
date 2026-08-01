@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import { teaching } from '../data/schema';
+---
+
+<Base
+  title="Teaching"
+  description="Course syllabi for Alex Tabarrok's undergraduate and graduate economics classes at George Mason University."
+>
+  <p class="eyebrow">Courses</p>
+  <h1 class="page-title">Class Syllabi</h1>
+  <p class="lede">Here are syllabi for my classes.</p>
+
+  <ul class="courses">
+    {teaching.map((c) => (
+      <li>
+        <a href={c.url}>
+          <span class="course-title">{c.title}</span>
+          <span class="course-level">{c.level}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <section class="talk">
+    <h2 class="section-head">TED Talk</h2>
+    <p class="prose talk-note">
+      I once calculated that 75% of my teaching has come from my TED Talk.
+    </p>
+    <div class="video">
+      <iframe
+        src="https://embed.ted.com/talks/lang/en/alex_tabarrok_how_ideas_trump_crises"
+        title="Alex Tabarrok: How ideas trump crises"
+        allowfullscreen
+        loading="lazy"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .courses {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 calc(var(--step) * 2);
+    max-width: 46rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .courses li { border-bottom: 1px solid var(--rule); }
+
+  .courses a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 0.25rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .courses a:hover {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent-soft) 40%, transparent);
+  }
+
+  .course-title { font-size: 1.03rem; }
+
+  .course-level {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    flex: none;
+  }
+
+  .talk-note { color: var(--ink-soft); margin-bottom: 1.25rem; }
+
+  .video {
+    position: relative;
+    max-width: 46rem;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: var(--paper-raised);
+  }
+
+  .video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>

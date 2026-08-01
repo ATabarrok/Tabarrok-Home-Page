@@ -1,0 +1,72 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { publications } from '../../data/schema';
+import { inlineMarkdown } from '../../lib/inline';
+
+export async function getStaticPaths() {
+  const explainers = await getCollection('explainers');
+  return explainers.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+// An explainer is always about a paper; surface that paper's links.
+const paper = publications.find((p) => p.id === entry.id);
+---
+
+<Base title={entry.data.title} description={entry.data.description}>
+  <p class="eyebrow"><a href="/research/">Research</a> · Explainer</p>
+  <h1 class="page-title">{entry.data.title}</h1>
+
+  {paper && (
+    <p class="source">
+      On {paper.url ? <a href={paper.url}>{paper.title}</a> : paper.title}
+      {paper.year && <> ({paper.year})</>}
+    </p>
+  )}
+
+  <div class="prose body">
+    <Content />
+  </div>
+
+  {paper?.citation && (
+    <p class="cite" set:html={inlineMarkdown(paper.citation)} />
+  )}
+</Base>
+
+<style>
+  .eyebrow a { color: inherit; }
+
+  .source {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+    max-width: var(--measure);
+    margin-bottom: calc(var(--step) * 1.2);
+  }
+
+  .body :global(h2) {
+    margin-top: calc(var(--step) * 1.6);
+    font-size: 1.35rem;
+  }
+
+  .body :global(blockquote) {
+    margin: 1.4rem 0;
+    padding-left: 1.1rem;
+    border-left: 3px solid var(--accent-soft);
+    color: var(--ink-soft);
+  }
+
+  .cite {
+    margin-top: calc(var(--step) * 2);
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.87rem;
+    color: var(--ink-faint);
+    max-width: var(--measure);
+  }
+</style>

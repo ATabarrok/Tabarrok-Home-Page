@@ -1,0 +1,1338 @@
+# Publications, newest first.
+# To add a paper, copy an existing block and edit it. Required: id, title,
+# year. Optional: url, links, comment, abstract, citation. `id` must be
+# unique and is the slug for a future /research/<id>/ explainer page.
+
+- id: two-peas-in-a-pod-democracy-and-capitalism
+  title: "Two Peas in a Pod: Democracy and Capitalism"
+  url: https://academic.oup.com/book/60867/chapter/530291025
+  year: 2025
+  links:
+    - label: "working paper version"
+      url: https://marginalrevolution.com/wp-content/uploads/2025/10/Geloso-and-Tabarrok.pdf
+  abstract: >-
+    Many people argue that democracy is incompatible with capitalism, but they differ on whether
+    democracy will subvert capitalism or whether capitalism will subvert democracy. The first
+    argues that the logic of democracy leads to socialism with James Madison and Joseph
+    Schumpeter decrying the road to serfdom, with others like Karl Marx delighting in this
+    historical inevitability. The second argues, based in part on fears of rising inequality,
+    that capitalist oligarchs will come to control the democratic process, cementing their
+    dominance. Democratic forms may remain, but true democracy will be ended. A third argument
+    consistent with the views of Hayek, Mises, Friedman, and others is that capitalism and
+    democracy are compatible and even mutually reinforcing. We provide evidence for the third
+    view by showing that most democracies are capitalist, and most capitalist countries are
+    democracies. Empirically there is no obvious and inevitable trend either toward or away from
+    capitalism or democracy, although both rise and fall with events. We argue that there are
+    significant complementarities in theory and practice between capitalism and democracy and,
+    as a result, capitalist democracies are relatively stable.
+  citation: >-
+    Geloso, Vincent, and Alex Tabarrok. 2025. “Two Peas in a Pod: Democracy and Capitalism.” In
+    Can Democracy and Capitalism Be Reconciled?, edited by Sidney M Milkis and Scott C Miller.
+    Oxford University Press.
+    [https://doi.org/10.1093/9780197774731.003.0003](https://doi.org/10.1093/9780197774731.003.0003).
+
+- id: pandemic-preparation-without-romance-insights-from-public-choice
+  title: "Pandemic Preparation without Romance: Insights from Public Choice"
+  url: https://link.springer.com/article/10.1007/s11127-025-01277-2
+  year: 2025
+  abstract: >-
+    The COVID-19 pandemic, despite its unprecedented scale, mirrored previous disasters in its
+    predictable missteps in preparedness and response. Rather than blaming individual actors or
+    assuming better leadership would have prevented disaster, I examine how standard political
+    incentives—myopic voters, bureaucratic gridlock, and fear of blame—predictably produced an
+    inadequate pandemic response. The analysis rejects romantic calls for institutional reform
+    and instead proposes pragmatic solutions that work within existing political constraints:
+    wastewater surveillance, prediction markets, pre-developed vaccine libraries, human
+    challenge trials, a dedicated Pandemic Trust Fund, and temporary public–private
+    partnerships. These mechanisms respect political realities while creating systems that can
+    ameliorate future pandemics, potentially saving millions of lives and trillions in economic
+    damage.
+  citation: >-
+    Tabarrok, Alex. 2025. “Pandemic Preparation without Romance: Insights from Public Choice.”
+    Public Choice 204 (April): 262–85.
+    [https://doi.org/10.1007/s11127-025-01277-2](https://doi.org/10.1007/s11127-025-01277-2).
+
+- id: operation-warp-speed-negative-and-positive-lessons-for
+  title: "Operation Warp Speed: Negative and Positive Lessons for New Industrial Policy"
+  url: null
+  year: 2025
+  abstract: >-
+    Operation Warp Speed (OWS) was a U.S. government initiative to accelerate the development,
+    manufacturing, and distribution of COVID-19 vaccines. Novel vaccines typically take decades
+    to develop. Prior to COVID, the shortest development of a novel vaccine was for the mumps
+    vaccine, a record four years (Roos 2023). Public health officials in China identified a
+    novel coronavirus as the causative agent of the COVID-19 disease on January 7, 2020 (CDC
+    2023). On December 11, 2020 the FDA granted the first Emergency Use Authorization for a
+    COVID-19 vaccine in the United States (FDA 2020). A total development time of under one
+    year. Perhaps even more remarkably, by the end of that year over 5 million US residents had
+    already been vaccinated.1 It’s difficult to say how long it would have taken a COVID vaccine
+    to be produced absent OWS but there is little doubt that OWS accelerated the process, saving
+    millions of lives and trillions of dollars worldwide.2 How did Operation Warp Speed
+    accelerate COVID-19 vaccines? If we think of OWS as a type of industrial policy what are the
+    lessons for other industrial policies? These are the questions this paper attempts to
+    answer.
+  citation: >-
+    Tabarrok, Alex. 2025- forthcoming. Operation Warp Speed: Negative and Positive Lessons for
+    New Industrial Policy. Innovations: Technology, Governance, Globalization.
+
+- id: the-economic-way-of-thinking-in-a-pandemic
+  title: "The Economic Way of Thinking in a Pandemic"
+  url: https://doi.org/10.1080/00220485.2024.2403448
+  year: 2025
+  abstract: >-
+    During the pandemic, the economic way of thinking was extraordinarily useful, leading to a
+    quick consensus among economists of widely differing political persuasions on many issues of
+    pandemic policy. Yet speaking to politicians, bureaucrats, and the public revealed many ways
+    in which the economic way of thinking was foreign and sometimes uncomfortable to
+    non-economists, albeit often useful. Instructors can use pandemic policy to engage students
+    on topics like incentives, trade-offs, utilitarianism, Bayesian reasoning, and overcoming
+    cognitive biases.
+  citation: >-
+    Tabarrok, Alex. 2025. “The Economic Way of Thinking in a Pandemic.” The Journal of Economic
+    Education 56 (1): 51–57.
+    [https://doi.org/10.1080/00220485.2024.2403448](https://doi.org/10.1080/00220485.2024.2403448).
+
+- id: signaling-quality-how-refund-bonuses-can-overcome-information
+  title: "Signaling Quality: How Refund Bonuses Can Overcome Information Asymmetries in Crowdfunding"
+  url: https://doi.org/10.1287/mnsc.2023.03923
+  year: 2024
+  abstract: >-
+    Crowdfunding can suffer from information asymmetry, leaving some investors disappointed with
+    low-quality projects, whereas other high-quality projects remain unfunded. We show that
+    refund bonuses, which provide investors a payment if a fundraising campaign is unsuccessful,
+    can signal project quality and help overcome the market failure in crowdfunding. Because
+    strong projects have a lower risk of bonus payout, entrepreneurs with strong projects are
+    more likely to offer bonuses. This signals high quality to investors, and due to their
+    updated beliefs, this drives investment toward such projects. An experiment provides
+    supporting empirical evidence for the benefits of this signaling solution to the problems of
+    information asymmetry in crowdfunding,
+  citation: >-
+    Cason, Timothy N., Alex Tabarrok, and Robertas Zubrickas. 2024. “Signaling Quality: How
+    Refund Bonuses Can Overcome Information Asymmetries in Crowdfunding.” Management Science,
+    ahead of print, October 18.
+    [https://doi.org/10.1287/mnsc.2023.03923](https://doi.org/10.1287/mnsc.2023.03923).
+
+- id: freedom-of-the-test
+  title: "Freedom of the Test"
+  url: https://www.journaloffreespeechlaw.org/tabarrok.pdf
+  year: 2024
+  abstract: >-
+    Advancements in diagnostic tests and technologies hold the potential to usher in an era of
+    personalized medicine, which could significantly extend and improve our health span.
+    However, realizing this potential requires dismantling regulatory barriers, including
+    certain FDA restrictions on speech, which currently impede the progress and accessibility of
+    these innovations.
+  citation: >-
+    Tabarrok, Alex. 2024. “Freedom of the Test.” Journal of Free Speech Law 5 (1): 95–102.
+
+- id: targeted-randomization-dose-optimization-trials-enable-fractional-dosing
+  title: "Targeted Randomization Dose Optimization Trials Enable Fractional Dosing of Scarce Drugs"
+  url: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287511
+  year: 2023
+  abstract: >-
+    Administering drug at a dose lower than that used in pivotal clinical trials, known as
+    fractional dosing, can stretch scarce resources. Implementing fractional dosing with
+    confidence requires understanding a drug’s dose-response relationship. Clinical trials aimed
+    at describing dose-response in scarce, efficacious drugs risk underdosing, leading
+    dose-finding trials to not be pursued despite their obvious potential benefit. We developed
+    a new set of response-adaptive randomized dose-finding trials and demonstrate, in a series
+    of simulated trials across diverse dose-response curves, these designs’ efficiency in
+    identifying the minimum dose that achieves satisfactory efficacy. Compared to conventional
+    designs, these trials have higher probabilities of identifying lower doses while reducing
+    the risks of both population- and subject-level underdosing. We strongly recommend that,
+    upon demonstration of a drug’s efficacy, pandemic drug development swiftly proceeds with
+    response-adaptive dose-finding trials. This unified strategy ensures that scarce effective
+    drugs produce maximum social benefits.
+  citation: >-
+    Boonstra, Philip S., Alex Tabarrok, and Garth W. Strohbehn. 2023. “Targeted Randomization
+    Dose Optimization Trials Enable Fractional Dosing of Scarce Drugs.” PLOS ONE 18 (10):
+    e0287511.
+    [https://doi.org/10.1371/journal.pone.0287511](https://doi.org/10.1371/journal.pone.0287511).
+
+- id: building-networks-investigating-the-quid-pro-quo-between
+  title: "Building Networks: Investigating the Quid pro Quo between Local Politicians & Developers"
+  url: https://doi.org/10.1016/j.jdeveco.2023.103138
+  year: 2023
+  abstract: >-
+    Mutually beneficial arrangements between politicians and real estate developers are common
+    in many developing countries. We document what happens when the politician-developer nexus
+    is disrupted by an election. We construct a novel dataset of real estate projects and
+    electoral constituencies in Mumbai’s municipal government. We find that an incumbent party
+    losing the election increases real estate project completion times by 5%. We find no effect
+    of quasi-random redistricting or changes in voter preferences on project delays. We
+    investigate two mechanisms for the slowdown associated with party turnover — delays in
+    construction approvals around the time of the election and increase in litigation against
+    projects after the election. While we see no rise in litigation, we find that delayed
+    approvals near an election explain 23% of the increased total delays due to party change.
+  citation: >-
+    Tandel, Vaidehi, Sahil Gandhi, and Alex Tabarrok. 2023. “Building Networks: Investigating
+    the Quid pro Quo between Local Politicians & Developers.” Journal of Development Economics
+    164 (September): 103-138. https://doi.org/10.1016/j.jdeveco.2023.103138
+
+- id: how-to-learn-and-teach-economics-with-large
+  title: "How to Learn and Teach Economics with Large Language Models, Including GPT"
+  url: https://doi.org/10.2139/ssrn.4391863
+  year: 2023
+  abstract: >-
+    GPTs, such as ChatGPT and Bing Chat, are capable of answering economics questions, solving
+    specific economic models, creating exams, assisting with research, generating ideas, and
+    enhancing writing, among other tasks. This paper highlights how these innovative tools
+    differ from prior software and necessitate novel methods of interaction. By providing
+    examples, tips, and guidance, we aim to optimize the use of GPTs and LLMs for learning and
+    teaching economics effectively.
+  citation: >-
+    Cowen, Tyler, and Alexander T. Tabarrok. 2023. “How to Learn and Teach Economics with Large
+    Language Models, Including GPT.” SSRN Scholarly Paper. Rochester, NY.
+    [https://doi.org/10.2139/ssrn.4391863](https://doi.org/10.2139/ssrn.4391863).
+
+- id: covid-in-the-nursing-homes-the-us-experience
+  title: "Covid in the Nursing Homes: The US Experience"
+  url: https://doi.org/10.1093/oxrep/grac033.
+  year: 2022
+  abstract: >-
+    The death toll in nursing homes accounted for almost 30 per cent of total Covid-19 deaths in
+    the US during 2020. We examine the course of the pandemic in nursing homes focusing
+    especially on whether nursing homes could have been better shielded. Across all nursing
+    homes the key predictor of infections and deaths was community spread, i.e. a factor outside
+    of the control of nursing homes. We find that higher-quality nursing homes, as measured by
+    the CMS Five-Star Rating system, were not better able to protect their residents. Policy
+    failures from the CDC and FDA, especially in the early stages of the pandemic, created
+    extended waiting times for Covid-19 tests and slowed attempts to isolate infectious
+    residents. But once infections were widespread, testing would have had to have been much
+    greater to have had an appreciable effect on nursing home deaths. We find, however, that
+    starting vaccinations just 5 weeks earlier could have saved in the order of 14,000 lives and
+    starting them ten weeks earlier could have saved 40,000 lives. Or
+    [here](https://mason.gmu.edu/~atabarro/2022 Bjoerkheim Tabarrok.pdf).
+  citation: >-
+    Bjoerkheim, Markus B, and Alex Tabarrok. 2022. “Covid in the Nursing Homes: The US
+    Experience.” Oxford Review of Economic Policy 38 (4): 887–911.
+    [https://doi.org/10.1093/oxrep/grac033](https://doi.org/10.1093/oxrep/grac033).
+
+- id: vaccines-and-the-covid-19-pandemic-lessons-from
+  title: "Vaccines and the Covid-19 Pandemic: Lessons from Failure and Success"
+  url: https://doi.org/10.1093/oxrep/grac036
+  year: 2022
+  abstract: >-
+    The losses from the global Covid-19 pandemic have been staggering—trillions in economic
+    costs, on top of significant losses of life, health, and well-being. The world made
+    significant and successful investments in vaccines to mitigate the pandemic, yet there were
+    missed opportunities, as well. We review what has been learnt about the value of vaccines,
+    the speed at which vaccines can be developed, and the optimal and ethical approaches to
+    vaccine distribution, as well as other issues related to pandemic and emergency
+    preparedness. Surprisingly, spending on vaccines remains far below that which would be
+    justified by the social return. We remain poorly prepared for future pandemics and other
+    emergencies.
+  citation: >-
+    Kominers, Scott Duke, and Alex Tabarrok. 2022. “Vaccines and the Covid-19 Pandemic: Lessons
+    from Failure and Success.” Oxford Review of Economic Policy 38 (4): 719–41.
+    [https://doi.org/10.1093/oxrep/grac036](https://doi.org/10.1093/oxrep/grac036).
+
+- id: is-it-possible-to-prepare-for-a-pandemic
+  title: "Is It Possible to Prepare for a Pandemic?"
+  url: https://doi.org/10.1093/oxrep/grac035
+  year: 2022
+  abstract: >-
+    How effective were investments in pandemic preparation? We use a comprehensive and detailed
+    measure of pandemic preparedness, the Global Health Security (GHS) Index produced by the
+    Johns Hopkins Center for Health Security (JHU), to measure which investments in pandemic
+    preparedness reduced infections, deaths, excess deaths, or otherwise ameliorated or
+    shortened the pandemic. We also look at whether values or attitudinal factors such as
+    individualism, willingness to sacrifice, or trust in government—which might be considered a
+    form of cultural pandemic preparedness—influenced the course of the pandemic. Our primary
+    finding is that almost no form of pandemic preparedness helped to ameliorate or shorten the
+    pandemic. Compared to other countries, the United States did not perform poorly because of
+    cultural values such as individualism, collectivism, selfishness, or lack of trust. General
+    state capacity, as opposed to specific pandemic investments, is one of the few factors which
+    appears to improve pandemic performance. Understanding the most effective forms of pandemic
+    preparedness can help guide future investments. Our results may also suggest that either we
+    aren’t measuring what is important or that pandemic preparedness is a global public good. or
+    [here](https://mason.gmu.edu/~atabarro/2022 Omberg Tabarrok Is it Possible.pdf).
+  citation: >-
+    Omberg, Robert Tucker, and Alex Tabarrok. 2022. “Is It Possible to Prepare for a Pandemic?”
+    Oxford Review of Economic Policy 38 (4): 851–75.
+    [https://doi.org/10.1093/oxrep/grac035](https://doi.org/10.1093/oxrep/grac035).
+
+- id: william-baumol-and-the-cost-disease
+  title: "William Baumol and the Cost Disease"
+  url: https://www.emerald.com/insight/content/doi/10.1108/S0743-41542022000040B003/full/html
+  year: 2022
+  abstract: >-
+    The Baumol effect follows from simple but deep microeconomic reasoning. All prices are
+    relative prices, so if some goods are getting cheaper, others must be getting more
+    expensive. Simple. But in transferring our attention about the cause of rising prices from
+    stagnating sectors to progressive sectors, the Baumol effect radically changes our
+    understanding of the causes, consequences, and evaluation of rising prices. Even today, the
+    power of the Baumol effect to explain price changes through different time periods and
+    places is underestimated. Throughout his career, Baumol returned to this simple idea many
+    times, making it a key to his thought and his evolving views on long-term economic
+    development.
+  citation: >-
+    Tabarrok, Alex. 2022. “William Baumol and the Cost Disease.” In Research in the History of
+    Economic Thought and Methodology: Including a Symposium on the Work of William J. Baumol:
+    Heterodox Inspirations and Neoclassical Models, edited by Luca Fiorito, Scott Scheall, and
+    Carlos Eduardo Suprinyak, 40B:11–26. Research in the History of Economic Thought and
+    Methodology. Emerald Publishing Limited.
+    [https://doi.org/10.1108/S0743-41542022000040B003](https://doi.org/10.1108/S0743-41542022000040B003).
+
+- id: testing-fractional-doses-of-covid-19-vaccines
+  title: "Testing Fractional Doses of COVID-19 Vaccines"
+  url: https://doi.org/10.1073/pnas.2116932119
+  year: 2022
+  abstract: >-
+    Due to the enormous economic, health, and social costs of the COVID-19 pandemic, there are
+    high expected social returns to investing in parallel in multiple approaches to accelerating
+    vaccination. We argue there are high expected social returns to investigating the scope for
+    lowering the dosage of some COVID-19 vaccines. While existing evidence is not dispositive,
+    available clinical data on the immunogenicity of lower doses combined with evidence of a
+    high correlation between neutralizing antibody response and vaccine efficacy suggests that
+    half or even quarter doses of some vaccines could generate high levels of protection,
+    particularly against severe disease and death, while potentially expanding supply by 450
+    million to 1.55 billion doses per month, based on supply projections for 2021. An
+    epidemiological model suggests that, even if fractional doses are less effective than
+    standard doses, vaccinating more people faster could substantially reduce total infections
+    and deaths. The costs of further testing alternative doses are much lower than the expected
+    public health and economic benefits. However, commercial incentives to generate evidence on
+    fractional dosing are weak, suggesting that testing may not occur without public investment.
+    Governments could support either experimental or observational evaluations of fractional
+    dosing, for either primary or booster shots. Discussions with researchers and government
+    officials in multiple countries where vaccines are scarce suggests strong interest in these
+    approaches.
+  citation: >-
+    Więcek, Witold, Amrita Ahuja, Esha Chaudhuri, Michael Kremer, Alexandre Simoes Gomes,
+    Christopher M. Snyder, Alex Tabarrok, and Brandon Joel Tan. 2022. “Testing Fractional Doses
+    of COVID-19 Vaccines.” Proceedings of the National Academy of Sciences 119 (8).
+    [https://doi.org/10.1073/pnas.2116932119](https://doi.org/10.1073/pnas.2116932119).
+
+- id: preparing-for-a-pandemic-accelerating-vaccine-availability
+  title: "Preparing for a Pandemic: Accelerating Vaccine Availability"
+  url: https://doi.org/10.1257/pandp.20211103
+  year: 2021
+  abstract: >-
+    Vaccinating the world's population quickly in a pandemic has enormous health and economic
+    benefits. We analyze the problem faced by governments in determining the scale and structure
+    of procurement for vaccines. We analyze alternative approaches to procurement, arguing that
+    buyers should directly fund manufacturing capacity and shoulder most of the risk of failure
+    while maintaining some direct incentives for speed. We analyzed the optimal portfolio of
+    vaccine investments for countries with different characteristics as well as the implications
+    for international cooperation. Our analysis, considered in light of the experience of 2020,
+    suggests lessons for future pandemics.
+  citation: >-
+    Ahuja, Amrita, Susan Athey, Arthur Baker, Eric Budish, Juan Camilo Castillo, Rachel
+    Glennerster, Scott Duke Kominers, et al. 2021. “Preparing for a Pandemic: Accelerating
+    Vaccine Availability.” AEA Papers and Proceedings 111: 331–35.
+    [https://doi.org/10.1257/pandp.20211103](https://doi.org/10.1257/pandp.20211103).
+
+- id: early-refund-bonuses-increase-successful-crowdfunding
+  title: "Early refund bonuses increase successful crowdfunding"
+  url: https://doi.org/10.1016/j.geb.2021.05.006
+  year: 2021
+  links:
+    - label: ungated
+      url: https://ideas.repec.org/p/pur/prukra/1326.html
+  abstract: >-
+    The assurance contract mechanism is often used to crowdfund public goods. This mechanism has
+    weak implementation properties that can lead to miscoordination and failure to produce
+    socially valuable projects. To encourage early contributions, we extend the assurance
+    contract mechanism with refund bonuses rewarded only to early contributors in the event of
+    fundraising failure. The experimental results show that our proposed solution is very
+    effective in inducing early cooperation and increasing fundraising success. Limiting refund
+    bonuses to early contributors works as well as offering refund bonuses to all potential
+    contributors, while also reducing the amount of bonuses paid. We find that refund bonuses
+    can increase the rate of campaign success by 50% or more. Moreover, we find that even taking
+    into account campaign failures, refund bonuses can be financially self-sustainable
+    suggesting the real world value of extending assurance contracts with refund bonuses.
+  citation: >-
+    Cason, Timothy N., Alex Tabarrok, and Robertas Zubrickas. 2021. “Early Refund Bonuses
+    Increase Successful Crowdfunding.” Games and Economic Behavior,
+    [https://doi.org/10.1016/j.geb.2021.05.006](https://doi.org/10.1016/j.geb.2021.05.006).
+
+- id: too-slow-for-the-urban-march-litigations-and
+  title: "Too slow for the urban march: Litigations and the real estate market in Mumbai, India"
+  url: https://doi.org/10.1016/j.jue.2021.103330
+  year: 2021
+  links:
+    - label: ungated
+      url: http://TooSlow.pdf
+  abstract: >-
+    We use data from the universe of approximately 3000 ongoing formal real estate projects in
+    Mumbai to show that 27.3% of the projects and 42.9% of the built-up space is under
+    litigation. Average construction time is 8.5 years. Using OLS and matching techniques, and
+    controlling for other factors determining time to completion including location, developer
+    experience and project size, we estimate that litigated projects take approximately 20%
+    longer to complete than non-litigated projects. A variety of robustness tests are consistent
+    with this finding. We address potential endogeneity concerns using an instrument - the
+    neighborhood’s propensity to sue. The increase in time to completion increases the total
+    cost of building by at least 30%. We identify a small number of litigated projects in the
+    Bombay High Court dockets and find that so-called Public Interest Litigation, litigation
+    begun by people outside the contractual process (i.e. not apartment purchasers, residents,
+    or contractors), appears to be responsible for a significant share of project litigation.
+    Castillo, Juan Camilo, Amrita Ahuja, Susan Athey, Arthur Baker, Eric Budish, Tasneem Chipty,
+    Rachel Glennerster, et al. 2021. “Market Design to Accelerate COVID-19 Vaccine Supply.”
+    Science. [https://doi.org/10.1126/science.abg0889](https://doi.org/10.1126/science.abg0889).
+  citation: >-
+    Gandhi, Sahil, Vaidehi Tandel, Alexander Tabarrok, and Shamika Ravi. 2021. “Too Slow for the
+    Urban March: Litigations and the Real Estate Market in Mumbai, India.” Journal of Urban
+    Economics, February, 103330.
+    [https://doi.org/10.1016/j.jue.2021.103330](https://doi.org/10.1016/j.jue.2021.103330).
+
+- id: simple-rules-for-the-developing-world
+  title: "Simple Rules for the Developing World"
+  url: https://doi.org/10.1007/s10657-021-09716-3
+  year: 2021
+  abstract: >-
+    Much of the discussion in favor of simplicity of legal rules and against complex regulation
+    is rooted in economically developed countries with strong state capacity. With economic
+    development and state capacity comes the presumption that complex rules will be enforced.
+    Therefore, analysis focuses on the administrative and error costs, and the unintended
+    consequences of complex rules that are enforced. This paper argues that the Epsteinian
+    insight is even more relevant to the developing world where countries often lack enough
+    state capacity to even take on simple governance tasks. Developing countries often have less
+    than 20 percent of the state capacity of developed countries. However, this does not mean
+    they limit the regulatory structure to a fifth of the tasks. Under-enforcement or
+    non-enforcement of complex rules imposes different costs and unintended consequences on
+    society. Using examples from India, this paper highlights problems of enforcement swamping,
+    deadweight loss, and corruption arising from the under-enforcement of complex rules. To
+    avoid these problems, the paper concludes that a fortiori less developed countries should
+    favor simple rules.
+  citation: >-
+    Rajagopalan, Shruti, and Alex Tabarrok. 2021. “[Simple Rules for the Developing
+    World](https://doi.org/10.1007/s10657-021-09716-3).” European Journal of Law and Economics,
+    December. https://doi.org/10.1007/s10657-021-09716-3.
+
+- id: to-serve-and-collect-the-fiscal-and-racial
+  title: "To Serve and Collect: The Fiscal and Racial Determinants of Law Enforcement"
+  url: https://doi.org/10.1086/700589
+  year: 2019
+  abstract: >-
+    We exploit local deficits and state-level differences in police revenue retention from civil
+    asset forfeitures to estimate how incentives to raise revenue influence policing. In a
+    national sample, we find that local fine and forfeiture revenue increases faster with drug
+    arrests than arrests for violent crimes. Revenues also increase faster with arrests of
+    blacks and Hispanics than with whites’ drug arrests. Concomitant with higher rates of
+    revenue generation, we find that arrests of blacks and Hispanics for drugs, driving under
+    the influence, and prostitution, and associated property seizures, increase with local
+    deficits when institutions allow officials to more easily retain revenues from forfeited
+    property. Whites’ drug and driving under the influence arrests are insensitive to these
+    institutions. We do, however, observe comparable increases in whites’ prostitution arrests.
+    Our results show that revenue-driven law enforcement can distort police behavior and
+    decision-making, altering the quantity, type, and racial composition of arrests.
+  citation: >-
+    Makowsky, Michael D., Thomas Stratmann, and Alex Tabarrok. 2019. “To Serve and Collect: The
+    Fiscal and Racial Determinants of Law Enforcement.” The Journal of Legal Studies 48 (1):
+    189–216. [https://doi.org/10.1086/700589](https://doi.org/10.1086/700589).
+
+- id: premature-imitation-and-indias-flailing-state
+  title: "Premature Imitation and India’s Flailing State"
+  url: https://www.independent.org/pdf/tir/tir_24_2_01_rajagopalan.pdf
+  year: 2019
+  abstract: >-
+    A flailing state is one where the government is unable to implement its own plans due to
+    misaligned incentives between the policymakers and implementing bureaucracy. The Indian
+    government attempts to legislate every aspect of citizens' lives, yet lacks the resources
+    and personnel to administer these ambitions, leading to failure in execution. One factor
+    behind inappropriate laws and regulations is the Indian elite's close connection with
+    Western, especially Anglo-American, elites. This elite minority, comprising the top
+    bureaucracy, academia and policy circles, initiates policies that appear progressive by
+    Western standards but are disconnected from ground realities for most Indians. As examples,
+    the paper discusses the 26 week maternity leave mandate, applicable to only 1% of Indian
+    women; housing regulations on parking and open spaces raising costs beyond affordability;
+    failed efforts on open defecation that overlook cultural factors; and the Right to Education
+    law that ignores learning outcomes while penalizing functional private schools. These
+    imported policy ideas burden the already weak state and worsen implementation issues. The
+    alternative proposed is presumptive laissez-faire, relying more on markets even if
+    imperfect, as befits limited state capacity. State capability must be built before taking on
+    ambitious governance. Laissez-faire allows wealth, education and trust to grow, gradually
+    enabling a mixed economy. The Indian elite's premature mimicry of Western welfare and
+    regulatory states, without context and capability, leads to the flailing state's failure.
+  citation: >-
+    Rajagopolan, S. and A. Tabarrok. 2019. “Premature Imitation and India’s Flailing State,” The
+    Independent Review, 24: 2, pp. 165-186.
+
+- id: is-regulation-to-blame-for-the-decline-in
+  title: "Is Regulation to Blame for the Decline in American Entrepreneurship?"
+  url: https://mason.gmu.edu/~atabarro/Regulation_and_Firm_Dynamics.pdf
+  year: 2018
+  abstract: >-
+    Mounting evidence suggests that economic dynamism and entrepreneurial activity are declining
+    in the United States. Over the past thirty years, the annual number of new business startups
+    and the pace of job reallocation have declined significantly. A variety of causes for these
+    trends have been suggested, including an increasing ability of firms to respond to
+    idiosyncratic shocks, technology induced changes in the costs of hiring and training, and
+    increasing regulation. This research combines data from the Statistics of U.S. Businesses,
+    which contains measures of the decline in economic dynamism, with RegData, a novel dataset
+    leveraging the textual content of the Code of Federal Regulations. RegData contains annual
+    industry level measures of the stringency of regulation. By combining these data, we are
+    able to estimate the extent to which changes in the level of federal regulation can explain
+    decreasing entrepreneurial activity and dynamism. We find that Federal regulation has had
+    little to no effect on declining dynamism.
+  citation: >-
+    Goldschlag, N. and Tabarrok A. 2018-forthcoming. I[s Regulation to Blame for the Decline in
+    American Entrepreneurship?](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2559803)
+    Economic Policy 93
+
+- id: a-skeptical-view-of-the-national-science-foundations
+  title: "A Skeptical View of the National Science Foundation's Role in Economic Research"
+  url: https://www.aeaweb.org/articles?id=10.1257/jep.30.3.235
+  year: 2016
+  abstract: >-
+    We can imagine a plausible case for government support of science based on traditional
+    economic reasons of externalities and public goods. Yet when it comes to government support
+    of grants from the National Science Foundation (NSF) for economic research, our sense is
+    that many economists avoid critical questions, skimp on analysis, and move straight to
+    advocacy. In this essay, we take a more skeptical attitude toward the efforts of the NSF to
+    subsidize economic research. We offer two main sets of arguments. First, a key question is
+    not whether NSF funding is justified relative to laissez-faire, but rather, what is the
+    marginal value of NSF funding given already existing government and nongovernment support
+    for economic research? Second, we consider whether NSF funding might more productively be
+    shifted in various directions that remain within the legal and traditional purview of the
+    NSF. Such alternative focuses might include data availability, prizes rather than grants,
+    broader dissemination of economic insights, and more. Given these critiques, we suggest some
+    possible ways in which the pattern of NSF funding, and the arguments for such funding, might
+    be improved.
+  citation: >-
+    Cowen, T., & Tabarrok, A. 2016. [A Skeptical View of the National Science Foundation’s Role
+    in Economic Research](https://www.aeaweb.org/articles?id=10.1257/jep.30.3.235). Journal of
+    Economic Perspectives, 30(3): 235–248.
+
+- id: is-entrepreneurship-in-decline
+  title: "Is Entrepreneurship in Decline?"
+  url: https://mason.gmu.edu/~atabarro/Is%20Entrepreneurship%20in%20Decline.pdf
+  year: 2015
+  comment: >-
+    Written for Cato Conference on Growth, [video
+    presentation](http://marginalrevolution.com/marginalrevolution/2014/12/entrepreneurship-and-business-dynamism.html).
+  abstract: >-
+    The US economy has been one of the most dynamic economies in the world but recent research
+    suggests that US entrepreneurship and dynamism are in decline (Decker, Haltiwanger, Jarmin
+    and Miranda 2014). We offer a brief survey of the decline in dynamism literature and some of
+    the potential causes. We find that Federal regulation, is probably not a causes of declining
+    dynamism. Taking a closer look at some of the ways that dynamism and entrepreneurship have
+    been measured suggests that we may be mismeasuring. If entrepreneurship is measured as new
+    firm creation, for example, we miss the entrepreneurship inherent in rebuilding and
+    revitalizing larger and older firms. Since most workers work for larger and older firms,
+    revitalizing these firms may be a more important use of entrepreneurship than starting new
+    firms. In an increasing global economy we may also miss some of the outsourcing of dynamism
+    that has occurred in recent decades. Dynamism as measured by, for example, job reallocation
+    has a negative side, churn. Information technology may allow us to reduce churn while still
+    allowing adaption and innovation. Creative destruction is necessary for a growing economy
+    but if we can boost the ratio of creative to destruction that counts as an improvement in
+    welfare. The relationship between dynamism and entrepreneurship, flexibility and growth is
+    uncertain and welfare conclusions are not yet clear.
+  citation: >-
+    Tabarrok, A. & N. Goldschlag. 2015. Is Entrepreneurship in Decline? In [Understanding the
+    Growth
+    Slowdown](https://www.amazon.com/Understanding-Growth-Slowdown-Brink-Lindsey-ebook/dp/B0195OICJW)
+    (Brink Lindsey (ed). Cato Institute.
+
+- id: lessons-from-gurgaon-indias-private-city
+  title: "Lessons from Gurgaon, India's Private City"
+  url: https://mason.gmu.edu/~atabarro/Lessons%20from%20Gurgaon.pdf
+  year: 2014
+  abstract: >-
+    In just thirty years, Gurgaon has grown from a tiny hamlet to a city of nearly two million
+    people and it has done so based almost entirely on the private provision of public goods,
+    including transportation, utilities, and security. In some rankings, Gurgaon is the best
+    city in India in which to live and work (Behl 2009). Gurgaon, however, lacks important
+    infrastructure, especially in areas such as sewage and electricity where the optimal scale
+    exceeds that of most builders. Thus, for large-scale infrastructure, important externalities
+    are not internalized. We examine where Gurgaon has succeeded, where it has failed, and how
+    people are adapting to both the successes and the failures. We compare Gurgaon with other
+    private cities built on a different model, including Jamshedpur in India and Walt Disney
+    World in the United States. The developing world, including India, is urbanizing rapidly. We
+    draw lessons from Gurgaon to suggest how new private cities could be built on an
+    even-greater scale, thus internalizing externalities while still keeping the advantages of
+    private provision.
+  citation: >-
+    Rajagopalan, S., & Tabarrok, A. 2014. Lessons from Gurgaon, India’s private city. Cities and
+    Private Planning (pp. 199–231). Edward Elgar Publishing. Retrieved from
+    http://www.elgaronline.com/view/9781783475056.00018.xml
+
+- id: public-choice-perspectives-on-intellectual-property
+  title: "Public Choice Perspectives on Intellectual Property"
+  url: https://mason.gmu.edu/~atabarro/DouradoTabarrok%20PublicChoice%20IP.pdf
+  year: 2014
+  abstract: >-
+    Abstract: We mine two public choice traditions for insights into intellectual property
+    rights: the Virginia school, centered on James Buchanan and Gordon Tullock, and the
+    Bloomington or Institutional Analysis and Development school, centered on Elinor Ostrom and
+    Vincent Ostrom. We apply the perspectives of each school to issues of intellectual property
+    and develop new insights, questions, and focuses of attention. We also explore tensions and
+    synergies between the two schools on issues of intellectual property.
+  citation: >-
+    Dourado, E., Tabarrok, A., 2014. Public choice perspectives on intellectual property. Public
+    Choice 1–23. doi:10.1007/s11127-014-0195-x
+
+- id: the-industrial-organization-of-online-education
+  title: "The Industrial Organization of Online Education"
+  url: http://www.aeaweb.org/articles.php?doi=10.1257/aer.104.5.519
+  year: 2014
+  abstract: >-
+    Abstract: Online education has flexibility and cost advantages over in-class teaching and
+    these advantages will grow with improvements in information technology. We consider likely
+    market structures given that the quality aspects of online education exhibit endogenous
+    fixed costs. Concentration in the market for courses could be high, as it is currently in
+    the market for textbooks. The not-for-profit sector will exhibit lower costs, lower
+    concentration, and possibly zero price.
+  citation: >-
+    Cowen, T., Tabarrok, A., 2014. The Industrial Organization of Online Education. American
+    Economic Review 104, 519–522. doi:10.1257/aer.104.5.519
+
+- id: an-fda-report-card-wide-variance-in-performance
+  title: "AN FDA REPORT CARD: Wide Variance in Performance Found Among Agency’s Drug Review Divisions"
+  url: http://www.manhattan-institute.org/pdf/fda_07.pdf
+  year: 2014
+  comment: >-
+    With DiMasi and Milne and a foreword by Dr. Andrew C. von Eschenbach, former commissioner,
+    U.S. Food and Drug Administration; director, National Cancer Institute
+  abstract: >-
+    Abstract: The United States Food and Drug Administration (FDA) reviews and must ultimately
+    approve any new drug as "safe and effective" before it can be marketed for sale in the
+    United States. The question of whether the agency is too cautious in its reviews (delaying
+    access to critically needed treatments), or too fast in issuing approvals (potentially
+    exposing patients to undetected risks from new products), has long been a subject of public
+    debate. This study attempts to provide a more objective examination of the FDA's performance
+    by examining disparities in review and approval times across 12 review divisions within the
+    FDA's Center for Drug Evaluation and Research (CDER). After reviewing nearly 200 products
+    accounting for 80 percent of new drug and biologic launches from 2004 to 2012, the authors
+    find wide variation in division performance. In fact, the most productive divisions
+    (Oncology and Antivirals) approve new drugs roughly twice as fast as the CDER average and
+    three times faster than the least efficient divisions—without the benefit of greater
+    resources, reduced complexity of task, or reduction in safety. The authors estimate that a
+    modest narrowing of the CDER divisional productivity gap would reduce drug costs by nearly
+    $900 million annually. The worth to patients, however, would be far greater if the agency
+    could accelerate access to an additional generation of (about 25) drugs. Greater agency
+    efficiency in approving a single generation of drugs would be worth about $4 trillion in
+    value to patients, from enhanced U.S. life expectancy. To reap such gains, this study
+    encourages Congress and the FDA to more closely evaluate the agency's most efficient drug
+    review divisions, and apply the lessons learned across CDER. We also propose a number of
+    reforms that the FDA and Congress should consider to improve efficiency, transparency, and
+    consistency at the divisional level.
+  citation: >-
+    DiMasi, J.A., Milne, C.-P., Tabarrok, A., 2014. AN FDA REPORT CARD: Wide Variance in
+    Performance Found Among Agency’s Drug Review Divisions. Manhattan Institute.
+
+- id: firearms-and-suicides-in-us-states
+  title: "Firearms and Suicides in US States"
+  url: http://www.sciencedirect.com/science/article/pii/S014481881300077X
+  year: 2014
+  links:
+    - label: "working paper version"
+      url: https://mason.gmu.edu/~atabarro/BriggsTabarrokFirearmsSuicide.pdf
+  comment: >-
+    (with Justin Thomas Briggs)
+  abstract: >-
+    ABSTRACT: This study investigates the relationship between firearm prevalence and suicide in
+    a sample of all US states over the years 2000–2009. We find strong, positive effects of gun
+    prevalence on suicide using OLS estimation, across a variety of measures for gun possession,
+    and with several sets of controls. When using instrumental variable estimation, the effect
+    remains significant, despite also finding significant evidence that gun ownership causes
+    substitution towards gun-suicide rather than other methods of suicide. There is also
+    evidence for non-linearities in the effects of guns on suicide.
+  citation: >-
+    Briggs Justin T. and A. Tabarrok. 2014. Firearms and suicides in US states. International
+    Review of Law and Economics 37: 180-188. http://dx.doi.org/10.1016/j.irle.2013.10.004.
+    (http://www.sciencedirect.com/science/article/pii/S014481881300077X)
+
+- id: ill-conceived-even-if-competently-administered-software-patents
+  title: "Ill-Conceived, Even If Competently Administered: Software Patents, Litigation and Innovation"
+  url: http://econjwatch.org/file_download/795/MillerTabarrokJan2014.pdf
+  year: 2014
+  comment: >-
+    -A Comment on Graham and Vishnubhakat in the JEP.
+  abstract: >-
+    Abstract: The number of patents has increased dramatically in the past three decades, as has
+    the number of patent-related lawsuits, particularly in the field of software. Industry and
+    academic experts have expressed concern that many of the patents being issued are of low
+    quality. Writing in the Journal of Economic Perspectives, Stuart Graham and Saurabh
+    Vishnubhakat have defended the United States Patent and Trademark Office, arguing that the
+    PTO has acted responsibly in issuing patents that are legally valid and that it is handling
+    problems constructively. We accept some of Graham and Vishnubhakat’s defense of the PTO, but
+    argue that the most important issue is not whether the law is being competently administered
+    but whether patent law, particularly as applied to software, is creating patents that are
+    overly broad and ambiguous. We maintain that it is, and that the results are less innovation
+    and more costly and unproductive litigation.
+  citation: >-
+    Miller, Shawn, and Alexander Tabarrok. 2014. Ill-Conceived, Even If Competently
+    Administered: Software Patents, Litigation and Innovation-A Comment on Graham and
+    Vishnubhakat. Econ Journal Watch 11 (1).
+
+- id: private-education-in-india-a-novel-test-of
+  title: "Private Education in India: A Novel Test of Cream Skimming"
+  url: http://onlinelibrary.wiley.com/doi/10.1111/j.1465-7287.2011.00286.x/abstract
+  year: 2013
+  abstract: >-
+    Abstract: Students in private schools routinely outperform those in public schools both in
+    the United States and around the world. But do private schools make students better or do
+    they simply cream skim better students? In this article I take advantage of the remarkable
+    fact that in many districts in India a majority of students attend private schools. As the
+    private share of school enrollment increases, cream skimming becomes less plausible as the
+    explanation for a higher rate of achievement in private schools. Evidence for cream skimming
+    is found when the private share of schooling is low, in the range of 0–15%, and thus private
+    schools have a large public pool from which to skim. But the private effect on achievement
+    does not appear to diminish greatly even in districts where more than 70% of students are in
+    private schools. Most importantly, mean scores taken over the entire population of students,
+    private and public, increase with the share of private schooling. These findings support a
+    significant productivity effect of private schools. (JEL I25, I2, L33)
+  citation: >-
+    Tabarrok, A., 2013. Private Education in India: A Novel Test of Cream Skimming. Contemporary
+    Economic Policy 31, 1–12. doi:10.1111/j.1465-7287.2011.00286.x
+
+- id: product-liability-and-moral-hazard-evidence-from-general
+  title: "Product Liability and Moral Hazard: Evidence from General Aviation"
+  url: http://www.jstor.org/stable/10.1086/666363
+  year: 2012
+  abstract: >-
+    Abstract: Product liability law reduces the costs of accidents to consumers, thus reducing
+    their incentives to invest in safety. We estimate the impact of tort liability on a subset
+    of consumers who have significant control over the probability of an accident: the consumers
+    of general aviation aircraft. The General Aviation Revitalization Act of 1994 exempted
+    manufacturers of small aircraft from product liability claims when their aircraft reached 18
+    years of age. We use the exemption at age 18 to estimate the impact of tort liability on
+    accidents as well as on a wide variety of behaviors and safety investments by pilots and
+    owners. The results are consistent with moral hazard. When an aircraft is exempted from tort
+    liability, the probability that the aircraft will be involved in an accident declines.
+    Direct evidence of pilots’ and owners’ behavior is also consistent with moral hazard.
+  citation: >-
+    Helland, E.A., Tabarrok, A., 2012. Product Liability and Moral Hazard: Evidence from General
+    Aviation. Journal of Law and Economics 55, 593–630. doi:10.1086/666363
+
+- id: do-off-label-drug-practices-argue-against-fda
+  title: "Do Off-Label Drug Practices Argue Against FDA Efficacy Requirements? Testing an Argument by Stuctured Conversations with Experts"
+  url: http://mason.gmu.edu/~atabarro/Do%20Off-Label%2024.pdf
+  year: null
+  comment: >-
+    (with Dan Klein). The heart of this paper is an analysis of the written comments that
+    physicians made to the "consistency argument" (see the paper). We provide all the comments
+    here as Word documents. The responses are split into three categories; the [comments of
+    challengers who disputed the consistency
+    argument](http://mason.gmu.edu/~atabarro/gComments.doc), the [comments of liberalizers who
+    agreed with the consistency argument](http://mason.gmu.edu/~atabarro/cComments.doc), and
+    [final comments ](http://mason.gmu.edu/~atabarro/fComments.doc)on the survey made by both
+    challengers and liberalizers. In the text these are denoted as the "g", "c" and "f" comments
+    respectively.
+  abstract: >-
+    ABSTRACT: The amended Food, Drug and Cosmetics Act requires efficacy certification for a
+    drug’s initial uses (“on-label”), but does not require certification before physicians may
+    prescribe the drug for subsequent uses (“off-label”). Does it make sense to require FDA
+    efficacy certification for new drugs but not for new uses of old drugs? Using a sequential
+    online survey we carried on a “virtual conversation” with some 500 physicians. The survey
+    asked whether efficacy requirements should be imposed on off-label uses; almost all
+    physicians said no. It asked whether the efficacy requirements for initial uses should be
+    dropped, and most physicians said no. We then asked respondents whether opposing efficacy
+    requirements in one case but not the other involved an inconsistency. In response, we
+    received hundreds of written commentaries. We organize and discuss these commentaries with
+    an eye to understanding how the medical market certifies off-label drug uses and how this
+    compares to FDA certification. Does off-label medicine suggest that efficacy requirements
+    should be placed on new uses of old drugs? Does it suggest that efficacy requirements on new
+    drugs should be lifted?
+
+- id: does-three-strikes-deter-a-non-parametric-investigation
+  title: "Does Three Strikes Deter? A Non-Parametric Investigation"
+  url: http://jhr.uwpress.org/cgi/reprint/XLII/2/309
+  year: 2007
+  comment: >-
+    (with Eric Helland)
+  abstract: >-
+    ABSTRACT: We take advantage of the fortuitous randomization of trial outcome to provide a
+    novel strategy to identify the deterrent effect exclusive of incapacitation. We compare the
+    post-sentencing criminal activity of criminals who were convicted of a strikeable offense
+    with those who were tried for a strikeable offense but convicted of a non-strikeable
+    offense. As a robustness check, we also make this comparison in states without three strikes
+    laws. The identification strategy lets us estimate the deterrent effect non-parametrically
+    using data solely from the three-strikes era. We find that California’s three strike
+    legislation significantly reduces felony arrest rates among the class of criminals with two
+    strikes by 17-20 percent.
+  citation: >-
+    Helland, E. and A. Tabarrok. 2007. Does Three Strikes Deter: A Non-Parametric Investigation.
+    Journal of Human Resources XLII (2): 309-330.
+
+- id: missing-the-mark
+  title: "Missing the Mark"
+  url: http://journals.cambridge.org/action/displayIssue?jid=CQH&volumeId=15&issueId=04
+  year: 2006
+  abstract: >-
+    In their paper “Members First: The Ethics of Donating Organs and Tissues to Groups,” Timothy
+    Murphy and Robert Veatch question the ethical underpinnings of LifeSharers, a grass-roots
+    effort to increase the supply of organs by giving organ donors preferred access to organs
+    Tabarrok and Undis respond.
+  citation: >-
+    Tabarrok, A. and David Undis. 2006. Missing the Mark. Cambridge Quarterly Journal of
+    HealthCare Ethics. 15(4):450-456.
+
+- id: the-problem-of-contingent-fees-for-waiters
+  title: "The Problem of Contingent Fees for Waiters"
+  url: https://mason.gmu.edu/~atabarro/ContingentFeesforWaiters.pdf
+  year: 2005
+  abstract: >-
+    ABSTRACT: In a series of influential papers, Lester Brickman (2003a, 2003b, 2004) has argued
+    that the income and effective hourly rate of tort lawyers using contingent fees has
+    increased by 1400% since 1960 and that the market for contingent fee lawyers is
+    uncompetitive as evidenced by lack of price advertising and uniform pricing across
+    practitioners, cases and time. He also argues that contingent fee lawyers use
+    “contingent-fee math” to build up additional costs and fees. I critically examine Brickman’s
+    calculations and compare contingent fees in the market for lawyers with contingent fees,
+    usually called tips, in the market for waiters.
+  citation: >-
+    Tabarrok, A. 2005. The Problem of Contingent Fees for Waiters. The Green Bag. Summer 2005:
+    377-381.
+
+- id: what-are-private-governments-worth
+  title: "What are Private Governments Worth?"
+  url: http://www.cato.org/pubs/regulation/regv28n3/v28n3-2.pdf
+  year: 2005
+  abstract: >-
+    Comment (with Amanda Agan) ABSTRACT: “Private governments” such as homeowners associations
+    and condominium cooperatives provide all manner of collective consumption goods, from road
+    maintenance, trash collection, and snow removal to transportation, policing, and medical
+    care. These organizations were practically unheard of in 1960, but today some 54.6 million
+    people in the United States live in various neighborhood associations. Using data from
+    Northern Virginia we show houses in HOAs are worth, on average, more than 5 percent more
+    than similar houses in the same neighborhood but outside of HOAs. Given those large
+    advantages, it is not surprising that HOAs are growing rapidly. Implications for the future
+    are discussed.
+  citation: >-
+    Agan, A. and A. Tabarrok. 2005. What are Private Governments Worth? Regulation. 28 (3:
+    Fall): 14-17.
+
+- id: using-terror-alert-levels-to-estimate-the-effect
+  title: "Using Terror Alert Levels To Estimate the Effect of Police on Crime"
+  url: https://mason.gmu.edu/~atabarro/TerrorAlertProofs.pdf
+  year: 2005
+  comment: >-
+    (with Jon Klick)
+  abstract: >-
+    ABSTRACT: We argue that changes in the terror alert level set by the Department of Homeland
+    Security provide a shock to police presence in the Mall area of Washington, D.C. Using daily
+    crime data during the period the terror alert system has been in place, we show that crime
+    drops significantly, both statistically and economically, in the Mall area relative to the
+    other areas of Washington DC. This provides strong evidence of the causal effect of police
+    on crime and suggests a research strategy that can be used in other cities.
+  citation: >-
+    Klick, J. and A. Tabarrok. 2005. Using Terror Alert Levels to Estimate the Effect of Police
+    on Crime. Journal of Law and Economics. 48(1): 267-280.
+
+- id: the-fugitive-evidence-on-public-versus-private-law
+  title: "The Fugitive: Evidence on Public versus Private Law Enforcement from Bail Jumping"
+  url: https://mason.gmu.edu/~atabarro/PublicvsPrivate.pdf
+  year: 2004
+  comment: >-
+    (with Eric Helland)
+  abstract: >-
+    ABSTRACT: After being arrested and booked, most felony defendants are released to await
+    trial. On the day of the trial, a substantial percentage fail to appear. If the failure to
+    appear is not quickly explained, warrants are issued and two quite different systems of
+    pursuit and rearrest are put into action. Public police have the primary responsibility for
+    pursuing and rearresting defendants who were released on their own recognizance or on cash
+    or government bail. Defendants who made bail by borrowing from a bond dealer, however, must
+    worry about an entirely different pursuer. When a defendant who has borrowed money skips
+    trial, the bond dealer forfeits the bond unless the fugitive is soon returned. As a result,
+    bond dealers have an incentive to monitor their charges and ensure that they do not skip.
+    When a defendant does skip, bond dealers hire bail enforcement agents, more colloquially
+    known as bounty hunters, to pursue and return the defendants to custody. We compare the
+    effectiveness of these two different systems by examining failure to appear rates, fugitive
+    rates and capture rates of felony defendants who fall under the respective systems. We apply
+    propensity score and matching techniques.
+  citation: >-
+    Helland, E. and A. Tabarrok. 2004. [The Fugitive: Evidence on Public versus Private Law
+    Enforcement from Bail
+    Jumping](http://www.journals.uchicago.edu/cgi-bin/resolve?JLE470101PDF). Journal of Law and
+    Economics XLVII (1): 83-122.
+
+- id: using-placebo-laws-to-test-more-guns-less
+  title: "Using Placebo Laws to Test “More Guns, Less Crime”"
+  url: https://mason.gmu.edu/~atabarro/Using%20Placebo.pdf
+  year: 2004
+  comment: >-
+    (with Eric Helland).
+  abstract: >-
+    ABSTRACT: We reexamine Mustard and Lott’s controversial study on the affect of “shall-issue”
+    gun laws on crime using an empirical standard error function randomly generated from
+    “placebo” laws. We find that the effect of shall-issue laws on crime is much less
+    well-estimated than the Mustard and Lott (1997) and Lott (2000) results suggest. We also
+    find, however, that the cross equation restrictions implied by the Lott-Mustard theory are
+    supported. A boomlet has occurred in recent years in the use of quasi-natural experiments to
+    answer important questions of public policy. The intuitive power of this approach, however,
+    has sometimes diverted attention from the statistical assumptions that must be made,
+    particularly regarding standard errors. Failing to take into account serial correlation and
+    grouped data can dramatically reduce standard errors suggesting greater certainty in effects
+    than is actually the case. We find that the placebo law technique (Bertrand, Duflo and
+    Mullainathan 2002) is a useful addition to the econometrician’s toolkit.
+  citation: >-
+    Helland, E. and A. Tabarrok. 2004. Using Placebo Laws to Test “More Guns, Less Crime”.
+    Advances in Economic Analysis & Policy 4 (1): Article 1.
+    http://www.bepress.com/bejeap/advances/vol4/iss1/art
+
+- id: contingency-fees-settlement-delay-and-low-quality-litigation
+  title: "Contingency Fees, Settlement Delay and Low-Quality Litigation: Empirical Evidence from Two Datasets"
+  url: http://jleo.oupjournals.org/cgi/reprint/19/2/517.pdf
+  year: 2003
+  comment: >-
+    (with Eric Helland)
+  abstract: >-
+    ABSTRACT: Although flat fees are common for divorces, wills and trusts and probate, lawyers
+    in personal injury cases generally are paid by contingency fee or at an hourly rate.
+    Arguments have been made that contingency fees increase low-quality, "frivolous" litigation
+    but counter-arguments suggest that contingency fees actually limit such litigation and
+    instead it is hourly-fees that increase low-quality litigation. Using a difference in
+    differences test and data on a cross section of states in 1992 we test whether legal quality
+    is lower under contingency or hourly fees. We also examine medical malpractice claims in
+    Florida using a time series centered around a law change that limited contigency fees. We
+    also examine the impact of fee arrangements on the expected time to settlement. We find that
+    hourly fees encourage the filing of low-quality suits and increase the time to settlement
+    (i.e. contingency fees increase legal-quality and decrease the time to settlement).
+  citation: >-
+    Helland, E. and A. Tabarrok. 2003. Contingency Fees, Settlement Delay and Low-Quality
+    Litigation: Empirical Evidence from Two Datasets. Journal of Law, Economics and Organization
+    19 (2): 517-542.
+
+- id: patent-theory-versus-patent-law
+  title: "Patent Theory versus Patent Law"
+  url: https://mason.gmu.edu/~atabarro/PatentPublished.pdf
+  year: 2002
+  abstract: >-
+    ABSTRACT: According to the economic theory of patents, patents are needed so that pioneer
+    firm have time to recoup their sunk costs of research and development. The key element in
+    the economic theory is that pioneer firms have large, hard to recoup, sunk costs. Yet
+    patents are not awarded on the basis of a firm's sunk costs. Patent law, in fact, ignores
+    costs. The disconnect between patent law and patent theory suggests either that modifying
+    patent law so that it better fits with patent theory would reduce the costs and
+    inefficiencies associated with current patent practice or that the standard economic theory
+    of patents is wrong.
+  citation: >-
+    Tabarrok, Alexander. 2002. Patent Theory versus Patent Law. Contributions to Economic
+    Analysis & Policy 1 (1), Article 9.
+    http://www.bepress.com/bejeap/contributions/vol1/iss1/art9
+
+- id: race-poverty-and-american-tort-awards-evidence-from
+  title: "Race, Poverty, and American Tort Awards: Evidence from Three Datasets"
+  url: http://www.journals.uchicago.edu/JLS/journal/issues/v32n1/320103/320103.web.pdf
+  year: 2003
+  comment: >-
+    Working paper version [here](https://mason.gmu.edu/~atabarro/RacePovertyTortAwards.pdf).
+    (The above link requires subscription or university access to the JLS).
+  abstract: >-
+    ABSTRACT: We investigate the impact of the race and income of the jury pool on trial awards.
+    We find that the average tort award increases as black and Hispanic county population rates
+    increase and especially as black and Hispanic county poverty rates increase. An increase in
+    the black county-poverty rate of 1 percentage point tends to raise the average personal
+    injury tort award by 3 to 10 percent. An increase in the Hispanic county-poverty rate of 1
+    percentage point tends to raise awards by as much as 7 percent although this effect is less
+    well estimated. These effects imply that forum shopping for high-poverty minority counties
+    could raise awards by hundreds of thousands of dollars. Average awards fall with increases
+    in white (non-black, non-Hispanic) poverty rates in two of our datasets, thus making these
+    findings even more surprising. Awards increase with black and Hispanic county-poverty rates
+    even after controlling for a wide variety of other potential causes.
+  citation: >-
+    Helland, Eric. and Alexander Tabarrok. 2003. Race, Poverty, and American Tort Awards:
+    Evidence from Three Datasets. The Journal of Legal Studies 32 (2): 27-58.
+
+- id: expected-dividend-growth-valuation-ratios-and-rational-optimism
+  title: "Expected Dividend Growth, Valuation Ratios and Rational Optimism"
+  url: https://mason.gmu.edu/~atabarro/expectedgrowth3.doc
+  year: 2002
+  abstract: >-
+    ABSTRACT: Large changes in valuation ratios can be explained by relatively small changes in
+    the expected dividend growth rate. We use the Gordon growth model to back out an "expected"
+    dividend growth rate and we compare this rate with the actual rate of dividend growth. We
+    cannot reject the hypothesis that our estimated rate is a rational expectation of the
+    actual. As a result, a model of valuation ratios based solely on a handful of fundamentals
+    can easily explain the variation in the data. In particular, the historically high ratios of
+    the late 1990s and today are consistent with rational expectations about dividend growth.
+    Such expectations, moreover, appear reasonable in the context of slowly accumlating,
+    long-term changes in the economy that are reducing output volatility, increasing the
+    duration of expansions and reducing the duration of recessions. Contrary to a number of
+    recent analyses, optimism about the future is not ruled out by the data.
+  citation: >-
+    Santoni, G. and A. Tabarrok. 2002. Expected Dividend Growth, Valuation Ratios and Rational
+    Optimism. Journal of Financial and Economic Practice 1 (1): 110-119.
+
+- id: the-effect-of-electoral-institutions-on-tort-awards
+  title: "The Effect of Electoral Institutions on Tort Awards"
+  url: https://academic.oup.com/aler/article/4/2/341/251508
+  year: 2002
+  links:
+    - label: PDF
+      url: https://alextabarrok.com/wp-content/uploads/2020/11/Electoral-Institutions.pdf
+  abstract: >-
+    ABSTRACT: We argue that partisan elected judges, have an incentive to redistribute wealth
+    from out-of-state defendants (non-voters) to in-state plaintiffs (voters). We first test the
+    hypothesis using cross-state data. We find a significant partisan effect after controlling
+    for differences in injuries, state incomes, poverty levels, selection effects and other
+    factors. One difference which appears difficult to control for is that each state has its
+    own tort law. In cases involving citizens of different states, Federal judges decide
+    disputes using state law. Using these diversity of citizenship cases we conclude that
+    differences in awards are caused by differences in electoral systems not by differences in
+    state law.
+  citation: >-
+    Helland, E. and A. Tabarrok. 2002. The Effect of Electoral Institutions on Tort Awards.
+    American Law and Economics Review 4 (2): 341-370.
+
+- id: a-geometric-proof-of-the-neutrality-theorem
+  title: "A Geometric Proof of the Neutrality Theorem"
+  url: https://mason.gmu.edu/~atabarro/Geometric%20Proof%20of%20Neutrality.pdf
+  year: null
+  abstract: >-
+    ABSTRACT: The neutrality theorem for public goods is proved using a Dolbear triangle
+    diagram.
+  citation: >-
+    Tabarrok, A. forthcoming. A Geometric Proof of the Neutrality Theorem. Public
+    Finance/Finances Publiques.
+
+- id: president-perot-or-fundamentals-of-voting-theory-illustrated
+  title: "President Perot, or Fundamentals of Voting Theory Illustrated with the 1992 Election"
+  url: https://mason.gmu.edu/~atabarro/Perot.pdf
+  year: 2001
+  comment: >-
+    Mathematica code for most of the calculations in this paper can be found here. This paper
+    uses the same techniques (but in one less dimension) as Would the Borda Count have Avoided
+    the Civil War? - thus the theory sections overlap.
+  abstract: >-
+    ABSTRACT: Different voting systems can lead to different election outcomes even when voter
+    preferences are held constant. Using the 1992 election as an example, it is shown how the
+    outcome of every positional vote system can be found. Similarly, every possible cumulative
+    and approval vote outcome is shown. Multiple vote systems, like approval and cumulative
+    voting, have disturbing properties. Using the 1992 election as illustration, it is shown how
+    a candidate who wins under every positional vote system, who wins every pairwise vote (i.e.
+    is the Condorcet winner), and who has the most first place and least last place votes may
+    nevertheless lose under approval or cumulative voting. Similarly, it is shown how a
+    candidate who loses under every positional system, who loses every pairwise vote (i.e. is
+    the Condorcet loser), and who has the least first place and most last place votes may
+    nevertheless win under approval or cumulative voting.
+  citation: >-
+    Tabarrok, Alexander. 2001. President Perot, or Fundamentals of Voting Theory Illustrated
+    with the 1992 Election. Public Choice 106 (3-4): 275-297.
+
+- id: an-economic-theory-of-avant-garde-and-popular
+  title: "An Economic Theory of Avant-Garde and Popular Art, or High and Low Culture"
+  url: http://links.jstor.org/sici?sici=0038-4038%28200010%2967%3A2%3C232%3AAETOAA%3E2.0.CO%3B2-X
+  year: 2000
+  abstract: >-
+    (The above is a link to the JSTOR PDF. [Email me](mailto:Alex.Tabarrok@gmail.com) if you do
+    not have access.) ABSTRACT: Artists face choices between the pecuniary benefits of selling
+    to the market and the non-pecuniary benefits of creating to please their own tastes. We
+    examine how changes in wages, lump sum income, and capital-labor ratios affect the artist's
+    pursuit of self-satisfaction versus market sales. Using our model of labor supply as a
+    guide, we consider the economic forces behind the high/low culture split, why some artistic
+    media offer greater scope for the avant-garde than others, why so many artists dislike the
+    market, and how economic growth and taxation affect the quantity and form of different kinds
+    of art.
+  citation: >-
+    Cowen, Tyler and Alexander Tabarrok. 2000. An Economic Theory of Avant-Garde and Popular
+    Art, or High and Low Culture. Southern Economic Journal 67(2): 232-253.
+
+- id: assessing-the-fda-via-the-anomaly-of-off
+  title: "Assessing the FDA via the Anomaly of Off-Label Drug Prescriptions"
+  url: http://www.independent.org/publications/tir/article.asp?issueID=21&articleID=240
+  year: 2000
+  abstract: >-
+    ABSTRACT: Most American hospital patients are given drugs not approved by the U.S. Food and
+    Drug Administration for the prescribed use. If off-label prescribing is so widespread and
+    successful, is the FDA's pre-approval process really necessary?
+  citation: >-
+    Tabarrok, A. 2000. Assessing the FDA via the Anomaly of Off-Label Drug Prescriptions. The
+    Independent Review V, #1: pp. 25-53.
+
+- id: runaway-judges-selection-effects-and-the-jury
+  title: "Runaway Judges? Selection effects and the jury?"
+  url: https://mason.gmu.edu/~atabarro/JudgeJuryFinal
+  year: 2000
+  abstract: >-
+    ABSTRACT: Reports about runaway jury awards have become so common that it is widely accepted
+    that the US jury system needs to be ‘fixed.’ Proposals to limit the right to a jury trial
+    and increase judicial discretion over awards implicitly assume that judges decide cases
+    differently than juries. We show that there are large differences in mean awards and win
+    rates across juries and judges. But if the types of cases coming before juries are different
+    from those coming before judges, mean award and win rates may differ even if judges and
+    juries would make the same decisions when faced with the same cases. We find that most of
+    the difference in judge and jury mean awards can be explained by differences in the sample
+    of cases coming before judges and juries. On some dimensions, however, there remain robust
+    and suggestive differences between judges and juries.
+  citation: >-
+    Helland, Eric and Alexander Tabarrok. 2000. Runaway Judges? Selection effects and the jury?
+    Journal of Law, Economics, and Organization 16 (2): 306-333.
+
+- id: believe-in-pascals-wager-have-i-got-a
+  title: "Believe in Pascal's Wager? Have I got a deal for you!"
+  url: https://mason.gmu.edu/~atabarro/Pascal%27sWager.pdf
+  year: 2000
+  abstract: >-
+    ABSTRACT: Pascal’s wager is initially compelling because “believing” in God appears to be
+    costless. Believing in the possibility of infinite utility, however, implies that the
+    believer is willing to accept any finite cost to achieve any positive probability, no matter
+    how small, of attaining infinite utility. "Tabarrok's offer," although costly, should be
+    compelling to those who accept Pascal's wager.
+  citation: >-
+    Tabarrok, A. 2000. Believe in Pascal's Wager? Have I got a deal for you! Theory and Decision
+    48: 123-128.
+
+- id: the-ramsey-model-of-economic-growth
+  title: "The Ramsey Model of Economic Growth"
+  url: https://mason.gmu.edu/~atabarro/RamseyGrowthModel.nb
+  year: 2000
+  comment: >-
+    The link is to a Mathematica NB file.
+  abstract: >-
+    ABSTRACT: The Ramsey model of economic growth is a workhorse of contemporary
+    macro-economics. It's the starting point not only for growth theory but also for modern
+    business cycle theory. Ask an economist how the economy will react to an increase in
+    government purchases or to a change in the tax rate on capital and the first model he will
+    reach for in a search for answers is the Ramsey model. In this paper I briefly explain a
+    simple version of the Ramsey model and put the model through its paces using Mathematica's
+    extensive numerical and graphical abilities.
+  citation: >-
+    Tabarrok, Alexander. 2000. The Ramsey Model of Economic Growth. Mathematica in Education and
+    Research 8: 3-4: 43-51.
+
+- id: the-opportunity-costs-of-rent-seeking
+  title: "The Opportunity Costs of Rent Seeking"
+  url: https://mason.gmu.edu/~atabarro/TheOpportunityCostsofRentSeeking.pdf
+  year: 1999
+  comment: >-
+    May be minor differences from published version.
+  abstract: >-
+    ABSTRACT: The costs of rent seeking exceed traditional measures when opportunity cost is
+    considered. When the quantity of resources consumed by rent seeking is large, rent seeking
+    draws consumer surplus out of alternative resource employments. The costs of rent seeking
+    differ in partial and general equilibrium frameworks; Tullock (1989) recognizes this but
+    incorrectly argues that rent seeking costs are twice as large in general than in partial
+    equilibrium. Other authors suggest that rent seeking costs are lower once the opportunity
+    costs of resources used in rent seeking are considered. We clear up the confusion in the
+    current literature.
+  citation: >-
+    Cowen, T., and A. Tabarrok. 1999. The Opportunity Costs of Rent Seeking. Journal of Public
+    Finance and Public Choice XVII (2-3):121-27.
+
+- id: court-politics-the-political-economy-of-tort-awards
+  title: "Court Politics: The Political Economy of Tort Awards"
+  url: null
+  year: 1999
+  comment: >-
+    In most respects superseded by The Effect of Electoral Institutions on Tort Awards which
+    reviews the pertinent findings from this paper.
+  abstract: >-
+    ABSTRACT: We investigate the forces, which explain why trial awards differ across the U.S.
+    states. In 23 states judges are elected and in 10 they are elected via partisan elections.
+    Elections have two important effects. First, defendants are often out-of-state non-voters
+    while plaintiffs are typically in-state voters. We predict, therefore, that elected judges
+    will redistribute wealth from out-of-state businesses to in-state plaintiffs. Second, the
+    realities of campaign financing require judges to seek and accept campaign funding from
+    trial lawyers who uniformly are interested in larger awards. We hypothesize that these two
+    forces cause awards to be larger in states where the judiciary is elected rather than
+    appointed. We also hypothesize that the demand for redistribution will increase as poverty
+    increases and thus that awards will be larger in states with greater poverty. Using a sample
+    of over 7000 cases across 48 of the 50 states we find significant evidence in support of
+    these hypotheses.
+  citation: >-
+    Tabarrok, A., and E. Helland. 1999. Court Politics: The Political Economy of Tort Awards.
+    Journal of Law and Economics XLII,1(April): 157-188.
+
+- id: would-the-borda-count-have-avoided-the-civil
+  title: "Would the Borda Count have Avoided the Civil War?"
+  url: https://mason.gmu.edu/~atabarro/Would%20the%20Borda%20Count.pdf
+  year: 1999
+  comment: >-
+    Mathematica code for most of the calculations in this paper can be found here. This paper
+    uses the same techniques (but in one more dimension) as President Perot - thus the theory
+    sections overlap.
+  abstract: >-
+    ABSTRACT: The election of 1860 was one of the most important and contentious elections in US
+    history. It was also one of the most interesting. Four candidates from three different
+    parties battled for the presidency and all four received a significant number of votes. We
+    ask whether Lincoln's victory was sound, or was it due to a fluke in the electoral system?
+    Did a Lincoln win plausibly represent the will of the voters or would a different voting
+    system have represented their preferences more accurately? Would the outcome have been the
+    same had one or more of the candidates dropped out of the race? These and other questions
+    are answered using new graphical techniques which let us assess voter preferences more
+    accurately. Using these techniques, we are able to show, in a single figure, the outcome of
+    every positional voting system, as well as all possible approval voting outcomes. By
+    comparing the outcome under plurality rule to the outcomes which would have occurred under
+    other voting systems, we conclude that Stephen Douglas, not Lincoln, was plausibly the
+    candidate who best represented the preferences of the voters.
+  citation: >-
+    Tabarrok, Alexander. and Lee Spector. 1999. Would the Borda Count have Avoided the Civil
+    War? Journal of Theoretical Politics 11(2): 261-288.
+
+- id: voting-theory-with-representation-triangles-and-cubes
+  title: "Voting Theory with Representation Triangles and Cubes"
+  url: https://mason.gmu.edu/~atabarro/VotingArticle.nb
+  year: 1998
+  comment: >-
+    The link is to a Mathematica NB file. See the material on voting and mathematica for more
+    complete coverage of the voting package.
+  abstract: >-
+    Abstract: Voting seems straightforward but on closer inspection even simple voting rules
+    have mysterious and odd properties which often challenge our conception of democracy. Some
+    of these paradoxes have bothered social scientists for hundreds of years but until recently
+    little theory existed which explained why and when paradoxes might be expected to occur. In
+    his book, "The Geometry of Voting," the mathematician Donald Saari has shed considerable
+    light on why voting 'paradoxes' occur and how they can be predicted. The package voting.m
+    uses Mathematica's capabilities to implement many of the functions described in Saari's book
+    "The Geometry of Voting," Springer-Verlag, 1994. The package allows us to experiment with
+    positional voting systems, pairwise voting, approval voting and cumulative voting. In this
+    article I will focus on positional and pairwise voting, other package capabilities are
+    explained at length in the electronic supplement.
+  citation: >-
+    Tabarrok, A. 1998. Voting Theory with Representation Triangles and Cubes. Mathematica in
+    Education and Research 7 (3):20-28.
+
+- id: who-benefits-from-progress
+  title: "Who Benefits from Progress?"
+  url: https://doi.org/10.1111/j.1467-6435.1998.tb01426.x
+  year: 1998
+  abstract: >-
+    Abstract: Progress is better for some consumers than for others. We analyze the factors
+    which govern how much a consumer gains from progress, defined as price declines and the
+    introduction of new and improved products, and we show how these factors vary systematically
+    across different consumer groups. Economic developments of the 1980s and 1990s have brought
+    increasing disagreement about the performance of the American and European economies.
+    Economists typically try to account for these dual and contrasting perspectives by citing
+    the increasing gap between the wages of skilled and unskilled labor. We examine differential
+    consumer gains as another factor which may account for the contrasting perspectives.
+    Differential consumer gains can also help to explain contrasting perspectives on the
+    de-socialization of the East European and Soviet economies.
+  citation: >-
+    Tabarrok, Alexander and Tyler Cowen. 1998. Who Benefits from Progress?, Kyklos 51
+    (3):379-397.
+
+- id: the-separation-of-commercial-and-investment-banking-morgans
+  title: "The Separation of Commercial and Investment Banking: Morgans Vs Rockefellers"
+  url: http://www.qjae.org/journals/qjae/pdf/qjae1_1_1.pdf
+  year: 1998
+  comment: >-
+    Too much public choice takes a correlation as proof of (special interest) causation. This
+    paper is my attempt at an historical public choice. My most Rothbardian paper.
+  abstract: >-
+    ABSTRACT: The public interest arguments for the separation of commercial and investment
+    banking are weak and appear unable to explain the passage of the Banking Act. The separation
+    can best be understood in the context of a bank war between the Morgan and Rockefeller
+    banking groups. The House of Morgan blended commercial and investment banking to a much
+    greater extent than did the Rockefeller group. Although separation raised the costs of
+    banking to the Rockefeller group, it hurt the House of Morgan disproportionately and gave
+    the Rockefeller group a decisive advantage in their battle with the Morgans. The
+    micro-history approach of this paper pinpoints the specific individuals who were responsible
+    for the Act's provisions separating commercial and investment banking.
+  citation: >-
+    Tabarrok, A. 1998. The Separation of Commercial and Investment Banking: Morgans Vs
+    Rockefellers. The Quarterly Journal of Austrian Economics 1 (1):1-18.
+
+- id: a-simple-model-of-crime-waves-riots-and
+  title: "A Simple Model of Crime Waves, Riots, and Revolutions"
+  url: https://link.springer.com/article/10.1007/BF02298409
+  year: 1997
+  abstract: >-
+    Abstract: Like the title says.
+  citation: >-
+    Tabarrok, A. 1997. A Simple Model of Crime Waves, Riots, and Revolutions. Atlantic Economic
+    Review 25 (3):274-288
+
+- id: the-private-provision-of-public-goods-via-dominant
+  title: "The Private Provision of Public Goods Via Dominant Assurance Contracts"
+  url: https://mason.gmu.edu/~atabarro/PrivateProvision.pdf
+  year: 1998
+  comment: >-
+    My most un(der)appreciated paper!
+  abstract: >-
+    ABSTRACT: Many types of public goods can be produced privately by profit seeking
+    entrepreneurs using a modified form of assurance contract, called a dominant assurance
+    contract. I model the dominant assurance contract as a game and show that the pure strategy
+    equilibrium has agents contributing to the public good as a dominant strategy. The game is
+    also modelled under incomplete information as a Bayesian-Nash game.
+  citation: >-
+    Tabarrok, A. 1998. The Private Provision of Public Goods Via Dominant Assurance Contracts.
+    Public Choice 96:345-362.
+
+- id: genetic-testing-and-human-welfare-reply-to-hall
+  title: "Genetic Testing and Human Welfare: Reply to Hall"
+  url: http://www.sciencedirect.com/science?_ob=MImg&_imagekey=B6V8K-3VW8PB3-G-1&_cdi=5873&_orig=browse&_coverDate=06%2F30%2F1996&_sk=999849996&wchp=dGLbVzb-lSztz&_acct=C000035118&_version=1&_userid=650615&md5=1a39e41427832b29e716470f687711de&ie=f.pdf
+  year: 1996
+  abstract: >-
+    ABSTRACT: Short reply.
+  citation: >-
+    Tabarrok, A. 1996. Genetic Testing and Human Welfare: Reply to Hall. Journal of Health
+    Economics 15:381-84.
+
+- id: irrelevance-propositions-are-irrelevant
+  title: "Irrelevance Propositions Are Irrelevant"
+  url: https://doi.org/10.1111/j.1467-6435.1995.tb02322.x
+  year: 1995
+  comment: >-
+    Pascal's Wager applied to new-classical economics.
+  abstract: >-
+    Abstract: Ricardian equivalence theory and other New-Classical neutrality results have
+    generated an enormous debate because they appear to have strong implications for policy. I
+    argue that irrelevance propositions are policy irrelevant. If these propositions are true
+    then behaving as if they are false has zero costs, but, if they are false, behaving as if
+    they are true may be very costly. Thus, even if we beleive these propositions to be true, we
+    should behave as if they were false. In consequence, we should not be overly concerned with
+    whether these propositions are in fact true. An interesting corrolary of the above arguments
+    is that if irrelevance propositions are believed to be true much evidence will exist which
+    suggests that they are false.
+  citation: >-
+    Tabarrok, A. 1995. Irrelevance Propositions Are Irrelevant. Kyklos 48:409-417.
+
+- id: good-grapes-and-bad-lobsters-applying-the-alchian
+  title: "Good Grapes and Bad Lobsters: Applying the Alchian and Allen Theorem"
+  url: https://doi.org/10.1111/j.1465-7295.1995.tb01860.x
+  year: 1995
+  abstract: >-
+    Abstract: We consider the well-known theorem of Alchian and Allen that adding a per unit
+    charge to the price of two substitute goods increases the relative consumption of the higher
+    price good. The current literature misspecifies the conditions under which the theorem
+    holds. When applying the theorem the fixed cost should be applied on a per unit basis,
+    rather than in terms of an entry fee for consumption. We state the necessary conditions for
+    the theorem to hold when the the consumers are shipped to the goods.
+  citation: >-
+    Cowen, T., and A. Tabarrok. 1995. Good Grapes and Bad Lobsters: Applying the Alchian and
+    Allen Theorem. Economic Inquiry XXXIII (April):253-56.
+
+- id: genetic-testing-an-economic-and-contractarian-analysis
+  title: "Genetic Testing: An Economic and Contractarian Analysis"
+  url: http://www.sciencedirect.com/science?_ob=MImg&_imagekey=B6V8K-45DMNXW-G-1&_cdi=5873&_orig=browse&_coverDate=03%2F31%2F1994&_sk=999869998&wchp=dGLbVtb-lSzBS&_acct=C000035118&_version=1&_userid=650615&md5=651b9a2c5468780131fc578adcb7381e&ie=f.pdf
+  year: 1994
+  abstract: >-
+    ABSTRACT: Medical researchers are rapidly identifying the genetic causes of many diseases.
+    Genes that increase the risk of contracting Alzheimer's, colon and breast cancer,
+    Huntington's, cystic fibrosis and numerous other diseases have been identified. Genetic
+    tests can reveal an individual's probable health status many years in advance of sickness.
+    Many fear that this will lead to `genetic discrimination' in the employment and health
+    insurance markets. Solutions such as consent laws are impractical and create adverse
+    selection problems. A new form of insurance, genetic insurance, can eliminate these problems
+    and allow everyone to be insured.
+  citation: >-
+    Tabarrok, A. 1994. Genetic Testing: An Economic and Contractarian Analysis. Journal of
+    Health Economics 13:75-91.
+
+- id: a-survey-critique-and-new-defense-of-term
+  title: "A Survey, Critique, and New Defense of Term Limits"
+  url: http://www.cato.org/pubs/journal/cjv14n2-9.html
+  year: 1994
+  abstract: >-
+    ABSTRACT: Like the title says.
+  citation: >-
+    Tabarrok, Alexander. 1994. A Survey, Critique, and New Defense of Term Limits. Cato Journal
+    14 (2):333-50.
+
+- id: the-public-choice-theory-of-john-c-calhoun
+  title: "The Public Choice Theory of John C. Calhoun"
+  url: https://www.jstor.org/stable/40751557
+  year: 1992
+  comment: >-
+    One of the best pieces on Calhoun in my humble opinion.
+  abstract: >-
+    Abstract: Like the title says.
+  citation: >-
+    Tabarrok, A., and T. Cowen. 1992. The Public Choice Theory of John C. Calhoun. Journal of
+    Institutional and Theoretical Economics 148 (4):655-74.
+
+- id: the-preferred-tax-type-comment-on-herbener
+  title: "The Preferred Tax Type: Comment On Herbener"
+  url: http://www.qjae.org/journals/rae/pdf/rae5_2_5.pdf
+  year: 1991
+  abstract: >-
+    Abstract: "Austrian" economists sometimes object that indifference curves are a poor tool
+    because indifference doesn't exist in the real world. The premise is questionable but the
+    real issue is, Does the use of i. curves results in mistaken economics? Herbener was the
+    first to try to proof that it does but his argument is faulty.
+  citation: >-
+    Tabarrok, A. 1991. The Preferred Tax Type: Comment On Herbener. Review of Austrian Economics
+    5 (2):107-10

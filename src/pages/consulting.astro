@@ -1,0 +1,119 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { consulting } from '../data/schema';
+
+// Logos are named in YAML, so resolve them through a glob rather than
+// a static import per firm. Adding a firm needs no code change.
+const logos = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/img/*.{png,jpg,jpeg,webp}',
+  { eager: true },
+);
+
+function logoFor(file: string) {
+  const hit = logos[`../assets/img/${file}`];
+  if (!hit) throw new Error(`consulting.yaml: no image src/assets/img/${file}`);
+  return hit.default;
+}
+---
+
+<Base
+  title="Consulting"
+  description="Alex Tabarrok has served as an advisor and consultant to firms in the blockchain space and beyond."
+>
+  <p class="eyebrow">Advisory</p>
+  <h1 class="page-title">Consulting</h1>
+  <p class="lede">
+    Alex Tabarrok has served as an advisor and consultant for many firms, including those below.
+    For more information, please email
+    <a href="mailto:Alex.Tabarrok@gmail.com">Alex.Tabarrok@gmail.com</a>.
+  </p>
+
+  <div class="firms">
+    {consulting.map((f) => (
+      <article class="firm">
+        <div class="firm-logo">
+          <Image
+            src={logoFor(f.logo)}
+            alt={`${f.name} logo`}
+            widths={[160, 320]}
+            sizes="136px"
+            loading="lazy"
+          />
+        </div>
+        <div class="firm-body">
+          <h2 class="firm-name">
+            {f.url ? <a href={f.url}>{f.name}</a> : f.name}
+          </h2>
+          {f.years && <p class="firm-years">{f.years}</p>}
+          <p class="firm-desc">{f.description}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .firms {
+    display: grid;
+    gap: 1.1rem;
+    max-width: 52rem;
+  }
+
+  .firm {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.4rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .firm:hover {
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--rule));
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 640px) {
+    .firm { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
+  .firm-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .firm-logo img {
+    max-height: 3.6rem;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .firm-name {
+    font-size: 1.1rem;
+    margin: 0 0 0.2rem;
+  }
+
+  .firm-name a { color: var(--ink); text-decoration-color: var(--rule); }
+  .firm-name a:hover { color: var(--accent); }
+
+  .firm-years {
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--citrus);
+    margin: 0 0 0.5rem;
+  }
+
+  .firm-desc {
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+</style>

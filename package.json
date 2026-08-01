@@ -1,0 +1,19 @@
+{
+  "name": "alextabarrok-com",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "verify": "node scripts/verify-content.mjs",
+    "links": "node scripts/check-links.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^5.6.1",
+    "js-yaml": "^4.1.0"
+  }
+}
