@@ -26,6 +26,10 @@
     'Helvetica Neue', Arial, sans-serif;
 
   --measure: 68ch;
+  /* Reading column for publication entries. Sized in rem so every element in
+     an entry shares one edge regardless of its own font-size. */
+  --entry: 38rem;
+  --gutter: 3.5rem;
   --page: 1120px;
   --step: clamp(1rem, 0.6rem + 1.4vw, 1.6rem);
 

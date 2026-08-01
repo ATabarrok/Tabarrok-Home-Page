@@ -26,53 +26,58 @@ const haystack = [
 ---
 
 <article class="paper" data-year={paper.year ?? ''} data-search={haystack}>
-  <header class="paper-head">
+  <p class="paper-year">{paper.year ?? ''}</p>
+
+  <div class="paper-body">
     <h3 class="paper-title">
       {paper.url ? <a href={paper.url}>{paper.title}</a> : paper.title}
     </h3>
-    {paper.year && <span class="paper-year">{paper.year}</span>}
-  </header>
 
-  {(paper.links.length > 0 || explainer) && (
-    <p class="paper-links">
-      {explainer && (
-        <a class="chip chip-accent" href={`/research/${paper.id}/`}>Explainer</a>
-      )}
-      {paper.links.map((l) => (
-        <a class="chip" href={l.url}>{l.label}</a>
-      ))}
-    </p>
-  )}
+    {(paper.links.length > 0 || explainer) && (
+      <p class="paper-links">
+        {explainer && (
+          <a class="chip chip-accent" href={`/research/${paper.id}/`}>Explainer</a>
+        )}
+        {paper.links.map((l) => (
+          <a class="chip" href={l.url}>{l.label}</a>
+        ))}
+      </p>
+    )}
 
-  {paper.comment && (
-    <p class="paper-comment" set:html={inlineMarkdown(paper.comment)} />
-  )}
+    {paper.comment && (
+      <p class="paper-comment" set:html={inlineMarkdown(paper.comment)} />
+    )}
 
-  {paper.abstract && (
-    <details class="paper-abstract">
-      <summary>Abstract</summary>
-      <div set:html={inlineMarkdown(paper.abstract)} />
-    </details>
-  )}
+    {paper.abstract && (
+      <details class="paper-abstract">
+        <summary>Abstract</summary>
+        <div set:html={inlineMarkdown(paper.abstract)} />
+      </details>
+    )}
 
-  {paper.citation && (
-    <p class="paper-citation" set:html={inlineMarkdown(paper.citation)} />
-  )}
+    {paper.citation && (
+      <p class="paper-citation" set:html={inlineMarkdown(paper.citation)} />
+    )}
+  </div>
 </article>
 
 <style>
+  /* Year in a left gutter, content in one column of fixed width.
+     The column is sized in rem, not ch: `ch` resolves against each element's
+     own font-size, so per-element `max-width: 68ch` gave the citation a
+     narrower column than the abstract and left every entry ragged. */
   .paper {
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, var(--entry));
+    column-gap: 1.75rem;
     padding: 1.35rem 0 1.5rem;
     border-bottom: 1px solid var(--rule);
   }
 
   .paper[hidden] { display: none; }
 
-  .paper-head {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    justify-content: space-between;
+  @media (max-width: 46rem) {
+    .paper { grid-template-columns: minmax(0, 1fr); row-gap: 0.1rem; }
   }
 
   .paper-title {
@@ -80,7 +85,6 @@ const haystack = [
     font-weight: 620;
     line-height: 1.3;
     margin: 0 0 0.35rem;
-    max-width: 62ch;
   }
 
   .paper-title a { color: var(--ink); text-decoration-color: var(--rule); }
@@ -92,7 +96,15 @@ const haystack = [
     font-weight: 620;
     color: var(--ink-faint);
     font-variant-numeric: tabular-nums;
-    flex: none;
+    text-align: right;
+    /* Optically settle the year onto the title's first baseline. */
+    margin: 0;
+    padding-top: 0.3rem;
+  }
+
+  @media (max-width: 46rem) {
+    .paper-year { text-align: left; padding-top: 0; }
+    .paper-year:empty { display: none; }
   }
 
   .paper-links {
@@ -130,12 +142,10 @@ const haystack = [
     font-size: 0.95rem;
     color: var(--ink-soft);
     margin: 0 0 0.55rem;
-    max-width: var(--measure);
   }
 
   .paper-abstract {
     margin: 0 0 0.6rem;
-    max-width: var(--measure);
   }
 
   .paper-abstract summary {
@@ -172,7 +182,6 @@ const haystack = [
     font-size: 0.87rem;
     color: var(--ink-faint);
     margin: 0;
-    max-width: var(--measure);
   }
 
   .paper-citation a { color: var(--ink-faint); }

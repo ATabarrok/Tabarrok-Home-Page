@@ -216,6 +216,8 @@ const decades = rows
   .jump a { color: var(--ink-soft); text-decoration: none; }
   .jump a:hover { color: var(--accent); }
 
+  /* Sits in the same left gutter the years occupy, so the decade reads as a
+     heading for the column of years beneath it. */
   .decade {
     font-size: 0.78rem;
     font-family: var(--sans);
@@ -223,7 +225,13 @@ const decades = rows
     letter-spacing: 0.1em;
     color: var(--citrus);
     margin: calc(var(--step) * 1.4) 0 0.2rem;
+    width: var(--gutter);
+    text-align: right;
     scroll-margin-top: 130px;
+  }
+
+  @media (max-width: 46rem) {
+    .decade { width: auto; text-align: left; }
   }
 
   .decade[hidden] { display: none; }
@@ -234,11 +242,16 @@ const decades = rows
     padding: 2rem 0;
   }
 
+  /* Indented to line up with the publication entries above. */
   .nonref {
     list-style: none;
     padding: 0;
-    margin: 0;
-    max-width: var(--measure);
+    margin: 0 0 0 calc(var(--gutter) + 1.75rem);
+    max-width: var(--entry);
+  }
+
+  @media (max-width: 46rem) {
+    .nonref { margin-left: 0; }
   }
 
   .nonref li {
