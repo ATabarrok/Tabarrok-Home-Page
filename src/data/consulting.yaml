@@ -3,7 +3,7 @@
 
 - name: LBRY
   url: https://lbry.com/
-  logo: lbry.png
+  logo: lbry.webp
   years: "Advisor: 2015–2023"
   description: >-
     LBRY is YouTube on the Blockchain, a censorship-resistant, decentralized protocol that allows
@@ -12,20 +12,20 @@
 
 - name: Wireline
   url: https://www.wireline.io/
-  logo: wireline.png
+  logo: wireline.webp
   years: "Advisor: 2018–2021"
   description: >-
     Wireline was a peer-to-peer operating system.
 
 - name: Bluechip
   url: https://bluechip.org/
-  logo: bluechip.png
+  logo: bluechip.webp
   description: >-
     Bluechip is a non-profit ratings agency for stablecoins.
 
 - name: TEAL
   url: https://www.tealindia.in/
-  logo: teal.png
+  logo: teal.webp
   description: >-
     TEAL is building an end-to-end decision support platform for land and property in India. TEAL
     is an information and analytics tool for banks, housing finance companies, real
