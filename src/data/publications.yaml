@@ -3,6 +3,34 @@
 # year. Optional: url, links, comment, abstract, citation. `id` must be
 # unique and is the slug for a future /research/<id>/ explainer page.
 
+- id: breaking-ground-can-refund-bonuses-solve-the-holdout
+  title: "JUE Insight: Breaking Ground: Can Refund Bonuses Solve the Holdout Problem?"
+  url: https://web.ics.purdue.edu/~cason/Holdout_bonuses.pdf
+  year: 2026
+  comment: >-
+    (with Timothy N. Cason and Robertas Zubrickas) Forthcoming in the *Journal of Urban
+    Economics*. The link is to the working paper; swap it for the DOI once JUE assigns one.
+  abstract: >-
+    The holdout problem presents a pervasive challenge in situations that require the assembly of
+    independently controlled assets, where due to complementarity the combined whole is worth
+    more than the sum of its parts. One avenue for addressing holdout problems involves
+    contingent contracts, where agreements are conditional upon reaching a predetermined
+    threshold. This paper reports an experiment to investigate a new refund bonus contingent
+    mechanism, in which asset owners who agree to participate (e.g., sell their asset) receive a
+    bonus payment if the required threshold for project success is not met. The refund bonus
+    eliminates failure equilibria and improves the frequency of successfully reaching the
+    threshold in the symmetric mixed strategy equilibrium. In the experiment, individual asset
+    holders choose each round whether to accept an offer to sell. Multiple owners must accept for
+    the (contingent) sale to materialize, and holdout owners who do not sell can earn more, so
+    the game has the strategic incentives of a volunteer's dilemma. The data show that the bonus
+    mechanism increases agreements to sell, the frequency of successful projects, and efficiency.
+    By the second half of the experimental sessions, the total number of sales is 35 percent
+    higher and the threshold is met nearly twice as often with the bonus than without.
+  citation: >-
+    Cason, Timothy N., Alex Tabarrok, and Robertas Zubrickas. 2026. “JUE Insight: Breaking
+    Ground: Can Refund Bonuses Solve the Holdout Problem?” Journal of Urban Economics,
+    forthcoming.
+
 - id: coase-conjecture-electronic-books
   title: A Test of the Coase Conjecture Using Prices of Electronic Books
   url: https://doi.org/10.1002/soej.70052

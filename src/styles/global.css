@@ -35,6 +35,15 @@
 
   --radius: 10px;
   --shadow: 0 1px 2px rgb(22 22 26 / 6%), 0 8px 24px -12px rgb(22 22 26 / 18%);
+
+  /* An anchored element has to clear the sticky header and, on the research
+     page, the sticky filter toolbar under it. The toolbar wraps to more rows
+     as the viewport narrows, so the offset grows with it. */
+  --anchor-offset: 175px;
+}
+
+@media (max-width: 46rem) {
+  :root { --anchor-offset: 220px; }
 }
 
 @media (prefers-color-scheme: dark) {

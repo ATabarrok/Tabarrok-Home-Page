@@ -1,0 +1,32 @@
+---
+/**
+ * The papers an explainer covers, listed oldest first so it reads as the arc
+ * the piece follows. Shared by both explainer bodies: the markdown route and
+ * any hand-built page.
+ */
+import { publications } from '../data/schema';
+
+interface Props {
+  /** Paper ids, as declared in explainers.yaml. */
+  papers: string[];
+  label?: string;
+}
+
+const { papers, label = 'The papers behind this explainer' } = Astro.props;
+
+const rows = papers
+  .map((id) => publications.find((p) => p.id === id)!)
+  .sort((a, b) => (a.year ?? 0) - (b.year ?? 0));
+---
+
+<div class="basis">
+  <div class="basis-label">{label}</div>
+  <ol>
+    {rows.map((p) => (
+      <li>
+        <span class="yr">{p.year}</span>
+        <a href={`/research/#${p.id}`}>{p.title}</a>
+      </li>
+    ))}
+  </ol>
+</div>

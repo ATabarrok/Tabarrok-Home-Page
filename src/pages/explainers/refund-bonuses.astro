@@ -1,0 +1,718 @@
+---
+/**
+ * Long-form explainer on refund bonuses and dominant assurance contracts.
+ *
+ * The frame comes from Base; the furniture from explainer.css; the accent and
+ * chart series are set below and belong to this page alone. The paper linkage
+ * lives in src/data/explainers.yaml, which is also what puts an "Explainer"
+ * chip beside each of these papers on /research/.
+ */
+import Base from '../../layouts/Base.astro';
+import PapersBehind from '../../components/PapersBehind.astro';
+import { explainers } from '../../data/schema';
+import '../../styles/explainer.css';
+
+const entry = explainers.find((e) => e.slug === 'refund-bonuses')!;
+---
+
+<Base title={entry.title} description={entry.description} wide>
+  <div class="explainer">
+    <header class="hero">
+      <div class="wrap">
+        <div class="kicker">Dominant Assurance Contracts</div>
+        <h1>The refund<br />bonus.</h1>
+        <p class="lede">
+          A refund bonus is a small payment made to contributors when a collective project fails
+          to reach its goal. This single contractual clause changes the strategic character of
+          fundraising, and it makes possible the private provision of public goods.
+        </p>
+        <div class="byline">
+          An explainer drawn from the work of <b>Alexander Tabarrok</b>, <b>Robertas Zubrickas</b>,
+          <b>Timothy Cason</b>, and colleagues, 1998 to 2026.
+        </div>
+
+        <PapersBehind papers={entry.papers} />
+      </div>
+    </header>
+
+    {/* 1 */}
+    <section>
+      <div class="wrap measure">
+        <div class="sec-num">01 &nbsp;/&nbsp; The problem</div>
+        <h2>Why valuable goods go unbuilt</h2>
+        <p class="lead dropcap">Consider a town on a floodplain. A dike six feet high would keep every house dry. Its cost exceeds what any one family can bear, so it must be financed jointly. Each family reasons as follows.</p>
+        <p class="reasoning">If no one else contributes, my contribution is wasted, since a half-built dike holds back nothing. I keep my money. If everyone else contributes, the dike is built regardless of what I do, and I enjoy the protection for free. I keep my money again. Whatever I expect of my neighbors, withholding looks rational. Every family reasons the same way, and the dike goes unbuilt.</p>
+        <p>The dike is a public good. Once it stands, it protects everyone nearby, and a neighbor who contributed nothing cannot easily be excluded. That property is what makes it hard to finance.</p>
+        <p>Paul Samuelson gave this category its modern formulation in 1954, and he drew a pessimistic conclusion from it. Each person does better by understating what the good is worth to him, so it is, in Samuelson's words, “in the selfish interest of each person to give false signals, to pretend to have less interest in a given collective consumption activity than he really has.” From this he concluded that “no decentralized pricing system can serve to determine optimally these levels of collective consumption.” Public goods, on this view, are what governments are for. Refund bonuses are a challenge to that conclusion.</p>
+        <p>The difficulty has a standard formal statement. Say the dike is worth 50 to me and my share of the cost is 20.</p>
+      </div>
+
+      <div class="matrix-wrap wrap" id="mxGame">
+        <div class="mx-controls" role="tablist">
+          <button class="mx-btn on" data-k="game" role="tab" aria-selected="true">The game</button>
+          <button class="mx-btn" data-k="assurance" role="tab" aria-selected="false">The assurance problem</button>
+          <button class="mx-btn" data-k="freeride" role="tab" aria-selected="false">The free-rider problem</button>
+        </div>
+        <div class="matrix">
+          <table class="mx">
+            <thead>
+              <tr>
+                <th class="corner"></th>
+                <th data-h="succ">Enough others contribute</th>
+                <th data-h="fail">Too few others contribute</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-row="in">
+                <td class="rowlab">You contribute</td>
+                <td class="cell" data-c="in_succ"><div class="pay"></div><div class="cap"></div></td>
+                <td class="cell" data-c="in_fail"><div class="pay"></div><div class="cap"></div></td>
+              </tr>
+              <tr data-row="out">
+                <td class="rowlab">You withhold</td>
+                <td class="cell" data-c="out_succ"><div class="pay"></div><div class="cap"></div></td>
+                <td class="cell" data-c="out_fail"><div class="pay"></div><div class="cap"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mx-caption"></div>
+      </div>
+
+      <div class="wrap measure">
+        <p>Two distinct forces produce this outcome, and Amartya Sen drew attention to the difference. Each occupies one column of the table above, which the buttons will isolate in turn. The <button type="button" class="term" data-mx="mxGame" data-mxk="assurance">assurance problem</button> is the second column, where too few neighbors are contributing and anything I put in would be thrown away on a dike that never rises. In the first column the dike goes up whatever I do, nothing I contribute is at risk, and I hold back only because keeping my twenty beats spending it. That is the <button type="button" class="term" data-mx="mxGame" data-mxk="freeride">free-rider problem</button>.</p>
+        <div class="pull">Provision can fail even when everyone values the good, because each contributor is waiting on the rest.</div>
+      </div>
+    </section>
+
+    {/* 2 */}
+    <section>
+      <div class="wrap measure">
+        <div class="sec-num">02 &nbsp;/&nbsp; Assurance contracts</div>
+        <h2>The assurance contract and its weakness</h2>
+        <p>One remedy has a long history. The town announces that the dike will be built only if enough residents pledge toward it, and that pledges will be returned in full if too few come forward. A pledge is now safe. Either enough neighbors join and the dike is built, or too few join and the money comes back. The fear of a wasted contribution is gone, and so the assurance problem is solved.</p>
+        <p>This is the mechanism behind all-or-nothing crowdfunding. Kickstarter collects a pledge only if a project reaches its goal by the deadline, so every such campaign is an assurance contract. The device is older than the platforms. Joseph Pulitzer's campaign for the pedestal of the Statue of Liberty ran on the same principle.</p>
+        <p>The free-rider problem is untouched. A resident who believes enough of his neighbors will pledge still does best by keeping his money, since the dike will protect him whether or not he pays for it. That column of the table has not moved.</p>
+        <p>The game has many equilibria. Everyone pledging is one of them, and so is nobody pledging, because one person's pessimism justifies another's. If I expect you to hold back, holding back is rational for me, and my holding back is what makes your expectation correct. Neither of us is making a mistake, which is what makes the outcome so stable. With twenty-five potential contributors the equilibria run into the millions, and the good goes unprovided in nearly all of them.</p>
+        <p>So the assurance contract clears the assurance problem, leaves free riding standing, and is vulnerable to self-fulfilling pessimism. Field data are consistent with this fragility.</p>
+      </div>
+
+      <div class="tiles">
+        <div class="tile">
+          <div class="num">40<span class="u">%</span></div>
+          <div class="lab">of Kickstarter campaigns reach their funding goal.</div>
+          <div class="src">Kickstarter stats, cited in <a href="https://doi.org/10.1016/j.econlet.2023.111265" target="_blank" rel="noopener">Lattimer &amp; Zubrickas (2023)</a></div>
+        </div>
+        <div class="tile">
+          <div class="num">22.4<span class="u">%</span></div>
+          <div class="lab">is the global average success rate across crowdfunding platforms.</div>
+          <div class="src">Fundly industry report, cited in <a href="https://doi.org/10.1016/j.econlet.2023.111265" target="_blank" rel="noopener">Lattimer &amp; Zubrickas (2023)</a></div>
+        </div>
+        <div class="tile">
+          <div class="num">~50<span class="u">%</span></div>
+          <div class="lab">of Kickstarter campaigns raise less than a fifth of their target.</div>
+          <div class="src">Kickstarter stats, cited in <a href="https://doi.org/10.1016/j.econlet.2023.111265" target="_blank" rel="noopener">Lattimer &amp; Zubrickas (2023)</a></div>
+        </div>
+      </div>
+
+      <div class="wrap measure">
+        <p>Most campaigns fail, and the modal failure raises almost nothing. The assurance contract removes the risk of losing one's money while leaving intact the equilibrium in which everyone waits.</p>
+      </div>
+    </section>
+
+    {/* 3 */}
+    <section>
+      <div class="wrap measure">
+        <div class="sec-num">03 &nbsp;/&nbsp; The mechanism</div>
+        <h2>The refund bonus</h2>
+        <p class="lead">In 1998 Alexander Tabarrok proposed a modification. Pay contributors precisely when the campaign fails.</p>
+        <p>The payment is a refund bonus. A contributor pledges as before. If the campaign reaches its goal, she pays her share and receives the good. If it falls short, she gets her money back together with a bonus, a payment for having been willing when willingness turned out to be insufficient.</p>
+        <p class="reasoning">Consider a contributor who expects the campaign to fail. Under the assurance contract she had no reason to pledge, and her expectation confirmed itself. Now pledging pays her the bonus while abstaining pays her nothing, so she pledges. Every contributor who shares her pessimism reasons the same way. Any outcome in which too few agents pledge gives each of the abstainers a strict reason to come in, so no such outcome is an equilibrium at all.</p>
+        <p>This is the central result. Every equilibrium of the refund bonus game provides the public good. The failure states have been removed from the game rather than made less likely within it.</p>
+        <p>Set against Samuelson's conclusion, this is a strong claim. A profit-seeking entrepreneur offering an ordinary contract, with no taxing power and no coercion available to him, can bring a public good into existence. Part of Samuelson's ground is conceded, since the argument assumes the efficient size of the good can be estimated and takes up only the problem of getting people to pay for it. On that problem the pessimism does not hold.</p>
+        <p>Because no equilibrium ends in failure, the bonus is never actually paid. The promise does its work entirely off the equilibrium path, which is the same reason deposit insurance stops bank runs in the Diamond and Dybvig analysis. Once depositors know their funds are guaranteed, no run occurs, and the guarantee is never invoked.</p>
+        <p>The payoff tables below take the argument in three steps.</p>
+      </div>
+
+      <div class="matrix-wrap wrap" id="mxContracts">
+        <div class="mx-controls" role="tablist">
+          <button class="mx-btn on" data-k="a" role="tab" aria-selected="true">Assurance contract</button>
+          <button class="mx-btn" data-k="b" role="tab" aria-selected="false">Refund bonus</button>
+          <button class="mx-btn" data-k="c" role="tab" aria-selected="false">Refund bonus, unanimity required</button>
+        </div>
+        <div class="matrix">
+          <table class="mx">
+            <thead>
+              <tr>
+                <th class="corner"></th>
+                <th data-h="succ">Enough others pledge</th>
+                <th data-h="fail">Too few others pledge</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-row="in">
+                <td class="rowlab">You pledge</td>
+                <td class="cell" data-c="in_succ"><div class="pay"></div><div class="cap"></div></td>
+                <td class="cell" data-c="in_fail"><div class="pay"></div><div class="cap"></div></td>
+              </tr>
+              <tr data-row="out">
+                <td class="rowlab">You abstain</td>
+                <td class="cell" data-c="out_succ"><div class="pay"></div><div class="cap"></div></td>
+                <td class="cell" data-c="out_fail"><div class="pay"></div><div class="cap"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mx-caption"></div>
+      </div>
+
+      <div class="wrap measure">
+        <h3>A special case: unanimity</h3>
+        <p>Tabarrok gives particular attention to the contract that requires every agent to accept. It has a property the general case lacks. When acceptance from everyone is needed, an agent who abstains guarantees failure and collects nothing, so the option of being carried disappears from the table. Accepting then pays more whatever anyone else does, which makes it a dominant strategy, and the all-accept outcome is the unique subgame-perfect equilibrium. This is the case that gives the dominant assurance contract its name.</p>
+      </div>
+
+      <div class="aside">
+        <details>
+          <summary><span class="plus">+</span> For the technical reader: why no equilibrium ends in failure</summary>
+          <div class="body">
+            <p>An entrepreneur offers each of <code>N</code> agents a contract <code>(F, S, K)</code>. If at least <code>K</code> agents accept, the contract succeeds: each accepting agent pays <code>S</code> and receives the public good worth <code>V</code>, for a payoff of <code>V − S</code>. If fewer than <code>K</code> accept, the contract fails, each accepting agent collects the refund bonus <code>F &gt; 0</code>, and agents who declined collect nothing.</p>
+            <p>Take the entrepreneur's case of interest, <code>V − S &gt; 0</code>. Suppose fewer than <code>K</code> agents accept. Any agent who declined can raise his payoff from <code>0</code> to <code>F</code> by accepting, so no such profile is an equilibrium. The pure-strategy equilibria all have exactly <code>K</code> agents accepting, one for each way of choosing <code>K</code> acceptors out of <code>N</code>, and the public good is provided in every one of them.</p>
+            <p>Acceptance is not dominant at <code>K &lt; N</code>. An accepter earns <code>V − S</code> while a decliner earns <code>V</code>, so each agent would prefer to sit among the <code>N − K</code> who are carried. These equilibria are Nash, and free riding persists inside them. The bonus leaves free riding in place while removing the possibility of non-provision.</p>
+            <p class="src">Source: <a href="https://doi.org/10.1023/A:1004957109535" target="_blank" rel="noopener">Tabarrok (1998)</a>, <em>Public Choice</em> 96, 345–362.</p>
+          </div>
+        </details>
+        <details style="margin-top:12px">
+          <summary><span class="plus">+</span> For the technical reader: how unanimity produces dominance</summary>
+          <div class="body">
+            <p>Set <code>K = N</code> and the calculation changes. An agent who declines makes failure certain and collects nothing, since decliners receive neither the good nor the bonus. An agent who accepts collects <code>V − S &gt; 0</code> if all the others accept and <code>F &gt; 0</code> otherwise. Acceptance strictly dominates rejection, the all-accept profile is the unique subgame-perfect equilibrium, and no belief about the other agents can support abstention. The coordination question of which agents bear the cost disappears with it, since no one is left to be carried.</p>
+            <p class="src">Source: <a href="https://doi.org/10.1023/A:1004957109535" target="_blank" rel="noopener">Tabarrok (1998)</a>, section 2.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <div class="wrap"><div class="section-break">✦</div></div>
+
+    {/* 4 */}
+    <section>
+      <div class="wrap measure">
+        <div class="sec-num">04 &nbsp;/&nbsp; The generalization</div>
+        <h2>From binary choices to continuous contributions</h2>
+        <p>Tabarrok's model asks each agent for a binary decision, a fixed share accepted or declined. Real fundraising involves contributions of varying size from people with varying valuations. In 2014 Robertas Zubrickas extended the mechanism to this richer setting and strengthened its efficiency properties.</p>
+        <p>In his version the refund bonus is proportional to one's own contribution. Take a thousand-dollar drinking fountain for a neighborhood. One member commits a hundred dollars and pledges that if the total falls short, the hundred will be divided among the other contributors in proportion to what each gave. The incentive this creates is sharp. When contributions lag, an additional dollar buys a larger share of the bonus fund, so contributors compete for it. Competition drives total contributions up to the provision point, at which point the good is provided and the bonus, once again, goes unpaid.</p>
+        <p>Zubrickas established a stronger result as well. When the bonus fund is set equal to the net value of the project, the mechanism has a unique equilibrium, and in it each person contributes the same fraction of his own valuation. That is Lindahl pricing, a longstanding benchmark of public economics, obtained here from a decentralized contribution game of exactly the kind Samuelson judged unequal to the task.</p>
+      </div>
+
+      <div class="aside">
+        <details>
+          <summary><span class="plus">+</span> For the technical reader: competition drives contributions to the point</summary>
+          <div class="body">
+            <p>Each consumer <code>i</code> with valuation <code>v_i</code> contributes <code>g_i</code>. If total contributions <code>G ≥ C</code> the good is provided; if <code>G &lt; C</code> each contributor is refunded and also receives a bonus <code>(g_i / G)·R</code>, where <code>R</code> is the total bonus fund committed in advance.</p>
+            <p>No outcome with <code>G &lt; C</code> can survive: a contributor can always raise their bonus share by giving a little more, so contributions are bid up until <code>G = C</code>. An equilibrium exists as long as <code>R ≤ V − C</code>, the bonus fund does not exceed the net social value. Set <code>R = V − C</code> and the equilibrium is unique, with <code>g_i = (C/V)·v_i</code>. That is a Lindahl tax of <code>C/V</code> on valuations. Because the bonus is paid only off the equilibrium path, the mechanism costs the designer nothing when the good is efficient.</p>
+            <p class="src">Source: <a href="https://doi.org/10.1016/j.jpubeco.2014.10.006" target="_blank" rel="noopener">Zubrickas (2014)</a>, <em>Journal of Public Economics</em> 120, 231–234.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    {/* 5 */}
+    <section>
+      <div class="wrap measure">
+        <div class="sec-num">05 &nbsp;/&nbsp; The evidence</div>
+        <h2>The experimental evidence</h2>
+        <p class="lead">Timothy Cason, Tabarrok, and Zubrickas have tested the mechanism in a series of incentivized laboratory experiments. The results support the theory on each of its main claims.</p>
+        <h3>Refund bonuses raise crowdfunding success by half</h3>
+        <p>The first test appeared in 2021. Groups of ten subjects had two minutes to fund a project requiring 300 experimental dollars, with the running total visible to all. Some groups faced the standard assurance contract. Others were offered a refund bonus, paid either on any contribution or only on contributions made in the first minute.</p>
+      </div>
+
+      <div class="figure">
+        <div class="fig-head">
+          <div class="fig-eyebrow">Experiment 1 · Crowdfunding in the lab</div>
+          <div class="fig-title">Share of campaigns that reached their goal</div>
+          <p class="fig-sub">Ten-person groups, 300-dollar target, two-minute window. A refund bonus aimed at early givers raised the success rate by more than half.</p>
+        </div>
+        <div class="chart" id="chart1" data-chart="c1"></div>
+        <p class="fig-note">Source: <a href="https://doi.org/10.1016/j.geb.2021.05.006" target="_blank" rel="noopener">Cason, Tabarrok &amp; Zubrickas (2021)</a>, <em>Games and Economic Behavior</em> 129, 78–95. "Early" bonuses reward only contributions made in the first minute.</p>
+      </div>
+
+      <div class="wrap measure">
+        <p>Without a bonus, fewer than half the campaigns reached the threshold. With a bonus restricted to early contributions, two thirds did. Targeting the first minute matters because early contributions signal to later givers that the campaign is likely to succeed, and the induced cooperation persisted after the bonus window closed. Benjamin Franklin raised money on the same principle. He advised solicitors to show prospective donors the list of those who had already given.</p>
+        <p>A natural objection concerns cost. If the sponsor must promise bonuses, the payouts on failed campaigns might erode the returns. In the 2021 data they did not. The additional successful campaigns generated enough surplus to cover the bonuses paid on failures, so with a modest markup the scheme was self-financing.</p>
+        <div class="aside" style="margin-top:22px">
+          <details>
+            <summary><span class="plus">+</span> For the technical reader: revenue equivalence</summary>
+            <div class="body">
+              <p><a href="https://doi.org/10.1016/j.econlet.2023.111265" target="_blank" rel="noopener">Lattimer and Zubrickas (2023)</a> formalize the self-funding result. Under imperfect information, for any standard assurance contract there is a dominant assurance contract that yields the entrepreneur the same expected revenue. The refund bonus changes behavior only through the equilibrium cutoff valuation <code>v*</code>; two contracts with the same threshold and the same <code>v*</code> earn the same expected revenue. So bonuses fix the coordination failure at no expected cost, except in the case that most needs fixing, when the standard contract would otherwise collapse to zero contributions.</p>
+              <p class="src">Source: <a href="https://doi.org/10.1016/j.econlet.2023.111265" target="_blank" rel="noopener">Lattimer &amp; Zubrickas (2023)</a>, <em>Economics Letters</em> 231, 111265.</p>
+            </div>
+          </details>
+        </div>
+
+        <h3>The bonus as a signal of quality</h3>
+        <p>Crowdfunding suffers from a second failure. Entrepreneurs know the quality of their projects and backers do not, so weak projects attract funding while strong ones go unfunded. In a 2024 paper in <em>Management Science</em>, the same authors show that refund bonuses address this information asymmetry as well.</p>
+        <p>The logic runs through expected cost. A strong project is likely to reach its goal, so its entrepreneur rarely pays the bonus, and the promise is cheap to make. A weak project is likely to fail, so the same promise is expensive. Offering a bonus therefore serves as a credible signal of quality, in the manner of Spence's warranty argument. In the laboratory, when entrepreneurs chose whether to offer bonuses, the market sorted.</p>
+      </div>
+
+      <div class="figure wide">
+        <div class="fig-head">
+          <div class="fig-eyebrow">Experiment 2 · The bonus as a signal</div>
+          <div class="fig-title">How often projects got funded, by quality</div>
+          <p class="fig-sub">When entrepreneurs chose whether to offer a bonus, good projects were funded far more often. When bonuses were assigned at random, the signal disappeared and good projects went largely unfunded.</p>
+        </div>
+        <div class="legend" id="legend2"></div>
+        <div class="chart" id="chart2" data-chart="c2"></div>
+        <p class="fig-note">Source: <a href="https://doi.org/10.1287/mnsc.2023.03923" target="_blank" rel="noopener">Cason, Tabarrok &amp; Zubrickas (2024)</a>, <em>Management Science</em> 71(7), 5933–5947. Entrepreneurs offered a bonus on 70% of good projects and 31% of bad ones, and investors backed a bonus-carrying project 79% of the time versus 23% without.</p>
+      </div>
+
+      <div class="wrap measure">
+        <p>Good projects were funded more than two and a half times as often when entrepreneurs chose the bonuses themselves. Assigning the same bonuses at random eliminated the effect, which identifies the choice, and the information it carries, as the active ingredient.</p>
+
+        <h3>The holdout problem</h3>
+        <p>The most recent work applies the mechanism to asset assembly. When a developer must acquire many adjacent parcels for a rail line or a hospital, each remaining owner gains bargaining power as the project nears completion, and the incentive to hold out for a larger payment grows. Assembly can stall even when it is socially valuable. The strategic structure resembles the public goods problem, with over-extraction in place of under-contribution.</p>
+        <p>The refund bonus applies for the same reason as before. If owners who agree to sell receive a bonus whenever the assembly fails, agreement pays in both states of the world, and expectations of failure can no longer sustain themselves. A 2026 experiment measures the effect.</p>
+      </div>
+
+      <div class="figure">
+        <div class="fig-head">
+          <div class="fig-eyebrow">Experiment 3 · Land assembly</div>
+          <div class="fig-title">Share of rounds in which the assembly succeeded</div>
+          <p class="fig-sub">Final eight rounds of the sessions. A bonus worth under a tenth of the offer price raised the success rate from one round in ten to one in four.</p>
+        </div>
+        <div class="chart" id="chart3" data-chart="c3"></div>
+        <p class="fig-note">Source: <a href="https://web.ics.purdue.edu/~cason/Holdout_bonuses.pdf" target="_blank" rel="noopener">Cason, Tabarrok &amp; Zubrickas (2026)</a>, <em>Journal of Urban Economics</em> (JUE Insight). Both rates sit within 1.5 percentage points of the equilibrium predictions (9.6% and 25.2%). Owners agreeing to sell averaged 2.04 of 4 with the bonus against 1.71 without, and realized efficiency in the later rounds roughly doubled, from 0.10 to 0.20.</p>
+      </div>
+
+      <div class="wrap measure">
+        <p>Theory predicts a large effect. A bonus worth less than a tenth of the offered price raises the predicted assembly rate by more than 160 percent, from 9.6 to 25.2 percent. The experiment delivers almost exactly this. By the final rounds the observed success rates were 10 percent without the bonus and 25 percent with it, and realized efficiency over the second half of the sessions roughly doubled. Behavior converged to the theoretical prediction as subjects gained experience.</p>
+      </div>
+    </section>
+
+    <div class="wrap"><div class="section-break">✦</div></div>
+
+    {/* 6 */}
+    <section>
+      <div class="wrap measure">
+        <div class="sec-num">06 &nbsp;/&nbsp; Applications</div>
+        <h2>Potential applications</h2>
+        <p class="lead">The mechanism applies wherever a valuable outcome requires many parties to commit together. Several domains stand out.</p>
+      </div>
+
+      <div class="apps">
+        <div class="app">
+          <span class="tag">Crowdfunding</span>
+          <h4>All-or-nothing campaigns</h4>
+          <p>A refund bonus added to an all-or-nothing campaign removes the equilibrium in which backers wait for one another. The 2021 evidence suggests the bonuses can be self-financing, and at least one platform, Ensuredone, has adopted the scheme.</p>
+        </div>
+        <div class="app">
+          <span class="tag">Cities and land</span>
+          <h4>Land assembly</h4>
+          <p>A rail line or a new hospital can stall when remaining owners hold out for larger payments. A bonus for owners who agree to sell weakens that incentive and can complete assemblies that standard contingent contracts leave unfinished.</p>
+        </div>
+        <div class="app">
+          <span class="tag">Innovation</span>
+          <h4>Patent and copyright pools</h4>
+          <p>New products often require rights from many owners at once, and any one of them can block agreement. The same logic that assembles land can assemble a portfolio of complementary patents or a catalog of licensed works.</p>
+        </div>
+        <div class="app">
+          <span class="tag">Local public goods</span>
+          <h4>Neighborhood-scale provision</h4>
+          <p>Local goods are the natural first field trials. The private city of Próspera in Honduras has used refund bonuses to finance local public goods, an early real-world application of the mechanism.</p>
+        </div>
+        <div class="app">
+          <span class="tag">Digital commons</span>
+          <h4>Open source and open science</h4>
+          <p>A shared software library or an open dataset benefits everyone and is financed by few. A refund bonus gives potential backers a reason to commit before they know whether the rest of the field will.</p>
+        </div>
+        <div class="app">
+          <span class="tag">Global goods</span>
+          <h4>Goods at planetary scale</h4>
+          <p>Some public goods are planetary in scope, such as asteroid detection or early climate technologies. Expected profit in the mechanism rises with the value of the good, so larger goods generate stronger private incentives to organize provision.</p>
+        </div>
+      </div>
+    </section>
+
+    {/* 7 */}
+    <section>
+      <div class="wrap measure">
+        <div class="sec-num">07 &nbsp;/&nbsp; Adoption</div>
+        <h2>Why adoption has been slow</h2>
+        <p>The theory is nearly thirty years old and the experimental support is consistent. Deployments remain rare.</p>
+        <p>Part of the explanation is that an entrepreneur must commit funds before any revenue arrives, and financially constrained or risk-averse entrepreneurs may hesitate even where the expected cost is near zero. Part of it is unfamiliarity. Robert Shiller has documented useful financial innovations that lay unused for decades before adoption, and the 2024 paper places refund bonuses in that category. The wheeled suitcase existed as a possibility long before anyone manufactured one.</p>
+        <p>The open questions are now practical rather than theoretical: optimal bonus size, contract drafting, and performance in the field at scale. Those questions will be answered by deployment.</p>
+        <div class="pull">A promise that changes what people expect can change what they do, and then it never has to be kept.</div>
+      </div>
+    </section>
+
+    {/* references */}
+    <div class="refs">
+      <div class="wrap">
+        <div class="sec-num" style="text-align:center">The papers</div>
+        <h2 style="text-align:center">Sources</h2>
+        <div class="reflist">
+          <div class="r"><div class="n">1</div><div><b>Tabarrok, A.</b> (1998). <a href="https://doi.org/10.1023/A:1004957109535" target="_blank" rel="noopener">The private provision of public goods via dominant assurance contracts</a>. <em>Public Choice</em>, 96(3), 345–362. <span class="gloss">The seminal paper.</span></div></div>
+          <div class="r"><div class="n">2</div><div><b>Zubrickas, R.</b> (2014). <a href="https://doi.org/10.1016/j.jpubeco.2014.10.006" target="_blank" rel="noopener">The provision point mechanism with refund bonuses</a>. <em>Journal of Public Economics</em>, 120, 231–234.</div></div>
+          <div class="r"><div class="n">3</div><div><b>Cason, T. N., Tabarrok, A., &amp; Zubrickas, R.</b> (2021). <a href="https://doi.org/10.1016/j.geb.2021.05.006" target="_blank" rel="noopener">Early refund bonuses increase successful crowdfunding</a>. <em>Games and Economic Behavior</em>, 129, 78–95.</div></div>
+          <div class="r"><div class="n">4</div><div><b>Cason, T. N., Tabarrok, A., &amp; Zubrickas, R.</b> (2024). <a href="https://doi.org/10.1287/mnsc.2023.03923" target="_blank" rel="noopener">Signaling quality: how refund bonuses can overcome information asymmetries in crowdfunding</a>. <em>Management Science</em>, 71(7), 5933–5947.</div></div>
+          <div class="r"><div class="n">5</div><div><b>Lattimer, T. R. B., &amp; Zubrickas, R.</b> (2023). <a href="https://doi.org/10.1016/j.econlet.2023.111265" target="_blank" rel="noopener">Refund bonuses and revenue equivalence</a>. <em>Economics Letters</em>, 231, 111265.</div></div>
+          <div class="r"><div class="n">6</div><div><b>Cason, T. N., Tabarrok, A., &amp; Zubrickas, R.</b> (2026). <a href="https://web.ics.purdue.edu/~cason/Holdout_bonuses.pdf" target="_blank" rel="noopener">JUE Insight: Breaking ground: can refund bonuses solve the holdout problem?</a> <em>Journal of Urban Economics</em>. <span class="gloss">Working paper.</span></div></div>
+        </div>
+        <div class="reflist-label">Background</div>
+        <div class="reflist">
+          <div class="r"><div class="n">7</div><div><b>Samuelson, P. A.</b> (1954). <a href="https://doi.org/10.2307/1925895" target="_blank" rel="noopener">The pure theory of public expenditure</a>. <em>Review of Economics and Statistics</em>, 36(4), 387–389. <span class="gloss">The pessimistic benchmark.</span></div></div>
+          <div class="r"><div class="n">8</div><div><b>Sen, A. K.</b> (1967). <a href="https://doi.org/10.2307/1879675" target="_blank" rel="noopener">Isolation, assurance and the social rate of discount</a>. <em>Quarterly Journal of Economics</em>, 81(1), 112–124. <span class="gloss">Separates assurance from free riding.</span></div></div>
+          <div class="r"><div class="n">9</div><div><b>Diamond, D. W., &amp; Dybvig, P. H.</b> (1983). <a href="https://doi.org/10.1086/261155" target="_blank" rel="noopener">Bank runs, deposit insurance, and liquidity</a>. <em>Journal of Political Economy</em>, 91(3), 401–419.</div></div>
+        </div>
+
+        <p class="ex-note">
+          Built from six papers on dominant assurance contracts and refund bonuses.<br />
+          Figures reproduce reported results; illustrative payoffs are simplified for clarity.
+        </p>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  /* This explainer's own identity. The frame is the site's; these are not. */
+  .explainer {
+    --ex-accent: #8a3244;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .explainer {
+      --ex-accent: #d98e9b;
+    }
+  }
+</style>
+
+<script>
+  /* Tokens live on the explainer element rather than :root, so the chart
+     colours have to be read from there. */
+  const ROOT = document.querySelector('.explainer') as HTMLElement;
+
+  function cssv(n: string) {
+    return getComputedStyle(ROOT).getPropertyValue(n).trim();
+  }
+
+  const NS = 'http://www.w3.org/2000/svg';
+
+  function el(tag: string, attrs: Record<string, string | number>) {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, String(attrs[k]));
+    return e;
+  }
+
+  /* Rounded-top bar path: square base, radius r on the top corners. */
+  function barPath(x: number, y: number, w: number, h: number, r: number) {
+    r = Math.min(r, w / 2, h);
+    return (
+      'M' + x + ',' + (y + h) + ' L' + x + ',' + (y + r) +
+      ' Q' + x + ',' + y + ' ' + (x + r) + ',' + y +
+      ' L' + (x + w - r) + ',' + y + ' Q' + (x + w) + ',' + y + ' ' + (x + w) + ',' + (y + r) +
+      ' L' + (x + w) + ',' + (y + h) + ' Z'
+    );
+  }
+
+  interface Series { name: string; color: string }
+  interface Cat { label: string; sub?: string; values: number[] }
+  interface ChartCfg {
+    height?: number; ymax: number; ticks?: number[]; barW?: number;
+    twoLine?: boolean; series: Series[]; cats: Cat[];
+    fmt: (v: number) => string; aria?: string;
+  }
+
+  type ChartBox = HTMLElement & { __tip?: HTMLElement };
+
+  function showTip(c: ChartBox, ev: MouseEvent, title: string, val: string) {
+    const t = c.__tip;
+    if (!t) return;
+    const r = c.getBoundingClientRect();
+    t.innerHTML = '<b>' + val + '</b><br>' + title;
+    t.style.left = ev.clientX - r.left + 'px';
+    t.style.top = ev.clientY - r.top + 'px';
+    t.style.opacity = '1';
+  }
+
+  function hideTip(c: ChartBox) {
+    if (c.__tip) c.__tip.style.opacity = '0';
+  }
+
+  /* ---------- chart engine (grouped columns) ---------- */
+  function drawColumns(container: ChartBox, cfg: ChartCfg) {
+    container.innerHTML = '';
+    const W = 760;
+    const H = cfg.height || 400;
+    const padL = 44, padR = 16, padT = 28, padB = cfg.twoLine ? 66 : 46;
+    const plotW = W - padL - padR, plotH = H - padT - padB;
+    const ymax = cfg.ymax, ticks = cfg.ticks || [0, 25, 50, 75, 100];
+    const svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': cfg.aria || '' });
+    const grid = cssv('--ex-grid'), base = cssv('--ex-baseline');
+    const series = cfg.series, cats = cfg.cats;
+
+    const yOf = (v: number) => padT + plotH - (v / ymax) * plotH;
+
+    ticks.forEach((t) => {
+      const y = yOf(t);
+      svg.appendChild(el('line', { x1: padL, y1: y, x2: W - padR, y2: y, stroke: t === 0 ? base : grid, 'stroke-width': 1 }));
+      const tx = el('text', { x: padL - 10, y: y + 4, 'text-anchor': 'end', class: 'c-ax' });
+      tx.textContent = String(t);
+      svg.appendChild(tx);
+    });
+
+    const n = cats.length, gband = plotW / n;
+    const barW = cfg.barW || 46, gap = 8;
+    const groupW = series.length * barW + (series.length - 1) * gap;
+
+    cats.forEach((cat, ci) => {
+      const gx = padL + ci * gband + (gband - groupW) / 2;
+      const cl = el('text', { x: padL + ci * gband + gband / 2, y: H - padB + (cfg.twoLine ? 22 : 24), 'text-anchor': 'middle', class: 'c-cat' });
+      cl.textContent = cat.label;
+      svg.appendChild(cl);
+      if (cat.sub) {
+        const cs = el('text', { x: padL + ci * gband + gband / 2, y: H - padB + (cfg.twoLine ? 40 : 24), 'text-anchor': 'middle', class: 'c-cat2' });
+        cs.textContent = cat.sub;
+        svg.appendChild(cs);
+      }
+
+      cat.values.forEach((v, si) => {
+        const x = gx + si * (barW + gap), y = yOf(v), h = padT + plotH - y;
+        const g = el('g', { class: 'bar-g' });
+        const p = el('path', { d: barPath(x, y, barW, h, 4), fill: series[si].color, class: 'bar-rect' });
+        p.addEventListener('mousemove', (ev) => {
+          showTip(container, ev as MouseEvent, (series.length > 1 ? series[si].name + ' · ' : '') + cat.label, cfg.fmt(v));
+        });
+        p.addEventListener('mouseleave', () => hideTip(container));
+        g.appendChild(p);
+        svg.appendChild(g);
+        const vl = el('text', { x: x + barW / 2, y: y - 9, 'text-anchor': 'middle', class: 'c-val bar-lab' });
+        vl.textContent = cfg.fmt(v);
+        svg.appendChild(vl);
+      });
+    });
+
+    container.appendChild(svg);
+    const tip = document.createElement('div');
+    tip.className = 'tip';
+    container.appendChild(tip);
+    container.__tip = tip;
+  }
+
+  /* ---------- chart data ---------- */
+  function buildChart(id: string) {
+    const c = document.getElementById(id) as ChartBox | null;
+    if (!c) return;
+    const teal = cssv('--ex-s1'), carmine = cssv('--ex-s2'), ochre = cssv('--ex-hl');
+    const kind = c.getAttribute('data-chart');
+
+    if (kind === 'c1') {
+      drawColumns(c, {
+        ymax: 80, ticks: [0, 20, 40, 60, 80], barW: 64,
+        series: [{ name: 'Success rate', color: teal }],
+        cats: [
+          { label: 'No bonus', values: [43.5] },
+          { label: 'Bonus, any time', values: [60.5] },
+          { label: 'Bonus, early only', values: [67.0] },
+        ],
+        fmt: (v) => v.toFixed(1) + '%',
+        aria: 'Column chart of crowdfunding success rates: no bonus 43.5 percent, bonus any time 60.5 percent, early bonus 67 percent.',
+      });
+      /* Highlight the winning bar. */
+      c.querySelectorAll('.bar-rect')[2]?.setAttribute('fill', ochre);
+    }
+
+    if (kind === 'c2') {
+      drawColumns(c, {
+        ymax: 60, ticks: [0, 20, 40, 60], barW: 48, twoLine: true,
+        series: [
+          { name: 'Bonus assigned at random', color: carmine },
+          { name: 'Entrepreneur chooses to offer a bonus', color: teal },
+        ],
+        cats: [
+          { label: 'Good projects', values: [17.5, 45.9] },
+          { label: 'Bad projects', values: [13.5, 12.7] },
+        ],
+        fmt: (v) => v.toFixed(1) + '%',
+        aria: 'Grouped columns: good projects funded 17.5 percent under random bonuses and 45.9 percent when entrepreneurs choose; bad projects 13.5 and 12.7 percent.',
+      });
+      const lg = document.getElementById('legend2');
+      if (lg) {
+        lg.innerHTML =
+          '<span class="lg"><span class="sw" style="background:' + teal + '"></span>Entrepreneur chooses to offer a bonus</span>' +
+          '<span class="lg"><span class="sw" style="background:' + carmine + '"></span>Bonus assigned at random</span>';
+      }
+    }
+
+    if (kind === 'c3') {
+      drawColumns(c, {
+        ymax: 40, ticks: [0, 10, 20, 30, 40], barW: 64,
+        series: [{ name: 'Assembly success rate', color: teal }],
+        cats: [
+          { label: 'No bonus', values: [10] },
+          { label: 'With refund bonus', values: [25] },
+        ],
+        fmt: (v) => v + '%',
+        aria: 'Column chart: share of final rounds in which the assembly succeeded, 10 percent without a bonus and 25 percent with a bonus.',
+      });
+      c.querySelectorAll('.bar-rect')[1]?.setAttribute('fill', ochre);
+    }
+  }
+
+  const CHART_IDS = ['chart1', 'chart2', 'chart3'];
+  CHART_IDS.forEach(buildChart);
+
+  /* Animate each chart once, when it first scrolls into view. */
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.35 },
+  );
+  ROOT.querySelectorAll('.chart').forEach((c) => io.observe(c));
+
+  /* The SVG fills are read from CSS at draw time rather than inherited, so a
+     change of system theme has to redraw them. The site has no theme toggle;
+     this is the only way the palette can move under a rendered chart. */
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+  mq.addEventListener('change', () => CHART_IDS.forEach(buildChart));
+
+  /* ---------- payoff matrix engine (drives both tables) ---------- */
+  interface MxState {
+    hSucc: string; hFail: string;
+    in_succ: string; in_fail: string; out_succ: string; out_fail: string;
+    cap_in_succ: string; cap_in_fail: string; cap_out_succ: string; cap_out_fail: string;
+    flip?: string[]; colhi?: string[]; dominant?: 'in' | 'out';
+    lead?: string; caption: string;
+  }
+
+  const MATRICES: Record<string, (key: string) => void> = {};
+  const CELLS = ['in_succ', 'in_fail', 'out_succ', 'out_fail'] as const;
+
+  function initMatrix(rootId: string, STATES: Record<string, MxState>, initial: string) {
+    const root = document.getElementById(rootId);
+    if (!root) return;
+    const capEl = root.querySelector('.mx-caption') as HTMLElement;
+    const btns = Array.from(root.querySelectorAll('.mx-btn'));
+
+    function apply(key: string) {
+      const d = STATES[key];
+      (root!.querySelector('[data-h="succ"]') as HTMLElement).textContent = d.hSucc;
+      (root!.querySelector('[data-h="fail"]') as HTMLElement).textContent = d.hFail;
+
+      CELLS.forEach((k) => {
+        const cell = root!.querySelector('[data-c="' + k + '"]') as HTMLElement;
+        (cell.querySelector('.pay') as HTMLElement).textContent = d[k];
+        (cell.querySelector('.cap') as HTMLElement).textContent = d[('cap_' + k) as keyof MxState] as string;
+        cell.classList.toggle('flip', (d.flip || []).indexOf(k) > -1);
+        cell.classList.toggle('colhi', (d.colhi || []).indexOf(k) > -1);
+      });
+
+      root!.querySelector('[data-row="in"]')!.classList.toggle('dominant', d.dominant === 'in');
+      root!.querySelector('[data-row="out"]')!.classList.toggle('dominant', d.dominant === 'out');
+      capEl.innerHTML = (d.lead ? '<b>' + d.lead + '</b>' : '') + d.caption;
+
+      btns.forEach((b) => {
+        const on = b.getAttribute('data-k') === key;
+        b.classList.toggle('on', on);
+        b.setAttribute('aria-selected', String(on));
+      });
+    }
+
+    btns.forEach((b) => b.addEventListener('click', () => apply(b.getAttribute('data-k')!)));
+    MATRICES[rootId] = apply;
+    apply(initial);
+  }
+
+  /* The bare public good game (section 1). */
+  initMatrix(
+    'mxGame',
+    {
+      game: {
+        hSucc: 'Enough others contribute', hFail: 'Too few others contribute',
+        in_succ: '+30', cap_in_succ: 'the dike is built, you paid your share',
+        in_fail: '−20', cap_in_fail: 'your money is spent and no dike rises',
+        out_succ: '+50', cap_out_succ: 'the dike is built and you paid nothing',
+        out_fail: '0', cap_out_fail: 'nothing spent, nothing gained',
+        dominant: 'out',
+        lead: 'Withholding wins in both columns. ',
+        caption: 'It pays 50 against 30 when enough others contribute, and 0 against −20 when too few do. Withholding is a dominant strategy, every family reasons its way to the same conclusion, and the dike goes unbuilt. This is the public good problem in its familiar prisoner’s dilemma form.',
+      },
+      assurance: {
+        hSucc: 'Enough others contribute', hFail: 'Too few others contribute',
+        in_succ: '+30', cap_in_succ: 'the dike is built, you paid your share',
+        in_fail: '−20', cap_in_fail: 'your money is spent and no dike rises',
+        out_succ: '+50', cap_out_succ: 'the dike is built and you paid nothing',
+        out_fail: '0', cap_out_fail: 'nothing spent, nothing gained',
+        colhi: ['in_fail', 'out_fail'],
+        lead: 'Take the second column alone. ',
+        caption: 'Too few of your neighbors are contributing, so no dike goes up and there is nothing for anyone to ride on. You withhold because a contribution would be thrown away on a dike that never rises. What stops you here is the absence of assurance.',
+      },
+      freeride: {
+        hSucc: 'Enough others contribute', hFail: 'Too few others contribute',
+        in_succ: '+30', cap_in_succ: 'the dike is built, you paid your share',
+        in_fail: '−20', cap_in_fail: 'your money is spent and no dike rises',
+        out_succ: '+50', cap_out_succ: 'the dike is built and you paid nothing',
+        out_fail: '0', cap_out_fail: 'nothing spent, nothing gained',
+        colhi: ['in_succ', 'out_succ'],
+        lead: 'Now the first column alone. ',
+        caption: 'Enough of your neighbors are contributing that the dike goes up whatever you do. Assurance plays no part, since the outcome is already settled. You withhold because withholding pays 50 where contributing pays 30. What stops you here is the temptation to ride free.',
+      },
+    },
+    'game',
+  );
+
+  /* The three contracts (section 3). */
+  initMatrix(
+    'mxContracts',
+    {
+      a: {
+        hSucc: 'Enough others pledge', hFail: 'Too few others pledge',
+        in_succ: '+30', cap_in_succ: 'the good is built, you paid your share',
+        in_fail: '0', cap_in_fail: 'refunded in full',
+        out_succ: '+50', cap_out_succ: 'the good is built and you paid nothing',
+        out_fail: '0', cap_out_fail: 'no pledge, no payoff',
+        lead: 'The refund erases the loss. ',
+        caption: 'Pledging into a campaign that falls short now costs nothing rather than 20, so the fear of a wasted contribution is gone. Two problems survive. Abstaining still beats pledging whenever the others carry the project, 50 against 30. And when you expect too few others to pledge, pledging gains you nothing, so universal abstention holds together on shared pessimism alone.',
+      },
+      b: {
+        hSucc: 'Enough others pledge', hFail: 'Too few others pledge',
+        in_succ: '+30', cap_in_succ: 'the good is built, you paid your share',
+        in_fail: '+10', cap_in_fail: 'refunded, plus the bonus',
+        out_succ: '+50', cap_out_succ: 'the good is built and you paid nothing',
+        out_fail: '0', cap_out_fail: 'no pledge, no payoff',
+        flip: ['in_fail'],
+        lead: 'The bonus changes the second column. ',
+        caption: 'Someone who expects the project to fail now earns 10 by pledging and 0 by abstaining, so no one has reason to sit out in anticipation of failure. Every outcome with too few pledges unravels, and every equilibrium that remains provides the good. Pledging is still not dominant, since anyone confident of success would rather be carried, at 50 against 30.',
+      },
+      c: {
+        hSucc: 'All the others pledge', hFail: 'Some of the others abstain',
+        in_succ: '+30', cap_in_succ: 'everyone pledged, the good is built',
+        in_fail: '+10', cap_in_fail: 'refunded, plus the bonus',
+        out_succ: '0', cap_out_succ: 'the contract needed your pledge, so it fails',
+        out_fail: '0', cap_out_fail: 'no pledge, no payoff',
+        dominant: 'in',
+        lead: 'Pledging now wins in both columns. ',
+        caption: 'Requiring every pledge removes the option of being carried, so the 50 disappears. Pledging pays more whatever the others do, 30 against 0 and 10 against 0, which makes it a dominant strategy. The dominance has changed rows since we began.',
+      },
+    },
+    'a',
+  );
+
+  /* Inline terms in the prose drive the table they name. */
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  ROOT.querySelectorAll('button.term[data-mx]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-mx')!;
+      const root = document.getElementById(id);
+      const apply = MATRICES[id];
+      if (!apply || !root) return;
+      apply(btn.getAttribute('data-mxk')!);
+      root.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    });
+  });
+</script>

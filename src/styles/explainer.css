@@ -1,0 +1,772 @@
+/* ---------------------------------------------------------------------------
+   Shared furniture for long-form explainers under /explainers/.
+
+   Everything here is scoped to `.explainer`, so a page can drop a rich
+   standalone document into the site without its bare-element styles colliding
+   with global.css. The frame belongs to the site: paper, ink, rules, type
+   stacks and page width all come from the global tokens, which is what keeps
+   the sticky header the same colour as the content scrolling under it.
+
+   What each explainer owns is its accent and its chart series. A page sets
+   --ex-accent and friends in its own scoped block; the defaults below fall
+   back to the site accent so a page that sets nothing still looks deliberate.
+
+   Sizes are in px, as authored. The reading size is deliberately larger than
+   the rest of the site (20px against ~17px) because these are long documents,
+   and the whole hierarchy above and below it is calibrated to that number.
+--------------------------------------------------------------------------- */
+
+.explainer {
+  --ex-pad: clamp(1.1rem, 4vw, 2.5rem);
+
+  /* Surfaces derived from the site palette, so they invert with it. */
+  --ex-surface: var(--paper-raised);
+  --ex-surface-2: color-mix(in srgb, var(--ink) 4%, var(--paper));
+  --ex-rule-strong: color-mix(in srgb, var(--ink) 20%, var(--rule));
+
+  /* Per-explainer identity. Pages override these. */
+  --ex-accent: var(--accent);
+  --ex-s1: #0b7ca6;
+  --ex-s2: #a63d4e;
+  --ex-hl: #96700d;
+
+  --ex-chart-surface: var(--paper-raised);
+  --ex-grid: color-mix(in srgb, var(--ink) 8%, var(--paper));
+  --ex-baseline: color-mix(in srgb, var(--ink) 24%, var(--paper));
+  --ex-shadow: 0 1px 2px rgb(22 22 26 / 5%), 0 8px 30px rgb(22 22 26 / 6%);
+
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  .explainer {
+    --ex-s1: #3399c2;
+    --ex-s2: #ca5d6f;
+    --ex-hl: #ab821c;
+    --ex-shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 10px 34px rgb(0 0 0 / 50%);
+  }
+}
+
+/* The explainer runs its own vertical rhythm, and the references band is
+   full-bleed to the footer, so main's usual padding would open a gap. */
+main:has(.explainer) { padding-block: 0; }
+
+.explainer ::selection {
+  background: color-mix(in srgb, var(--ex-accent) 22%, transparent);
+}
+
+/* --- prose ------------------------------------------------------------- */
+
+.explainer .measure { max-width: 680px; margin-inline: auto; }
+.explainer section { padding: 14px 0; }
+.explainer p { margin: 0 0 1.1em; }
+
+.explainer a {
+  color: var(--ex-accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--ex-accent) 30%, transparent);
+}
+
+/* Global styles a hover colour of its own; restate ours so links do not drift
+   to the site blue on the way past. */
+.explainer a:hover {
+  color: var(--ex-accent);
+  border-bottom-color: var(--ex-accent);
+}
+
+/* Headings are serif here. global.css sets h1–h4 to the sans stack, so every
+   one of these has to say so explicitly. */
+.explainer h1,
+.explainer h2,
+.explainer h3,
+.explainer h4 {
+  font-family: var(--serif);
+  text-wrap: balance;
+}
+
+.explainer h1 {
+  font-size: clamp(42px, 7vw, 78px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.32em;
+  font-weight: 600;
+}
+
+.explainer h2 {
+  font-size: clamp(28px, 3.8vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.5em;
+  font-weight: 600;
+}
+
+.explainer h3 {
+  font-size: 23px;
+  line-height: 1.25;
+  margin: 1.6em 0 0.4em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.explainer .lead { font-size: 22px; line-height: 1.55; color: var(--ink-soft); }
+
+.explainer .dropcap:first-letter {
+  float: left;
+  font-size: 4.05em;
+  line-height: 0.82;
+  padding: 0.06em 0.09em 0 0;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* --- hero -------------------------------------------------------------- */
+
+.explainer .hero {
+  padding: 68px 0 46px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.explainer .kicker {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ex-accent);
+  font-weight: 650;
+  margin-bottom: 22px;
+}
+
+.explainer .hero .lede {
+  font-size: clamp(21px, 2.6vw, 26px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin: 0 0 1.1em;
+}
+
+.explainer .byline {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+  margin-top: 30px;
+}
+
+.explainer .byline b { color: var(--ink-soft); font-weight: 600; }
+
+/* --- section headings -------------------------------------------------- */
+
+.explainer .sec-num {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ex-accent);
+  font-weight: 650;
+  margin-bottom: 14px;
+}
+
+/* A named term, styled to echo the control it points at. The dotted rule
+   marks it as a control rather than a link. */
+.explainer .term {
+  font-family: var(--sans);
+  font-weight: 650;
+  font-size: 0.88em;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+}
+
+.explainer button.term {
+  background: none;
+  border: 0;
+  padding: 0 1px;
+  margin: 0;
+  line-height: inherit;
+  cursor: pointer;
+  border-bottom: 2px dotted color-mix(in srgb, var(--ex-accent) 50%, transparent);
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.explainer button.term:hover {
+  color: var(--ex-accent);
+  border-bottom-color: var(--ex-accent);
+}
+
+/* Voiced reasoning: an agent thinking it through. */
+.explainer .reasoning {
+  margin-left: 1.7em;
+  margin-right: 0.4em;
+  font-size: 19px;
+  line-height: 1.62;
+  color: var(--ink-soft);
+}
+
+.explainer .pull {
+  font-size: clamp(24px, 3.2vw, 32px);
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  border-left: 3px solid var(--ex-accent);
+  padding: 6px 0 6px 26px;
+  margin: 34px auto;
+  max-width: 720px;
+  font-weight: 500;
+}
+
+/* --- blocks that sit outside .wrap ------------------------------------- */
+
+/* These centre on the viewport rather than inside the reading column, so they
+   need their own inset or they would touch the screen edge on a phone. */
+.explainer .figure,
+.explainer > section > .tiles,
+.explainer > section > .apps,
+.explainer > section > .aside {
+  margin-inline: auto;
+  width: min(820px, 100% - 2 * var(--ex-pad));
+}
+
+.explainer .figure.wide { width: min(940px, 100% - 2 * var(--ex-pad)); }
+.explainer > section > .aside { width: min(680px, 100% - 2 * var(--ex-pad)); }
+
+/* --- figure / chart card ------------------------------------------------ */
+
+.explainer .figure {
+  margin-block: 40px;
+  background: var(--ex-surface);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 26px 26px 20px;
+  box-shadow: var(--ex-shadow);
+}
+
+.explainer .fig-head { margin-bottom: 6px; }
+
+.explainer .fig-eyebrow {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ex-accent);
+  font-weight: 650;
+}
+
+.explainer .fig-title {
+  font-family: var(--sans);
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin: 6px 0 3px;
+  color: var(--ink);
+}
+
+.explainer .fig-sub {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.explainer .fig-note {
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-faint);
+  margin: 14px 0 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
+}
+
+.explainer .chart { position: relative; margin-top: 14px; }
+.explainer .chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+.explainer .legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 2px 0 6px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.explainer .legend .lg { display: inline-flex; align-items: center; gap: 7px; }
+.explainer .legend .sw { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+
+/* Chart text. Fills, not colours, so these are set on the SVG nodes. */
+.explainer .c-val { font-family: var(--sans); font-weight: 650; fill: var(--ink); font-size: 15px; }
+.explainer .c-cat { font-family: var(--sans); fill: var(--ink-soft); font-size: 13.5px; }
+.explainer .c-cat2 { font-family: var(--sans); fill: var(--ink-faint); font-size: 11.5px; }
+.explainer .c-ax {
+  font-family: var(--sans);
+  fill: var(--ink-faint);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The tooltip inverts by construction: --ink and --paper swap with the theme. */
+.explainer .tip {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -8px);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.35;
+  padding: 8px 11px;
+  border-radius: 9px;
+  white-space: nowrap;
+  box-shadow: 0 6px 22px rgb(0 0 0 / 28%);
+  transition: opacity 0.12s;
+  z-index: 5;
+}
+
+.explainer .tip b { font-size: 14px; }
+
+.explainer .bar-g {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.explainer .chart.in .bar-g { transform: scaleY(1); }
+.explainer .bar-lab { opacity: 0; transition: opacity 0.5s ease 0.5s; }
+.explainer .chart.in .bar-lab { opacity: 1; }
+.explainer .bar-rect { cursor: pointer; }
+.explainer .bar-rect:hover { filter: brightness(1.06); }
+
+/* --- stat tiles --------------------------------------------------------- */
+
+.explainer .tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-block: 34px;
+}
+
+.explainer .tile {
+  background: var(--ex-surface);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 20px 20px 18px;
+  box-shadow: var(--ex-shadow);
+}
+
+.explainer .tile .num {
+  font-family: var(--sans);
+  font-weight: 680;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.explainer .tile .num .u { font-size: 22px; font-weight: 650; color: var(--ink-soft); }
+.explainer .tile .lab { font-family: var(--sans); font-size: 13px; line-height: 1.45; color: var(--ink-soft); margin-top: 10px; }
+.explainer .tile .src { font-family: var(--sans); font-size: 11px; color: var(--ink-faint); margin-top: 8px; }
+
+/* --- payoff matrix ------------------------------------------------------ */
+
+.explainer .matrix-wrap { margin-block: 36px; }
+
+.explainer .mx-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  font-family: var(--sans);
+}
+
+.explainer .mx-btn {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--ex-rule-strong);
+  background: var(--ex-surface);
+  color: var(--ink-soft);
+  transition: 0.15s;
+}
+
+.explainer .mx-btn:hover { border-color: var(--ex-accent); color: var(--ink); }
+
+/* --paper reads light against a dark accent and dark against a light one, so
+   one declaration covers both themes. */
+.explainer .mx-btn.on {
+  background: var(--ex-accent);
+  border-color: var(--ex-accent);
+  color: var(--paper);
+}
+
+.explainer .matrix {
+  background: var(--ex-surface);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: var(--ex-shadow);
+  overflow: hidden;
+}
+
+.explainer table.mx { width: 100%; border-collapse: collapse; font-family: var(--sans); }
+
+.explainer table.mx th,
+.explainer table.mx td {
+  padding: 16px 14px;
+  text-align: center;
+  border: 1px solid var(--rule);
+}
+
+.explainer table.mx th {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--ink-soft);
+  background: var(--ex-surface-2);
+  letter-spacing: 0.01em;
+}
+
+.explainer table.mx .corner { background: transparent; border-top: none; border-left: none; }
+
+.explainer table.mx .rowlab {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--ink);
+  background: var(--ex-surface-2);
+  text-align: left;
+  width: 34%;
+}
+
+.explainer table.mx td.cell {
+  font-size: 15px;
+  color: var(--ink-soft);
+  position: relative;
+  transition: background 0.3s;
+}
+
+.explainer .cell .pay {
+  font-family: var(--sans);
+  font-weight: 680;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.explainer .cell .cap { font-size: 11.5px; color: var(--ink-faint); margin-top: 7px; line-height: 1.35; }
+
+.explainer tr.dominant td.cell { background: color-mix(in srgb, var(--ex-s1) 11%, var(--ex-surface)); }
+.explainer tr.dominant .pay { color: var(--ex-s1); }
+.explainer td.cell.flip { background: color-mix(in srgb, var(--ex-hl) 14%, var(--ex-surface)); }
+.explainer td.cell.flip .pay { color: var(--ex-hl); }
+.explainer td.cell.colhi { background: color-mix(in srgb, var(--ex-s2) 10%, var(--ex-surface)); }
+.explainer td.cell.colhi .pay { color: var(--ex-s2); }
+
+.explainer .mx-caption {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 14px;
+  line-height: 1.5;
+  min-height: 2.6em;
+}
+
+.explainer .mx-caption b { color: var(--ink); }
+
+/* --- asides ------------------------------------------------------------- */
+
+.explainer .aside { max-width: 680px; margin: 30px auto; }
+
+.explainer details {
+  background: var(--ex-surface-2);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 2px 20px;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.explainer details[open] { padding-bottom: 16px; }
+
+.explainer summary {
+  cursor: pointer;
+  font-weight: 640;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--ex-accent);
+  padding: 15px 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.explainer summary::-webkit-details-marker { display: none; }
+
+.explainer summary .plus {
+  font-size: 18px;
+  transition: transform 0.2s;
+  display: inline-block;
+  color: var(--ink-faint);
+}
+
+.explainer details[open] summary .plus { transform: rotate(45deg); }
+.explainer details .body { color: var(--ink-soft); padding-bottom: 4px; }
+.explainer details .body p { margin-bottom: 0.8em; }
+.explainer details .body .src { color: var(--ink-faint); font-size: 13.5px; }
+
+.explainer details code {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 13.5px;
+  background: var(--ex-surface);
+  padding: 1px 6px;
+  border-radius: 5px;
+  border: 1px solid var(--rule);
+}
+
+/* --- dividers ----------------------------------------------------------- */
+
+.explainer .section-break {
+  text-align: center;
+  color: var(--ex-rule-strong);
+  font-size: 22px;
+  letter-spacing: 0.5em;
+  margin: 26px 0 8px;
+}
+
+/* --- applications grid --------------------------------------------------- */
+
+.explainer .apps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-block: 30px;
+}
+
+.explainer .app {
+  background: var(--ex-surface);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 22px 22px 20px;
+  box-shadow: var(--ex-shadow);
+}
+
+.explainer .app h4 {
+  font-family: var(--sans);
+  font-size: 16.5px;
+  font-weight: 650;
+  margin: 0 0 8px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
+.explainer .app p { font-family: var(--sans); font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+
+.explainer .app .tag {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ex-accent);
+  font-weight: 650;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* --- papers behind the explainer ---------------------------------------- */
+
+/* Sits in the hero, so it shares the hero's left edge rather than centring. */
+.explainer .basis { margin: 34px 0 0; max-width: 620px; }
+
+.explainer .basis-label {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 650;
+  margin-bottom: 12px;
+}
+
+.explainer .basis ol { list-style: none; margin: 0; padding: 0; }
+
+.explainer .basis li {
+  font-family: var(--sans);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  padding: 9px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.explainer .basis li .yr {
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.6em;
+}
+
+/* --- markdown bodies ------------------------------------------------------ */
+
+/* A hand-built explainer places its own furniture. A markdown one emits plain
+   elements, so the ones the sections above do not already cover are set here. */
+
+.md-body > :first-child { margin-top: 0; }
+
+.md-body h2 { font-size: clamp(24px, 3vw, 32px); margin-top: 1.5em; }
+.md-body h3 { font-size: 21px; }
+
+.md-body ul,
+.md-body ol { margin: 0 0 1.1em; padding-left: 1.4em; }
+.md-body li { margin-bottom: 0.35em; }
+
+.md-body blockquote {
+  margin: 1.5em 0;
+  padding: 2px 0 2px 24px;
+  border-left: 3px solid var(--ex-accent);
+  color: var(--ink-soft);
+}
+
+.md-body blockquote p:last-child { margin-bottom: 0; }
+
+.md-body hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2em 0;
+}
+
+.md-body code {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.8em;
+  background: var(--ex-surface-2);
+  padding: 1px 6px;
+  border-radius: 5px;
+  border: 1px solid var(--rule);
+}
+
+.md-body pre {
+  background: var(--ex-surface-2);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.md-body pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+
+.md-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 15px;
+  margin: 1.5em 0;
+}
+
+.md-body th,
+.md-body td { padding: 10px 12px; border-bottom: 1px solid var(--rule); text-align: left; }
+.md-body th { font-weight: 650; color: var(--ink); }
+.md-body td { color: var(--ink-soft); }
+
+.md-body figcaption {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin-top: 8px;
+}
+
+/* --- references ---------------------------------------------------------- */
+
+.explainer .refs {
+  background: var(--ex-surface-2);
+  border-top: 1px solid var(--rule);
+  margin-top: 40px;
+  padding: 52px 0 30px;
+}
+
+.explainer .refs h2 { font-size: 26px; }
+
+.explainer .reflist {
+  max-width: 760px;
+  margin: 22px auto 0;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.explainer .reflist .r {
+  padding: 15px 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 12px;
+}
+
+.explainer .reflist .r:first-child { border-top: none; }
+.explainer .reflist .n { color: var(--ex-accent); font-weight: 680; }
+.explainer .reflist .r b { color: var(--ink); font-weight: 640; }
+.explainer .reflist em { color: var(--ink-soft); }
+.explainer .reflist .gloss { color: var(--ink-faint); }
+
+.explainer .reflist-label {
+  max-width: 760px;
+  margin: 36px auto 0;
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 650;
+  border-top: 1px solid var(--ex-rule-strong);
+  padding-top: 20px;
+}
+
+/* Links inside the small print take the surrounding colour until hovered. */
+.explainer .fig-note a,
+.explainer .tile .src a,
+.explainer details .body a {
+  color: inherit;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+}
+
+.explainer .fig-note a:hover,
+.explainer .tile .src a:hover,
+.explainer details .body a:hover {
+  color: var(--ex-accent);
+  border-bottom-color: currentColor;
+}
+
+.explainer .ex-note {
+  padding: 40px 0 10px;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-faint);
+  line-height: 1.7;
+}
+
+/* --- narrow screens ------------------------------------------------------ */
+
+@media (max-width: 720px) {
+  .explainer { font-size: 18px; }
+  .explainer .reasoning { margin-left: 1.05em; margin-right: 0; font-size: 17px; }
+  .explainer .tiles { grid-template-columns: 1fr; }
+  .explainer .apps { grid-template-columns: 1fr; }
+  .explainer table.mx .rowlab { width: 30%; font-size: 13px; }
+  .explainer .cell .pay { font-size: 22px; }
+  .explainer .hero { padding: 44px 0 34px; }
+  .explainer .figure { padding: 20px 16px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explainer .bar-g { transition: none; transform: none; }
+  .explainer .bar-lab { transition: none; opacity: 1; }
+}

@@ -1,0 +1,76 @@
+---
+/**
+ * The markdown flavour of an explainer.
+ *
+ * Handles every entry in explainers.yaml that names a `body` file. Entries
+ * without one are hand-built pages sitting beside this file as
+ * src/pages/explainers/<slug>.astro; Astro gives those static routes priority,
+ * and they are filtered out below in any case.
+ *
+ * Both flavours share the same frame, the same wrapper class and the same
+ * "papers behind this" block, so the two read as one mechanism.
+ */
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PapersBehind from '../../components/PapersBehind.astro';
+import { explainers } from '../../data/schema';
+import '../../styles/explainer.css';
+
+export async function getStaticPaths() {
+  const bodies = await getCollection('explainers');
+  const written = explainers.filter((e) => e.body);
+
+  return written.map((entry) => {
+    const name = entry.body!.replace(/\.md$/, '');
+    const doc = bodies.find((b) => b.id === name);
+
+    // A typo here would otherwise ship a blank page, so fail the build.
+    if (!doc) {
+      const had = bodies.map((b) => b.id + '.md').join(', ') || 'none';
+      throw new Error(
+        `explainers.yaml → ${entry.slug} names body "${entry.body}", ` +
+          `but src/content/explainers/ has: ${had}`,
+      );
+    }
+
+    return { params: { slug: entry.slug }, props: { entry, doc } };
+  });
+}
+
+const { entry, doc } = Astro.props;
+const { Content } = await render(doc);
+
+// A bare `2026-08-02` parses as UTC midnight, so formatting it in the build
+// machine's zone would render the day before. Read it back in UTC.
+const updated = doc.data.updated;
+const updatedLabel = updated?.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<Base title={entry.title} description={entry.description} wide>
+  <div class="explainer">
+    <header class="hero">
+      <div class="wrap">
+        <div class="kicker">Explainer</div>
+        <h1>{entry.title}</h1>
+        <p class="lede">{entry.description}</p>
+        {updated && (
+          <div class="byline">
+            Updated <time datetime={updated.toISOString().slice(0, 10)}>{updatedLabel}</time>
+          </div>
+        )}
+        <PapersBehind papers={entry.papers} />
+      </div>
+    </header>
+
+    <section>
+      <div class="wrap measure md-body">
+        <Content />
+      </div>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,36 @@
+# Explainers, one block per piece. Each is served at /explainers/<slug>/.
+#
+# This file is the single place an explainer is declared. It owns the title,
+# the blurb and the papers the piece covers, whatever the body is written in.
+# Every paper listed under `papers` gets an "Explainer" chip on /research/
+# pointing here, and an id that matches no paper fails the build.
+#
+# A body comes in one of two flavours.
+#
+#   body: something.md   Prose. Write src/content/explainers/something.md and
+#                        put nothing in it but the writing — no frontmatter is
+#                        needed, since the title and blurb are already here.
+#                        Optional `updated: 2026-08-02` frontmatter shows a
+#                        date under the title.
+#
+#   body omitted         A hand-built page at src/pages/explainers/<slug>.astro,
+#                        for anything prose cannot carry: charts, tables,
+#                        interactive figures. Wrap its content in
+#                        <div class="explainer"> and import
+#                        src/styles/explainer.css to get the shared furniture.
+#
+# Both flavours share the frame, the wrapper class and the "papers behind this"
+# block, so a reader cannot tell which is which. Start in markdown; switch a
+# piece to a page later by writing the .astro file and deleting the `body`
+# line. The URL does not change.
+
+- slug: refund-bonuses
+  title: The refund bonus
+  description: >-
+    How dominant assurance contracts and refund bonuses solve the free-rider
+    problem, and what the experimental evidence shows.
+  papers:
+    - the-private-provision-of-public-goods-via-dominant
+    - early-refund-bonuses-increase-successful-crowdfunding
+    - signaling-quality-how-refund-bonuses-can-overcome-information
+    - breaking-ground-can-refund-bonuses-solve-the-holdout

@@ -4,11 +4,15 @@ import { inlineMarkdown, toPlainText } from '../lib/inline';
 
 interface Props {
   paper: Publication;
-  /** True when an explainer page exists for this paper. */
-  explainer?: boolean;
+  /**
+   * Where this paper's explainer lives, or null when it has none. Either the
+   * paper's own markdown explainer at /research/<id>/ or a long-form one under
+   * /explainers/ covering several papers at once.
+   */
+  explainer?: string | null;
 }
 
-const { paper, explainer = false } = Astro.props;
+const { paper, explainer = null } = Astro.props;
 
 // One lowercase blob per paper drives the client-side filter without
 // needing a separate index or any JSON payload.
@@ -25,7 +29,7 @@ const haystack = [
   .toLowerCase();
 ---
 
-<article class="paper" data-year={paper.year ?? ''} data-search={haystack}>
+<article class="paper" id={paper.id} data-year={paper.year ?? ''} data-search={haystack}>
   <p class="paper-year">{paper.year ?? ''}</p>
 
   <div class="paper-body">
@@ -36,7 +40,7 @@ const haystack = [
     {(paper.links.length > 0 || explainer) && (
       <p class="paper-links">
         {explainer && (
-          <a class="chip chip-accent" href={`/research/${paper.id}/`}>Explainer</a>
+          <a class="chip chip-accent" href={explainer}>Explainer</a>
         )}
         {paper.links.map((l) => (
           <a class="chip" href={l.url}>{l.label}</a>
@@ -72,6 +76,9 @@ const haystack = [
     column-gap: 1.75rem;
     padding: 1.35rem 0 1.5rem;
     border-bottom: 1px solid var(--rule);
+    /* Every entry is an anchor target now, so clear the sticky header and the
+       sticky filter toolbar that sits under it. */
+    scroll-margin-top: var(--anchor-offset);
   }
 
   .paper[hidden] { display: none; }
