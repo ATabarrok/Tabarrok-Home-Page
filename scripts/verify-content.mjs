@@ -16,9 +16,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-// Mirrors astro.config.mjs: the build output can be redirected out of the
-// Dropbox-synced tree via ASTRO_OUT_DIR.
-const OUT = process.env.ASTRO_OUT_DIR ?? join(root, 'dist');
+const OUT = join(root, 'dist');
 
 const PAGES = [
   { name: 'home', built: 'index.html', path: '/' },
