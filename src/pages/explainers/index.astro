@@ -1,14 +1,15 @@
 ---
 /**
  * The explainers index. Reads the same YAML that declares each piece, so a new
- * block appears here, on /research/ as a chip, and at its own URL, with no
+ * block appears here, and on /research/ as a chip if it names papers, with no
  * edit to this page.
  */
 import Base from '../../layouts/Base.astro';
-import { explainers, publications } from '../../data/schema';
+import { explainers, publications, explainerHref } from '../../data/schema';
 
 // A summary of the papers behind each piece, rather than the full titles: the
-// explainer's own page lists those, and a row here should stay one line.
+// explainer's own page lists those, and a row here should stay one line. Some
+// explainers belong to no paper and get no summary at all.
 const rows = explainers.map((e) => {
   const years = e.papers
     .map((id) => publications.find((p) => p.id === id)?.year)
@@ -23,21 +24,32 @@ const rows = explainers.map((e) => {
         : `${years[0]}–${years[years.length - 1]}`;
 
   const count =
-    e.papers.length === 1 ? 'One paper' : `${e.papers.length} papers`;
+    e.papers.length === 0
+      ? null
+      : e.papers.length === 1
+        ? 'One paper'
+        : `${e.papers.length} papers`;
 
-  return { ...e, meta: span ? `${count} · ${span}` : count };
+  return {
+    ...e,
+    href: explainerHref(e),
+    meta: count ? (span ? `${count} · ${span}` : count) : null,
+    // Shown so a reader knows the link leaves the site before they follow it.
+    host: e.url ? new URL(e.url).hostname.replace(/^www\./, '') : null,
+  };
 });
 ---
 
 <Base
   title="Explainers"
-  description="Plain-language explainers on Alex Tabarrok's research, each drawing together several papers."
+  description="Plain-language explainers by Alex Tabarrok on economics, housing policy, public goods and other topics."
 >
   <p class="eyebrow">Plain language</p>
   <h1 class="page-title">Explainers</h1>
   <p class="lede">
-    Longer pieces about my research, written for readers who want the argument
-    without the apparatus. Each one draws on several papers at once.
+    Pieces written for readers who want an argument laid out plainly. Some draw
+    together several of my papers. Others are about subjects I have never
+    written up formally, but think are worth understanding.
   </p>
 
   {rows.length === 0 ? (
@@ -46,20 +58,21 @@ const rows = explainers.map((e) => {
     <ul class="list">
       {rows.map((e) => (
         <li>
-          <a href={`/explainers/${e.slug}/`}>
+          <a href={e.href}>
             <span class="title">{e.title}</span>
             <span class="desc">{e.description}</span>
-            <span class="meta">{e.meta}</span>
+            {(e.meta || e.host) && (
+              <span class="meta">
+                {e.meta}
+                {e.meta && e.host && <span class="sep"> · </span>}
+                {e.host && <span class="host">{e.host}</span>}
+              </span>
+            )}
           </a>
         </li>
       ))}
     </ul>
   )}
-
-  <p class="foot prose">
-    Every explainer is also linked from the paper it covers on the
-    <a href="/research/">research page</a>.
-  </p>
 </Base>
 
 <style>
@@ -114,16 +127,12 @@ const rows = explainers.map((e) => {
     font-variant-numeric: tabular-nums;
   }
 
+  /* Lowercase, because it is a domain and reads wrong shouted. */
+  .host { text-transform: none; letter-spacing: 0.02em; }
+
   .empty {
     font-family: var(--sans);
     color: var(--ink-faint);
     padding: 2rem 0;
   }
-
-  .foot {
-    font-size: 0.92rem;
-    color: var(--ink-faint);
-  }
-
-  .foot a { color: var(--ink-soft); }
 </style>

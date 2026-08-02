@@ -35,23 +35,30 @@ const course = z.object({
 });
 
 /**
- * An explainer covering one or more papers, served at /explainers/<slug>/.
+ * An explainer: a piece written for readers rather than referees.
  *
- * This file is the single declaration point: it owns the title, the blurb and
- * the papers the piece covers, whatever the body is written in. `body` names a
- * markdown file for a plain-prose piece; omitting it means the body is a
- * hand-built page at src/pages/explainers/<slug>.astro.
+ * This file is the single declaration point, whatever the body turns out to
+ * be. There are three flavours, and at most one field may say which:
+ *
+ *   body   a markdown file, rendered at /explainers/<slug>/
+ *   url    a page that lives somewhere else entirely; nothing is generated
+ *   neither  a hand-built page at src/pages/explainers/<slug>.astro
+ *
+ * `papers` is optional. Some explainers draw together several of Alex's
+ * papers and earn a chip beside each; others are about a subject he has not
+ * written up formally, and belong to no paper at all.
  */
 const explainer = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/, 'slug must be a lowercase slug'),
   title: z.string().min(1),
   description: z.string().min(1),
-  papers: z.array(z.string()).min(1),
+  papers: z.array(z.string()).default([]),
   body: z
     .string()
     .regex(/^[a-z0-9-]+\.md$/, 'body must be a markdown filename, e.g. foo.md')
     .nullable()
     .default(null),
+  url: z.string().url().nullable().default(null),
 });
 
 /** Parse + validate a YAML file, failing the build with a useful message. */
@@ -112,6 +119,13 @@ for (const e of explainers) {
   if (slugs.has(e.slug)) throw new Error(`Duplicate explainer slug: ${e.slug}`);
   slugs.add(e.slug);
 
+  // Two answers to "where is the body" is one too many.
+  if (e.body && e.url) {
+    throw new Error(
+      `explainers.yaml → ${e.slug} sets both body and url; pick one`,
+    );
+  }
+
   for (const id of e.papers) {
     if (!seen.has(id)) {
       throw new Error(
@@ -126,4 +140,12 @@ for (const e of explainers) {
     }
     explainerByPaper.set(id, e);
   }
+}
+
+/**
+ * Where an explainer is read. Offsite pieces keep their own address; the rest
+ * live under /explainers/. Callers should not build this string themselves.
+ */
+export function explainerHref(e: Explainer): string {
+  return e.url ?? `/explainers/${e.slug}/`;
 }

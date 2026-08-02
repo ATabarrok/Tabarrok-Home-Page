@@ -8,7 +8,6 @@
  * chip beside each of these papers on /research/.
  */
 import Base from '../../layouts/Base.astro';
-import PapersBehind from '../../components/PapersBehind.astro';
 import { explainers } from '../../data/schema';
 import '../../styles/explainer.css';
 
@@ -30,8 +29,6 @@ const entry = explainers.find((e) => e.slug === 'refund-bonuses')!;
           An explainer drawn from the work of <b>Alexander Tabarrok</b>, <b>Robertas Zubrickas</b>,
           <b>Timothy Cason</b>, and colleagues, 1998 to 2026.
         </div>
-
-        <PapersBehind papers={entry.papers} />
       </div>
     </header>
 

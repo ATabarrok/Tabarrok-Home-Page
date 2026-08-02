@@ -1,15 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import Paper from '../components/Paper.astro';
-import { publications, nonrefereed, explainerByPaper } from '../data/schema';
+import { publications, nonrefereed, explainerByPaper, explainerHref } from '../data/schema';
 import { inlineMarkdown } from '../lib/inline';
 
 // An explainer is optional per paper; the chip only appears once one covers it.
-// Markdown and hand-built explainers land at the same URL shape, so the chip
-// does not care which a given paper has.
-function explainerHref(id: string): string | null {
+// The chip does not care which flavour it is, including one that lives offsite.
+function chipHref(id: string): string | null {
   const e = explainerByPaper.get(id);
-  return e ? `/explainers/${e.slug}/` : null;
+  return e ? explainerHref(e) : null;
 }
 
 // Decade markers, computed once so an undated paper (forthcoming, or missing
@@ -124,7 +123,7 @@ const decades = rows
         {heading !== null && (
           <h2 class="decade" id={`d${heading}`}>{heading}s</h2>
         )}
-        <Paper paper={paper} explainer={explainerHref(paper.id)} />
+        <Paper paper={paper} explainer={chipHref(paper.id)} />
       </>
     ))}
   </div>

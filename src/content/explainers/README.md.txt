@@ -1,11 +1,13 @@
 Prose bodies for explainers live here.
 
-There is one explainer mechanism. Every explainer is declared as a block in
-src/data/explainers.yaml, is served at /explainers/<slug>/, and puts an
-"Explainer" chip on each paper it names. What differs is only where the body
-comes from, and a reader cannot tell which kind they are looking at.
+An explainer is a piece written for readers rather than referees. Some draw
+together several of Alex's papers; others are about a subject he has never
+written up formally. Every one of them is declared as a block in
+src/data/explainers.yaml and listed on /explainers/.
 
-WRITING ONE IN MARKDOWN
+There are three flavours, and at most one field in the block says which.
+
+1. MARKDOWN — body: something.md
 
 Add the block, naming a file in this directory:
 
@@ -24,24 +26,38 @@ are already declared above. The one field that is read, if you want it:
     updated: 2026-08-02
     ---
 
-The filename is free — it is referenced explicitly by `body`, so it no longer
-has to match a paper id. Naming a file that does not exist fails the build with
-a list of the files that do.
+The filename is free — it is referenced explicitly by `body`, so it does not
+have to match a paper id. Naming a file that does not exist fails the build
+with a list of the files that do.
 
 The page comes out at /explainers/two-peas/ with a standard heading, the blurb,
-the date if you set one, and the list of papers it covers. Ordinary markdown
-below that: headings, lists, quotes, tables, code, rules are all styled.
+the date if you set one, then the writing. Headings, lists, quotes, tables,
+code and rules are all styled. If the block names papers, they are listed at
+the foot of the piece, after the argument rather than before it.
 
-WRITING ONE AS A PAGE
+2. A HAND-BUILT PAGE — no body, no url
 
 For anything prose cannot carry — charts, interactive figures, custom tables —
-omit `body` and write src/pages/explainers/<slug>.astro instead. Wrap the
-content in <div class="explainer"> and import src/styles/explainer.css, which
-carries the shared furniture: figure cards, stat tiles, payoff matrices,
-application grids, reference lists. See refund-bonuses.astro.
+write src/pages/explainers/<slug>.astro. Wrap the content in
+<div class="explainer"> and import src/styles/explainer.css, which carries the
+shared furniture: figure cards, stat tiles, payoff matrices, application grids,
+reference lists. See refund-bonuses.astro.
 
 Astro gives that static file priority over the [slug].astro route, and the
 route skips entries without a `body` in any case, so the two never collide.
+
+3. SOMEWHERE ELSE ENTIRELY — url: https://...
+
+A piece that already lives at its own address. Nothing is built; the index and
+any paper chips link straight out to it, and the index shows the host so a
+reader knows the link leaves the site. See the rent-control entry.
+
+PAPERS ARE OPTIONAL
+
+List paper ids under `papers` and each of those papers gets an "Explainer" chip
+on /research/ pointing at the piece. An id matching no paper fails the build, as
+does a paper claimed by two explainers. Leave the field out for a piece that
+belongs to no paper.
 
 WHAT A PAGE OWNS, AND WHAT IT DOES NOT
 

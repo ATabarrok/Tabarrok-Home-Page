@@ -1,28 +1,35 @@
-# Explainers, one block per piece. Each is served at /explainers/<slug>/.
+# Explainers, one block per piece.
 #
-# This file is the single place an explainer is declared. It owns the title,
-# the blurb and the papers the piece covers, whatever the body is written in.
-# Every paper listed under `papers` gets an "Explainer" chip on /research/
-# pointing here, and an id that matches no paper fails the build.
+# This file is the single place an explainer is declared. It owns the title and
+# the blurb, and it is what puts the piece on /explainers/.
 #
-# A body comes in one of two flavours.
+# A body comes in one of three flavours, and at most one field may say which.
 #
-#   body: something.md   Prose. Write src/content/explainers/something.md and
-#                        put nothing in it but the writing — no frontmatter is
-#                        needed, since the title and blurb are already here.
-#                        Optional `updated: 2026-08-02` frontmatter shows a
-#                        date under the title.
+#   body: something.md   Prose, served at /explainers/<slug>/. Write
+#                        src/content/explainers/something.md and put nothing in
+#                        it but the writing — no frontmatter is needed, since
+#                        the title and blurb are already here. Optional
+#                        `updated: 2026-08-02` shows a date under the title.
 #
-#   body omitted         A hand-built page at src/pages/explainers/<slug>.astro,
+#   url: https://...     A piece that lives somewhere else. Nothing is built;
+#                        every link to it points offsite.
+#
+#   neither              A hand-built page at src/pages/explainers/<slug>.astro,
 #                        for anything prose cannot carry: charts, tables,
 #                        interactive figures. Wrap its content in
 #                        <div class="explainer"> and import
-#                        src/styles/explainer.css to get the shared furniture.
+#                        src/styles/explainer.css for the shared furniture.
 #
-# Both flavours share the frame, the wrapper class and the "papers behind this"
-# block, so a reader cannot tell which is which. Start in markdown; switch a
-# piece to a page later by writing the .astro file and deleting the `body`
-# line. The URL does not change.
+# `papers` is optional. List paper ids and each of those papers gets an
+# "Explainer" chip on /research/ pointing here; an id matching no paper fails
+# the build. Leave it out for a piece that belongs to no paper.
+
+- slug: rent-control
+  title: "Rent control: the ceiling trap"
+  description: >-
+    Why the most popular idea in housing policy keeps failing the people it is
+    meant to help.
+  url: https://mason.gmu.edu/~atabarro/RentControl/
 
 - slug: refund-bonuses
   title: The refund bonus

@@ -63,7 +63,6 @@ const updatedLabel = updated?.toLocaleDateString('en-US', {
             Updated <time datetime={updated.toISOString().slice(0, 10)}>{updatedLabel}</time>
           </div>
         )}
-        <PapersBehind papers={entry.papers} />
       </div>
     </header>
 
@@ -71,6 +70,14 @@ const updatedLabel = updated?.toLocaleDateString('en-US', {
       <div class="wrap measure md-body">
         <Content />
       </div>
+
+      {/* After the writing, not before it: a reader came here for the argument,
+          not for a reading list. */}
+      {entry.papers.length > 0 && (
+        <div class="wrap measure">
+          <PapersBehind papers={entry.papers} label="The papers behind this" />
+        </div>
+      )}
     </section>
   </div>
 </Base>
