@@ -3,7 +3,7 @@
 # year. Optional: url, links, comment, abstract, citation. `id` must be
 # unique and is the slug for a future /research/<id>/ explainer page.
 
-- id: a-test-of-the-coase-conjecture-using-prices
+- id: coase-conjecture-electronic-books
   title: A Test of the Coase Conjecture Using Prices of Electronic Books
   url: https://doi.org/10.1002/soej.70052
   year: 2026
