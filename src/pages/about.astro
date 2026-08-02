@@ -69,14 +69,16 @@ import portrait from '../assets/img/alex-tabarrok.webp';
       </p>
     </div>
 
-    <aside class="rail">
-      <Image
-        src={portrait}
-        alt="Alex Tabarrok"
-        widths={[340, 680]}
-        sizes="17rem"
-        loading="eager"
-      />
+    <Image
+      class="portrait"
+      src={portrait}
+      alt="Alex Tabarrok"
+      widths={[340, 680]}
+      sizes="17rem"
+      loading="eager"
+    />
+
+    <aside class="rail" aria-label="Links">
       <ul class="quick">
         <li><a href="https://mason.gmu.edu/~atabarro/TabarrokCV.pdf">Curriculum vitae (PDF)</a></li>
         <li><a href="https://scholar.google.com/citations?user=3syuONQAAAAJ&hl=en">Google Scholar page</a></li>
@@ -89,22 +91,43 @@ import portrait from '../assets/img/alex-tabarrok.webp';
 </Base>
 
 <style>
+  /* Portrait and links are separate grid items, not one sidebar, so each can
+     be placed independently. Stacked together they pushed the biography a
+     full screen down the page on a phone. */
   .about-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 17rem;
-    gap: clamp(1.5rem, 5vw, 3.5rem);
+    grid-template-areas:
+      'prose portrait'
+      'prose links';
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(1.5rem, 5vw, 3.5rem);
+    row-gap: 1.25rem;
     align-items: start;
   }
 
+  .prose { grid-area: prose; }
+  .portrait { grid-area: portrait; }
+  .rail { grid-area: links; }
+
+  /* Portrait first, then the biography, then the links. */
   @media (max-width: 860px) {
-    .about-grid { grid-template-columns: 1fr; }
-    .rail { order: -1; max-width: 18rem; }
+    .about-grid {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas:
+        'portrait'
+        'prose'
+        'links';
+      grid-template-rows: none;
+      row-gap: 1.75rem;
+    }
+
+    .portrait { max-width: 18rem; }
   }
 
-  .rail img {
+  .portrait {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    margin-bottom: 1.25rem;
   }
 
   .quick {
