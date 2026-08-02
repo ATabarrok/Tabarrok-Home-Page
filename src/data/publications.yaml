@@ -54,7 +54,7 @@
 
 - id: operation-warp-speed-negative-and-positive-lessons-for
   title: "Operation Warp Speed: Negative and Positive Lessons for New Industrial Policy"
-  url: null
+  url: https://doi.org/10.1162/inov.a.268
   year: 2025
   abstract: >-
     Operation Warp Speed (OWS) was a U.S. government initiative to accelerate the development,
@@ -72,8 +72,9 @@
     lessons for other industrial policies? These are the questions this paper attempts to
     answer.
   citation: >-
-    Tabarrok, Alex. 2025- forthcoming. Operation Warp Speed: Negative and Positive Lessons for
-    New Industrial Policy. Innovations: Technology, Governance, Globalization.
+    Tabarrok, Alex. 2025. "Operation Warp Speed: Negative and Positive Lessons for New Industrial
+    Policy." Innovations: Technology, Governance, Globalization 14 (1-2): 2-22.
+    [https://doi.org/10.1162/inov.a.268](https://doi.org/10.1162/inov.a.268).
 
 - id: the-economic-way-of-thinking-in-a-pandemic
   title: "The Economic Way of Thinking in a Pandemic"
@@ -1101,7 +1102,7 @@
 
 - id: court-politics-the-political-economy-of-tort-awards
   title: "Court Politics: The Political Economy of Tort Awards"
-  url: null
+  url: https://doi.org/10.1086/467421
   year: 1999
   comment: >-
     In most respects superseded by The Effect of Electoral Institutions on Tort Awards which

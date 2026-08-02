@@ -79,6 +79,9 @@ const EXPECTED_MISSING = {
     // "http://TooSlow.pdf", a filename typed into a link field. The paper's
     // DOI link is intact.
     ungated: 1,
+    // Operation Warp Speed is no longer forthcoming: CrossRef records it as
+    // published 2025-11-14, Innovations 14 (1-2): 2-22. Citation updated.
+    forthcoming: 1,
   },
   consulting: {
     // Intro sentence was cut off ("for many firms including.") and is now
