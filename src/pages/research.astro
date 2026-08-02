@@ -139,6 +139,33 @@ const decades = rows
 </Base>
 
 <style>
+  /* One text column for the whole page, indented past the year gutter, so the
+     intro, the toolbar, the section headings and every paper title share a
+     left and right edge. Only the years and decade markers hang left of it. */
+  .eyebrow,
+  .page-title,
+  .intro,
+  .toolbar,
+  .section-head,
+  .no-results,
+  .nonref {
+    margin-left: calc(var(--gutter) + 1.75rem);
+    max-width: var(--entry);
+  }
+
+  @media (max-width: 46rem) {
+    .eyebrow,
+    .page-title,
+    .intro,
+    .toolbar,
+    .section-head,
+    .no-results,
+    .nonref {
+      margin-left: 0;
+      max-width: none;
+    }
+  }
+
   .intro { margin-bottom: calc(var(--step) * 1.5); }
   .intro p { color: var(--ink-soft); }
 
@@ -242,16 +269,10 @@ const decades = rows
     padding: 2rem 0;
   }
 
-  /* Indented to line up with the publication entries above. */
   .nonref {
     list-style: none;
     padding: 0;
-    margin: 0 0 0 calc(var(--gutter) + 1.75rem);
-    max-width: var(--entry);
-  }
-
-  @media (max-width: 46rem) {
-    .nonref { margin-left: 0; }
+    margin-block: 0;
   }
 
   .nonref li {

@@ -4,11 +4,17 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
-  /** Omit on the home page, which carries its own hero heading. */
+  /**
+   * The home page runs a full-bleed hero and a card grid, so it keeps the
+   * wide frame and manages its own `.wrap`. Text pages use a narrower frame
+   * so the header, any toolbar, and the prose share one right edge instead
+   * of leaving a third of the page empty beside the reading column.
+   */
   wide?: boolean;
 }
 
 const { title, description = '', wide = false } = Astro.props;
+const frame = wide ? '70rem' : '52rem';
 const path = Astro.url.pathname;
 
 const nav = [
@@ -35,7 +41,7 @@ const full = title === 'Alex Tabarrok' ? title : `${title} — Alex Tabarrok`;
     <meta name="theme-color" content="#131317" media="(prefers-color-scheme: dark)" />
   </head>
 
-  <body>
+  <body style={`--page: ${frame}`}>
     <a class="skip" href="#main">Skip to content</a>
 
     <header class="site-head">
