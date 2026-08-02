@@ -350,9 +350,6 @@
   title: "Too slow for the urban march: Litigations and the real estate market in Mumbai, India"
   url: https://doi.org/10.1016/j.jue.2021.103330
   year: 2021
-  links:
-    - label: ungated
-      url: http://TooSlow.pdf
   abstract: >-
     We use data from the universe of approximately 3000 ongoing formal real estate projects in
     Mumbai to show that 27.3% of the projects and 42.9% of the built-up space is under
@@ -778,7 +775,7 @@
 
 - id: what-are-private-governments-worth
   title: "What are Private Governments Worth?"
-  url: http://www.cato.org/pubs/regulation/regv28n3/v28n3-2.pdf
+  url: https://www.cato.org/sites/cato.org/files/serials/files/regulation/2005/9/v28n3-2.pdf
   year: 2005
   abstract: >-
     Comment (with Amanda Agan) ABSTRACT: “Private governments” such as homeowners associations
@@ -864,7 +861,7 @@
 
 - id: contingency-fees-settlement-delay-and-low-quality-litigation
   title: "Contingency Fees, Settlement Delay and Low-Quality Litigation: Empirical Evidence from Two Datasets"
-  url: http://jleo.oupjournals.org/cgi/reprint/19/2/517.pdf
+  url: https://doi.org/10.1093/jleo/ewg019
   year: 2003
   comment: >-
     (with Eric Helland)
@@ -1004,7 +1001,7 @@
 
 - id: an-economic-theory-of-avant-garde-and-popular
   title: "An Economic Theory of Avant-Garde and Popular Art, or High and Low Culture"
-  url: http://links.jstor.org/sici?sici=0038-4038%28200010%2967%3A2%3C232%3AAETOAA%3E2.0.CO%3B2-X
+  url: https://www.jstor.org/stable/1061469
   year: 2000
   abstract: >-
     (The above is a link to the JSTOR PDF. [Email me](mailto:Alex.Tabarrok@gmail.com) if you do
@@ -1022,7 +1019,7 @@
 
 - id: assessing-the-fda-via-the-anomaly-of-off
   title: "Assessing the FDA via the Anomaly of Off-Label Drug Prescriptions"
-  url: http://www.independent.org/publications/tir/article.asp?issueID=21&articleID=240
+  url: https://www.independent.org/publications/tir/article.asp?id=240
   year: 2000
   abstract: >-
     ABSTRACT: Most American hospital patients are given drugs not approved by the U.S. Food and
@@ -1196,7 +1193,7 @@
 
 - id: the-separation-of-commercial-and-investment-banking-morgans
   title: "The Separation of Commercial and Investment Banking: Morgans Vs Rockefellers"
-  url: http://www.qjae.org/journals/qjae/pdf/qjae1_1_1.pdf
+  url: https://cdn.mises.org/qjae1_1_1.pdf
   year: 1998
   comment: >-
     Too much public choice takes a correlation as proof of (special interest) causation. This
@@ -1243,7 +1240,7 @@
 
 - id: genetic-testing-and-human-welfare-reply-to-hall
   title: "Genetic Testing and Human Welfare: Reply to Hall"
-  url: http://www.sciencedirect.com/science?_ob=MImg&_imagekey=B6V8K-3VW8PB3-G-1&_cdi=5873&_orig=browse&_coverDate=06%2F30%2F1996&_sk=999849996&wchp=dGLbVzb-lSztz&_acct=C000035118&_version=1&_userid=650615&md5=1a39e41427832b29e716470f687711de&ie=f.pdf
+  url: https://doi.org/10.1016/0167-6296(95)00026-7
   year: 1996
   abstract: >-
     ABSTRACT: Short reply.
@@ -1287,7 +1284,7 @@
 
 - id: genetic-testing-an-economic-and-contractarian-analysis
   title: "Genetic Testing: An Economic and Contractarian Analysis"
-  url: http://www.sciencedirect.com/science?_ob=MImg&_imagekey=B6V8K-45DMNXW-G-1&_cdi=5873&_orig=browse&_coverDate=03%2F31%2F1994&_sk=999869998&wchp=dGLbVtb-lSzBS&_acct=C000035118&_version=1&_userid=650615&md5=651b9a2c5468780131fc578adcb7381e&ie=f.pdf
+  url: https://doi.org/10.1016/0167-6296(94)90005-1
   year: 1994
   abstract: >-
     ABSTRACT: Medical researchers are rapidly identifying the genetic causes of many diseases.
@@ -1304,7 +1301,7 @@
 
 - id: a-survey-critique-and-new-defense-of-term
   title: "A Survey, Critique, and New Defense of Term Limits"
-  url: http://www.cato.org/pubs/journal/cjv14n2-9.html
+  url: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/1994/11/cj14n2-9.pdf
   year: 1994
   abstract: >-
     ABSTRACT: Like the title says.
@@ -1326,7 +1323,7 @@
 
 - id: the-preferred-tax-type-comment-on-herbener
   title: "The Preferred Tax Type: Comment On Herbener"
-  url: http://www.qjae.org/journals/rae/pdf/rae5_2_5.pdf
+  url: https://doi.org/10.1007/BF02426930
   year: 1991
   abstract: >-
     Abstract: "Austrian" economists sometimes object that indifference curves are a poor tool

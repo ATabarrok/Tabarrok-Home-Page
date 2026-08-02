@@ -33,7 +33,13 @@ const full = title === 'Alex Tabarrok' ? title : `${title} — Alex Tabarrok`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{full}</title>
     {description && <meta name="description" content={description} />}
-    <link rel="canonical" href={new URL(path, Astro.site)} />
+    {/* The 404 page is not a real URL, so it gets neither a canonical nor an
+        invitation to index it. */}
+    {path === '/404/' ? (
+      <meta name="robots" content="noindex" />
+    ) : (
+      <link rel="canonical" href={new URL(path, Astro.site)} />
+    )}
     <meta property="og:title" content={full} />
     <meta property="og:type" content="website" />
     {description && <meta property="og:description" content={description} />}

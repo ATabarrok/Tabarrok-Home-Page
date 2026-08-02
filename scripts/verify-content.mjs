@@ -16,12 +16,16 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
+// Mirrors astro.config.mjs: the build output can be redirected out of the
+// Dropbox-synced tree via ASTRO_OUT_DIR.
+const OUT = process.env.ASTRO_OUT_DIR ?? join(root, 'dist');
+
 const PAGES = [
-  { name: 'home', built: 'dist/index.html', path: '/' },
-  { name: 'about', built: 'dist/about/index.html', path: '/about/' },
-  { name: 'teaching', built: 'dist/teaching/index.html', path: '/teaching/' },
-  { name: 'research', built: 'dist/research/index.html', path: '/research/' },
-  { name: 'consulting', built: 'dist/consulting/index.html', path: '/consulting/' },
+  { name: 'home', built: 'index.html', path: '/' },
+  { name: 'about', built: 'about/index.html', path: '/about/' },
+  { name: 'teaching', built: 'teaching/index.html', path: '/teaching/' },
+  { name: 'research', built: 'research/index.html', path: '/research/' },
+  { name: 'consulting', built: 'consulting/index.html', path: '/consulting/' },
 ];
 
 // `--base https://…` checks a deployed site instead of the local dist/.
@@ -62,8 +66,19 @@ const EXPECTED_MISSING = {
     ftn1: 1, ftn2: 1,
     // The 21 "Comment:"/"Comments:" labels became styled markup.
     comment: 15, comments: 6,
-    // A stray trailing period made this DOI 404; it resolves without one.
-    // (Tokenises away, listed here so the decision is recorded.)
+    // Baseline artefacts, not losses. The WordPress markup put the spacing
+    // inside the anchor ("final comments</a>on the survey") and split one
+    // link across two anchors ("…and</a><a>Negligence…"), so the captured
+    // text ran the words together. The rebuilt pages read correctly.
+    commentson: 1, andnegligence: 1,
+    // "Available online at: <url>" on the Abigail Alliance brief — the host
+    // (regulation2point0.org) is gone with no capture, so the dangling lead-in
+    // went with the link. The citation itself is untouched.
+    available: 1, online: 1, at: 1,
+    // The "ungated" chip on "Too slow for the urban march" pointed at
+    // "http://TooSlow.pdf", a filename typed into a link field. The paper's
+    // DOI link is intact.
+    ungated: 1,
   },
   consulting: {
     // Intro sentence was cut off ("for many firms including.") and is now
@@ -80,51 +95,115 @@ function words(s) {
     s
       .toLowerCase()
       .replace(/&[a-z]+;/g, ' ')
-      // Spaces in PDF filenames are percent-encoded in hrefs.
-      .replace(/%20/g, ' ')
-      // Links were upgraded to https and de-www'd; compare hosts and paths,
-      // not the scheme boilerplate, on both sides.
-      .replace(/https?:\/\//g, ' ')
-      .replace(/\bwww\./g, ' ')
       .match(/[a-z0-9]+/g) ?? []
   );
 }
 
+/** Every http(s) URL in a string, normalised so trivia does not count. */
+function urls(s) {
+  const found = s.match(/https?:\/\/[^\s"'<>()\]]+/g) ?? [];
+  return new Set(found.map(normaliseUrl));
+}
+
+function normaliseUrl(u) {
+  return u
+    .toLowerCase()
+    .replace(/^https?:\/\//, '')
+    .replace(/^www\./, '')
+    .replace(/%7e/g, '~')
+    .replace(/[.,;:)\]]+$/, '')
+    .replace(/\/$/, '');
+}
+
 /**
- * Baseline text keeps links as `[text](url)` and headings as `[H2] `.
- * Drop the heading markers and the embedded images (theme chrome that the
- * rebuild replaces), but keep link text and link URLs — both are content.
+ * Baseline prose, with links reduced to their visible text.
+ *
+ * URLs are compared separately (see linkCheck): comparing them as words meant
+ * every legitimate dead-link repair showed up as dozens of "missing" tokens,
+ * which would eventually drown out a real content regression.
  */
 function baselineText(src) {
-  return (
-    src
-      .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
-      .replace(/\[H[1-6]\]/g, ' ')
-      // A link whose text is its own URL counted that URL twice on the old
-      // page. The rebuild prints a shortened label over the same href, so
-      // count it once.
-      .replace(/\[\s*([^\]]+?)\s*\]\(\s*\1\s*\)/g, '$1')
-      // Internal links are relative now; the origin is not content.
-      .replace(/https?:\/\/(?:www\.)?alextabarrok\.com/g, ' ')
-  );
+  return src
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[H[1-6]\]/g, ' ')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/https?:\/\/[^\s)]+/g, ' ');
+}
+
+/** Visible text of a built page, with markup and URLs removed. */
+function pageText(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<head[\s\S]*?<\/head>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/https?:\/\/[^\s)]+/g, ' ');
+}
+
+/** Hrefs of a built page, excluding the chrome the rebuild introduced. */
+function pageUrls(html) {
+  const body = html.replace(/<head[\s\S]*?<\/head>/gi, ' ');
+  const found = [...body.matchAll(/href="(https?:[^"]+)"/gi)].map((m) => m[1]);
+  return new Set(found.map(normaliseUrl));
 }
 
 /**
- * Strip a built page to comparable text. Hrefs are promoted to text so a
- * URL that the old page printed inline still counts as present.
+ * Links deliberately repointed because the original target died.
+ *
+ * Keys are the URL as it appeared on the WordPress site; values say where it
+ * went and why. A baseline URL that is neither still present nor listed here
+ * is a link we lost by accident, and fails the run.
  */
-function pageText(html) {
-  const body = html
-    .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<head\b[\s\S]*?<\/head>/gi, ' ');
+const REPLACED_LINKS = {
+  'mason.gmu.edu/~atabarro/www.fdareview.org': 'fdareview.org — domain had been pasted into a GMU path',
+  'cato.org/pubs/regulation/regv28n3/v28n3-2.pdf': 'cato.org serials path — Cato reorganised /pubs/',
+  'cato.org/pubs/regulation/regv27n2/v27n2-8.pdf': 'cato.org serials path',
+  'cato.org/pubs/regulation/regv24n4/v24n4-1.pdf': 'cato.org serials path',
+  'cato.org/pubs/regulation/regv23n2/helland.pdf': 'cato.org serials path',
+  'cato.org/pubs/journal/cjv14n2-9.html': 'cato.org serials path',
+  'cato.org/pubs/journal/cj20n1/cj20n1.html': 'cato.org serials path (book-reviews section)',
+  'qjae.org/journals/qjae/pdf/qjae1_1_1.pdf': 'cdn.mises.org — qjae.org no longer resolves',
+  'qjae.org/journals/rae/pdf/rae5_2_5.pdf': 'Springer DOI 10.1007/BF02426930',
+  'jleo.oupjournals.org/cgi/reprint/19/2/517.pdf': 'DOI 10.1093/jleo/ewg019',
+  'independent.org/publications/tir/article.asp?issueid=21&articleid=240':
+    'independent.org article.asp?id=240',
+  'thinkpragati.com/opinion/1863/dont-blame-empire': 'Wayback capture — site gone',
+  'ethics.harvard.edu/covid-roadmap': 'Wayback capture',
+  'ethics.harvard.edu/pandemic-resilience-supplement': 'Wayback capture',
+  'www-jstor-org.mutex.gmu.edu/stable/24562393':
+    'public jstor.org/stable/24562393 — the proxy only resolves on campus',
+};
 
-  // Collect hrefs separately: substituting them in place would leave the URL
-  // inside the tag, where the tag-strip below would eat it.
-  const hrefs = [...body.matchAll(/href="([^"]*)"/gi)].map((m) => m[1]);
+/**
+ * Baseline URLs deliberately unlinked because the target is gone and no
+ * replacement or archive capture exists. The citation text is untouched in
+ * every case — only the anchor was removed, because a link to a 404 (or to a
+ * domain-sale page) is worse than plain text.
+ */
+const DROPPED_LINKS = new Set([
+  // Not a URL at all — a filename typed into a link field on the old site.
+  'tooslow.pdf',
+  // Domain is now a HugeDomains parking page; apex and www both 404.
+  'wireline.io',
+  // Host retired by EBSCO, no Wayback capture.
+  'connection.ebscohost.com/c/articles/6630465/time-end-americas-drug-lag',
+  // Document removed by Heartland, no Wayback capture.
+  'heartland.org/policy-documents/better-way-elect-school-boards',
+  // AEI-Brookings regulation2point0.org is gone, no Wayback capture.
+  'regulation2point0.org/wp-content/uploads/downloads/2010/04/brief07-01_topost.pdf',
+  // Repository deleted; the wirelineio org remains but the work does not.
+  'github.com/wirelineio/mechanisms',
+]);
 
-  return body.replace(/<[^>]+>/g, ' ') + ' ' + hrefs.join(' ');
-}
+/** URL prefixes whose exact form is allowed to drift (JSTOR ids, old sici). */
+const URL_EXEMPT = [
+  'links.jstor.org', // sici-style link replaced by the stable JSTOR id
+  'sciencedirect.com/science?_ob=mimg', // session-scoped legacy Elsevier URLs
+  // Two GMU PDFs have literal spaces in their filenames. The baseline capture
+  // truncates them at the first space; the rebuilt pages percent-encode them,
+  // which is why they no longer match as strings.
+  'mason.gmu.edu/~atabarro/2022',
+];
 
 function counts(list) {
   const m = new Map();
@@ -146,7 +225,7 @@ let failed = false;
 if (BASE) console.log(`Checking deployed site at ${BASE}\n`);
 
 for (const page of PAGES) {
-  const builtPath = join(root, page.built);
+  const builtPath = join(OUT, page.built);
   const basePath = join(root, 'scripts/baseline', `${page.name}.txt`);
 
   let html;
@@ -162,7 +241,7 @@ for (const page of PAGES) {
     html = await res.text();
   } else {
     if (!existsSync(builtPath)) {
-      console.error(`✗ ${page.name}: missing build output ${page.built}`);
+      console.error(`✗ ${page.name}: missing build output ${builtPath}`);
       failed = true;
       continue;
     }
@@ -189,6 +268,28 @@ for (const page of PAGES) {
     if (dropped.length > 40) {
       console.error(`      … and ${dropped.length - 40} more`);
     }
+  }
+
+  // Links are checked separately from prose so that repairing a dead URL
+  // does not read as losing content.
+  const oldUrls = urls(readFileSync(basePath, 'utf8'));
+  const newUrls = pageUrls(html);
+  const lostLinks = [...oldUrls].filter(
+    (u) =>
+      !newUrls.has(u) &&
+      !REPLACED_LINKS[u] &&
+      !DROPPED_LINKS.has(u) &&
+      !URL_EXEMPT.some((p) => u.startsWith(p)) &&
+      !u.startsWith('alextabarrok.com') &&
+      !u.includes('wp-content/uploads'),
+  );
+
+  if (lostLinks.length === 0) {
+    console.log(`    ${oldUrls.size} source links accounted for`);
+  } else {
+    failed = true;
+    console.error(`✗ ${page.name}: ${lostLinks.length} link(s) vanished with no replacement`);
+    for (const u of lostLinks.slice(0, 20)) console.error(`      ${u}`);
   }
 }
 

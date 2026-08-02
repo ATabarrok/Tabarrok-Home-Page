@@ -1,58 +1,65 @@
-# Dead links inherited from the WordPress site
+# Link repairs
 
-From `npm run links` on 2026-08-01. These were already broken before the
-rebuild; none were introduced by it. Nothing here is auto-fixed, because the
-right replacement is a judgement call in every case.
+State after the 2026-08-01 audit and repair pass. Re-run `npm run links` to
+refresh. Every replacement below was probed and returns 200, or is a DOI whose
+`doi.org` redirect resolves to the publisher.
 
-Re-run `npm run links` any time to refresh this picture.
+External links resolving: **90 → 105** of 162.
 
-## Not resolving at all
+## Repaired
 
-| Link | Where | Note |
+| Was | Now | Why |
 |---|---|---|
-| `http://TooSlow.pdf` | "Too slow for the urban march" → *ungated* | Not a URL. Someone typed a filename into the link field. The intended target is unknown — the paper's main DOI link works, so the simplest fix is deleting this `links:` entry in `publications.yaml`. |
-| `http://www.qjae.org/journals/qjae/pdf/qjae1_1_1.pdf` | Morgans vs Rockefellers | qjae.org no longer resolves. Try mises.org. |
-| `http://www.qjae.org/journals/rae/pdf/rae5_2_5.pdf` | Preferred Tax Type | Same. |
-| `http://jleo.oupjournals.org/cgi/reprint/19/2/517.pdf` | Contingency Fees | oupjournals.org is retired; use the academic.oup.com URL. |
-| `http://connection.ebscohost.com/...` | Time to End America's Drug Lag | EBSCO retired this host. |
+| `mason.gmu.edu/~atabarro/www.FDAReview.org` | `https://www.fdareview.org/` | The domain had been pasted into a GMU path. |
+| `cato.org/pubs/regulation/regv28n3/v28n3-2.pdf` | `cato.org/sites/cato.org/files/serials/files/regulation/2005/9/v28n3-2.pdf` | Cato reorganised `/pubs/` into `/serials/`. |
+| `…/regv27n2/v27n2-8.pdf` | `…/regulation/2004/7/v27n2-8.pdf` | Same. |
+| `…/regv24n4/v24n4-1.pdf` | `…/regulation/2001/12/v24n4-1.pdf` | Same. |
+| `…/regv23n2/helland.pdf` | `…/regulation/2000/7/helland.pdf` | Same. |
+| `cato.org/pubs/journal/cjv14n2-9.html` | `…/cato-journal/1994/11/cj14n2-9.pdf` | Same. |
+| `cato.org/pubs/journal/cj20n1/cj20n1.html` | `…/cato-journal/2000/5/cj20n1-16.pdf` | The *Law's Order* review is in the book-reviews section; PDF text confirmed. |
+| `qjae.org/journals/qjae/pdf/qjae1_1_1.pdf` | `https://cdn.mises.org/qjae1_1_1.pdf` | qjae.org no longer resolves; Mises hosts the PDFs. |
+| `qjae.org/journals/rae/pdf/rae5_2_5.pdf` | `https://doi.org/10.1007/BF02426930` | Same, via the Springer DOI. |
+| `jleo.oupjournals.org/cgi/reprint/19/2/517.pdf` | `https://doi.org/10.1093/jleo/ewg019` | oupjournals.org is retired. |
+| `links.jstor.org/sici?sici=0038-4038…` | `https://www.jstor.org/stable/1061469` | sici-style links are gone; DOI `10.2307/1061469` gives the stable id. |
+| `independent.org/…?issueID=21&articleID=240` | `independent.org/publications/tir/article.asp?id=240` | Verified by page title. |
+| `sciencedirect.com/science?_ob=MImg&…` (×2) | `10.1016/0167-6296(94)90005-1`, `10.1016/0167-6296(95)00026-7` | Session-scoped 2005-era Elsevier URLs, replaced with DOIs. |
+| `thinkpragati.com/opinion/1863/dont-blame-empire/` | Wayback capture (2025-09-17) | Site gone. |
+| `ethics.harvard.edu/Covid-Roadmap` | Wayback capture (2024-08-06) | Page removed. |
+| `ethics.harvard.edu/pandemic-resilience-supplement` | Wayback capture (2024-07-30) | Page removed. |
 
-## 404
+DOIs were found via the CrossRef API rather than guessed, and each was checked
+to resolve to the right publisher record.
 
-| Link | Where |
-|---|---|
-| `http://www.cato.org/pubs/regulation/regv28n3/v28n3-2.pdf` | What are Private Governments Worth? |
-| `http://www.cato.org/pubs/regulation/regv27n2/v27n2-8.pdf` | Who Certifies Off Label? |
-| `http://www.cato.org/pubs/regulation/regv24n4/v24n4-1.pdf` | The Blessed Monopolies |
-| `http://www.cato.org/pubs/regulation/regv23n2/helland.pdf` | Exporting Tort Awards |
-| `http://www.cato.org/pubs/journal/cj20n1/cj20n1.html` | Review of Law's Order |
-| `http://www.cato.org/pubs/journal/cjv14n2-9.html` | Term Limits |
-| `http://links.jstor.org/sici?sici=0038-4038...` | Avant-Garde and Popular Art |
-| `http://www.independent.org/publications/tir/article.asp?issueID=21&articleID=240` | Assessing the FDA |
-| `http://heartland.org/policy-documents/better-way-elect-school-boards` | A Better Way to Elect School Boards |
-| `http://regulation2point0.org/.../Brief07-01_topost.pdf` | Abigail Alliance amicus |
-| `https://ethics.harvard.edu/Covid-Roadmap` | Roadmap to Pandemic Resilience |
-| `https://ethics.harvard.edu/pandemic-resilience-supplement` | Pandemic Resilience: Getting It Done |
-| `https://github.com/wirelineio/mechanisms` | Fee Auctions for Block Inclusion |
-| `https://www.thinkpragati.com/opinion/1863/dont-blame-empire/` | Don't Blame The Empire |
-| `https://mason.gmu.edu/~atabarro/www.FDAReview.org` | FDAReview.org — should probably just be `https://www.fdareview.org/` |
-| `https://www.wireline.io/` | About + Consulting — company appears defunct |
+## Unlinked — dead with no replacement
 
-The cato.org ones all share a cause: Cato reorganised `/pubs/` years ago. Most
-of these papers are also on `mason.gmu.edu/~atabarro/`, which is the more
-durable host.
+Citation text is untouched in every case; only the anchor was removed. A link
+to a 404, or to a domain-sale page, is worse than plain text.
 
-## Not broken, despite what the checker says
+| Link | Entry | Why |
+|---|---|---|
+| `http://TooSlow.pdf` | Too slow for the urban march | Not a URL — a filename typed into a link field. The paper's DOI link is intact. |
+| `wireline.io` | Wireline (About + Consulting) | **Now a HugeDomains "for sale" parking page**; apex and `www` both 404. |
+| `connection.ebscohost.com/c/articles/6630465/…` | Time to End America's Drug Lag | Host retired by EBSCO. No Wayback capture. |
+| `heartland.org/policy-documents/better-way-elect-school-boards` | A Better Way to Elect School Boards | Document removed. No Wayback capture. |
+| `regulation2point0.org/…/Brief07-01_topost.pdf` | Abigail Alliance amicus brief | AEI-Brookings site gone. No Wayback capture. Checked AEI and SSRN without luck. |
+| `github.com/wirelineio/mechanisms` | Fee Auctions for Block Inclusion | Repo deleted. The `wirelineio` org still exists but the work does not. |
 
-Roughly 55 links return `403` to an automated request but work fine in a
-browser: `doi.org`, `jstor.org`, `sciencedirect.com`, `journals.uchicago.edu`,
-`sagepub.com`, `pnas.org`, `science.org`, `emerald.com`, `mercatus.org`, and
-`marginalrevolution.com` among them. These publishers block non-browser
-traffic. Treat a 403 in the report as "unknown", not "dead".
+If you have local copies of any of these, dropping them on
+`mason.gmu.edu/~atabarro/` and pointing the citation there would be the durable
+fix — that host has proven the most stable of anything on the page.
+
+## Not broken, despite the report
+
+About 55 links return `403` to an automated request but work fine in a browser:
+`doi.org`, `jstor.org`, `sciencedirect.com`, `journals.uchicago.edu`,
+`sagepub.com`, `pnas.org`, `science.org`, `emerald.com`, `academic.oup.com`,
+`mercatus.org` and `marginalrevolution.com` among them. These publishers block
+non-browser traffic. Treat a 403 as "unknown", not "dead".
 
 ## One link with no scheme
 
 `sobelrs.people.cofc.edu/UC/The%20Rule%20of%20Law.pdf` (Judicial elections,
 electoral incentives, and checks and balances) has no `http://` prefix in the
-source. It renders as plain text rather than a link, which is deliberate — the
-renderer refuses to build an href from a scheme-less string. Add `https://` in
-`nonrefereed.yaml` to make it a link again, once you've confirmed it resolves.
+source, so it renders as plain text rather than a link. That is deliberate —
+the renderer refuses to build an href from a scheme-less string. Add `https://`
+in `nonrefereed.yaml` once you have confirmed it resolves.

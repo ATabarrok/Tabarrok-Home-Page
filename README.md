@@ -92,6 +92,27 @@ is served by Vercel, so it 404s under `npm run dev` — that is expected.
   copied. If that host ever goes away, `npm run links` will say so loudly.
 - Images live in `src/assets/img/` and go through Astro's image pipeline
   (resized, converted to WebP). Put new images there, not in `public/`.
-- `dist/`, `node_modules/` and `.astro/` are marked
-  `com.dropbox.ignored` so Dropbox does not sync build output and lock files
-  mid-build. If you clone this elsewhere under Dropbox, do the same.
+### Dropbox and the build
+
+The project lives in a Dropbox-synced folder, and Dropbox holds handles on
+files Astro is trying to delete. Builds **emit correct output** but often exit
+non-zero on the final cleanup step, with `EBUSY ... rmdir '.astro/chunks'` or
+similar. `npm run verify` passing is the signal that the build was fine.
+
+Mitigations already in place: `dist/`, `node_modules/` and `.astro/` are marked
+`com.dropbox.ignored`, and `astro.config.mjs` honours `ASTRO_OUT_DIR` so the
+output can be written outside the synced tree:
+
+```powershell
+$env:ASTRO_OUT_DIR = "$env:TEMP\tabarrok-build\dist"
+npm run build; npm run verify
+```
+
+Neither fully removes the race, because Astro recreates `.astro/` on every
+build and the ignore marker does not survive recreation.
+
+The real fix is to stop syncing this folder: the repo is on GitHub and Vercel
+builds from there, so Dropbox is no longer the backup. Right-click the folder
+in Dropbox → *Make offline / ignore*, or move the working copy outside
+Dropbox entirely. None of this affects Vercel, which builds on its own
+machines and sets no `ASTRO_OUT_DIR`.
