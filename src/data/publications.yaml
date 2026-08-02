@@ -3,6 +3,27 @@
 # year. Optional: url, links, comment, abstract, citation. `id` must be
 # unique and is the slug for a future /research/<id>/ explainer page.
 
+- id: a-test-of-the-coase-conjecture-using-prices
+  title: A Test of the Coase Conjecture Using Prices of Electronic Books
+  url: https://doi.org/10.1002/soej.70052
+  year: 2026
+  comment: >-
+    (with Tim Groseclose)
+  abstract: >-
+    The Coase Conjecture predicts that a durable-goods monopolist without commitment will rapidly
+    cut price toward marginal cost. We test this prediction in the electronic-book market using
+    release-day prices. To proxy for marginal cost, we use competitive prices of public-domain
+    electronic books on the same platforms. Release-day prices for copyrighted electronic books
+    are far above this cost benchmark—typically more than 30 times higher—and prices remain
+    largely flat over the first month. Sales also persist well beyond release, contradicting
+    immediate market clearing. These patterns are hard to reconcile with standard no-commitment
+    models but are consistent with models featuring commitment to future prices and with
+    outside-option models.
+  citation: >-
+    Groseclose, Tim, and Alex Tabarrok. 2026. “A Test of the Coase Conjecture Using Prices of
+    Electronic Books.” Southern Economic Journal, May 23.
+    [https://doi.org/10.1002/soej.70052](https://doi.org/10.1002/soej.70052).
+
 - id: two-peas-in-a-pod-democracy-and-capitalism
   title: "Two Peas in a Pod: Democracy and Capitalism"
   url: https://academic.oup.com/book/60867/chapter/530291025
