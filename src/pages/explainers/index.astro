@@ -1,0 +1,129 @@
+---
+/**
+ * The explainers index. Reads the same YAML that declares each piece, so a new
+ * block appears here, on /research/ as a chip, and at its own URL, with no
+ * edit to this page.
+ */
+import Base from '../../layouts/Base.astro';
+import { explainers, publications } from '../../data/schema';
+
+// A summary of the papers behind each piece, rather than the full titles: the
+// explainer's own page lists those, and a row here should stay one line.
+const rows = explainers.map((e) => {
+  const years = e.papers
+    .map((id) => publications.find((p) => p.id === id)?.year)
+    .filter((y): y is number => typeof y === 'number')
+    .sort((a, b) => a - b);
+
+  const span =
+    years.length === 0
+      ? null
+      : years[0] === years[years.length - 1]
+        ? String(years[0])
+        : `${years[0]}–${years[years.length - 1]}`;
+
+  const count =
+    e.papers.length === 1 ? 'One paper' : `${e.papers.length} papers`;
+
+  return { ...e, meta: span ? `${count} · ${span}` : count };
+});
+---
+
+<Base
+  title="Explainers"
+  description="Plain-language explainers on Alex Tabarrok's research, each drawing together several papers."
+>
+  <p class="eyebrow">Plain language</p>
+  <h1 class="page-title">Explainers</h1>
+  <p class="lede">
+    Longer pieces about my research, written for readers who want the argument
+    without the apparatus. Each one draws on several papers at once.
+  </p>
+
+  {rows.length === 0 ? (
+    <p class="empty">Nothing here yet.</p>
+  ) : (
+    <ul class="list">
+      {rows.map((e) => (
+        <li>
+          <a href={`/explainers/${e.slug}/`}>
+            <span class="title">{e.title}</span>
+            <span class="desc">{e.description}</span>
+            <span class="meta">{e.meta}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  <p class="foot prose">
+    Every explainer is also linked from the paper it covers on the
+    <a href="/research/">research page</a>.
+  </p>
+</Base>
+
+<style>
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 calc(var(--step) * 1.5);
+    max-width: 46rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .list li { border-bottom: 1px solid var(--rule); }
+
+  .list a {
+    display: block;
+    padding: 1.15rem 0.25rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .list a:hover {
+    background: color-mix(in srgb, var(--accent-soft) 40%, transparent);
+  }
+
+  .title {
+    display: block;
+    font-size: 1.12rem;
+    font-weight: 620;
+    font-family: var(--sans);
+    letter-spacing: -0.015em;
+    margin-bottom: 0.3rem;
+  }
+
+  .list a:hover .title { color: var(--accent); }
+
+  .desc {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 40rem;
+  }
+
+  .meta {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .empty {
+    font-family: var(--sans);
+    color: var(--ink-faint);
+    padding: 2rem 0;
+  }
+
+  .foot {
+    font-size: 0.92rem;
+    color: var(--ink-faint);
+  }
+
+  .foot a { color: var(--ink-soft); }
+</style>

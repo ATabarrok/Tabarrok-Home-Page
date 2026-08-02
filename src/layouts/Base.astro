@@ -21,8 +21,13 @@ const nav = [
   { href: '/about/', label: 'About' },
   { href: '/teaching/', label: 'Teaching' },
   { href: '/research/', label: 'Research' },
+  { href: '/explainers/', label: 'Explainers' },
   { href: '/consulting/', label: 'Consulting' },
 ];
+
+// A section stays marked as current on its inner pages, so an explainer does
+// not read as though it sits outside the site.
+const current = (href: string) => path === href || path.startsWith(href);
 
 const full = title === 'Alex Tabarrok' ? title : `${title} — Alex Tabarrok`;
 ---
@@ -55,7 +60,7 @@ const full = title === 'Alex Tabarrok' ? title : `${title} — Alex Tabarrok`;
         <a class="brand" href="/">Alex Tabarrok</a>
         <nav class="nav" aria-label="Main">
           {nav.map((i) => (
-            <a href={i.href} aria-current={path === i.href ? 'page' : undefined}>
+            <a href={i.href} aria-current={current(i.href) ? 'page' : undefined}>
               {i.label}
             </a>
           ))}
