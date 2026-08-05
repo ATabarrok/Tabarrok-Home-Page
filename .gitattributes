@@ -1,0 +1,5 @@
+# Store every text file as LF in the repository, whatever the working copy uses.
+# Keeps diffs honest when the repo is read from Linux, macOS or WSL, where git
+# does not apply the CRLF conversion that Git for Windows does by default.
+# Binary files are detected and left alone.
+* text=auto
