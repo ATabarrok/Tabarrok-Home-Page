@@ -82,9 +82,64 @@ const full = title === 'Alex Tabarrok' ? title : `${title} — Alex Tabarrok`;
         <p>
           <a href="https://scholar.google.com/citations?user=3syuONQAAAAJ&hl=en">Google Scholar</a>
           · <a href="https://mason.gmu.edu/~atabarro/TabarrokCV.pdf">CV</a>
-          · <a href="mailto:Alex.Tabarrok@gmail.com">Email</a>
+          · <a href="mailto:Alex.Tabarrok@gmail.com">Alex.Tabarrok@gmail.com</a>
+          <button type="button" class="copy-email" data-copy="Alex.Tabarrok@gmail.com" hidden>
+            Copy
+          </button>
         </p>
       </div>
     </footer>
+
+    <script>
+      // Progressive enhancement. mailto: only works when the visitor has a
+      // desktop mail client registered, which many people reading mail in a
+      // browser tab do not. The address is visible either way; this only
+      // saves them selecting it by hand, so it stays hidden without JS.
+      const copyButtons =
+        document.querySelectorAll<HTMLButtonElement>('.copy-email');
+
+      for (const button of copyButtons) {
+        const address = button.dataset.copy;
+        const link = button.previousElementSibling;
+        if (!address) continue;
+
+        button.hidden = false;
+
+        let restore: number | undefined;
+        const flash = (text: string, ms: number) => {
+          clearTimeout(restore);
+          button.textContent = text;
+          button.classList.add('is-copied');
+          restore = window.setTimeout(() => {
+            button.textContent = 'Copy';
+            button.classList.remove('is-copied');
+          }, ms);
+        };
+
+        // If the clipboard is unavailable or refuses (no user activation,
+        // insecure context, permissions), select the address instead so the
+        // visitor can just press Ctrl+C. Never disable the button — a refusal
+        // is often transient and they should be able to try again.
+        const selectAddress = () => {
+          if (!link) return false;
+          const range = document.createRange();
+          range.selectNodeContents(link);
+          const selection = window.getSelection();
+          selection?.removeAllRanges();
+          selection?.addRange(range);
+          return true;
+        };
+
+        button.addEventListener('click', async () => {
+          try {
+            if (!navigator.clipboard?.writeText) throw new Error('unavailable');
+            await navigator.clipboard.writeText(address);
+            flash('Copied', 1600);
+          } catch {
+            flash(selectAddress() ? 'Press Ctrl+C' : address, 2600);
+          }
+        });
+      }
+    </script>
   </body>
 </html>

@@ -240,6 +240,36 @@ hr {
 
 .site-foot a { color: var(--ink-soft); }
 
+/* Copy-to-clipboard beside the footer address. Shown only when the browser
+   exposes the clipboard API; the address itself is always readable, so this
+   is a convenience rather than the way to get the address. */
+.copy-email {
+  font: inherit;
+  font-size: 0.78rem;
+  line-height: 1;
+  margin-left: 0.4rem;
+  padding: 0.28rem 0.5rem;
+  color: var(--ink-faint);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.14s ease, border-color 0.14s ease;
+}
+
+.copy-email:hover:not(:disabled) {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.copy-email.is-copied {
+  color: var(--accent-ink);
+  border-color: transparent;
+  background: var(--accent-soft);
+}
+
+.copy-email:disabled { cursor: default; }
+
 /* --- page furniture ---------------------------------------------------- */
 
 main { padding-block: clamp(2rem, 5vw, 3.5rem); }
