@@ -9,6 +9,28 @@
 # under `links` as "working paper version". Keep the id unchanged so any
 # explainer that points at it keeps working.
 
+- id: how-much-redistribution-will-ai-require
+  title: How Much Redistribution Will AI Require?
+  url: https://alextabarrok.com/papers/how-much-redistribution-will-ai-require.pdf
+  year: 2026
+  abstract: >-
+    Artificial intelligence may raise output while reducing labor’s share of income. This paper
+    derives an accounting rule for the transfer required to keep aggregate real labor income per
+    capita on its no-AI path. The required share of AI-path GDP depends on relative GDP and
+    labor’s share. Faster growth permits a lower labor share without reducing aggregate labor
+    income. Suppose GDP would otherwise grow by 2 percent annually, with labor receiving 60
+    percent. No transfer is needed if AI raises annual growth to 5 percent and labor’s share
+    remains at least 45 percent. At 10 percent growth, labor’s share can fall to 28 percent and
+    labor as a whole would remain as well off as under the no-AI path. A three-parameter
+    translator connects beliefs about displacement, productivity, and labor’s share of new output
+    to this forecast space. Across three stylized views, including one in which labor’s share falls
+    to 23 percent, the required transfer remains below 6 percent of GDP. At that scale, making
+    labor recipients whole while preserving gains for capital recipients appears politically
+    feasible.
+  citation: >-
+    Tabarrok, Alex. 2026. “How Much Redistribution Will AI Require?” Working paper, August.
+    [PDF](https://alextabarrok.com/papers/how-much-redistribution-will-ai-require.pdf).
+
 - id: chaos-and-misallocation-under-price-controls
   title: Chaos and Misallocation under Price Controls
   url: https://arxiv.org/abs/2602.12066
