@@ -35,6 +35,17 @@ a broken page.
 Other data files work the same way: `nonrefereed.yaml`, `consulting.yaml`,
 `teaching.yaml`.
 
+## Adding a working paper
+
+`src/data/workingpapers.yaml` has the same shape as `publications.yaml` and
+feeds the "Working papers" section at the top of `/research/`. Set `year` to
+the year the preprint was posted.
+
+When a working paper is accepted, move its whole block to the top of
+`publications.yaml`, swap `url` for the DOI and keep the preprint under `links`
+as a `working paper version`. Keep the `id` unchanged so any explainer pointing
+at it keeps working — the build fails if the same id appears in both files.
+
 ## Adding a paper explainer
 
 Create `src/content/explainers/<id>.md`, where `<id>` matches a paper's `id`:

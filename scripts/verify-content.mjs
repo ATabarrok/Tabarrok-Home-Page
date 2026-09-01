@@ -80,6 +80,9 @@ const EXPECTED_MISSING = {
     // Operation Warp Speed is no longer forthcoming: CrossRef records it as
     // published 2025-11-14, Innovations 14 (1-2): 2-22. Citation updated.
     forthcoming: 1,
+    // The Gurgaon chapter's "Retrieved from <elgaronline url>" became a plain
+    // DOI link; the lead-in went with it.
+    retrieved: 1,
   },
   consulting: {
     // Intro sentence was cut off ("for many firms including.") and is now
@@ -173,6 +176,8 @@ const REPLACED_LINKS = {
   'ethics.harvard.edu/pandemic-resilience-supplement': 'Wayback capture',
   'www-jstor-org.mutex.gmu.edu/stable/24562393':
     'public jstor.org/stable/24562393 — the proxy only resolves on campus',
+  'elgaronline.com/view/9781783475056.00018.xml':
+    'DOI 10.4337/9781783475063.00018 — the old view URL no longer resolves',
 };
 
 /**

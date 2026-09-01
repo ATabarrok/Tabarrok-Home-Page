@@ -2,6 +2,7 @@ import { z } from 'astro/zod';
 import yaml from 'js-yaml';
 
 import publicationsRaw from './publications.yaml?raw';
+import workingPapersRaw from './workingpapers.yaml?raw';
 import nonrefereedRaw from './nonrefereed.yaml?raw';
 import consultingRaw from './consulting.yaml?raw';
 import teachingRaw from './teaching.yaml?raw';
@@ -84,6 +85,12 @@ export const publications = load(
   'publications.yaml',
 );
 
+export const workingPapers = load(
+  workingPapersRaw,
+  z.array(publication),
+  'workingpapers.yaml',
+);
+
 export const nonrefereed = load(
   nonrefereedRaw,
   z.array(z.string()),
@@ -99,9 +106,11 @@ export const explainers = load(
   'explainers.yaml',
 );
 
-// A duplicate id would silently collide with a future explainer route.
+// A duplicate id would silently collide with a future explainer route. Working
+// papers share the namespace: a paper keeps its id when it moves from
+// workingpapers.yaml to publications.yaml, and must not appear in both.
 const seen = new Set<string>();
-for (const p of publications) {
+for (const p of [...workingPapers, ...publications]) {
   if (seen.has(p.id)) throw new Error(`Duplicate publication id: ${p.id}`);
   seen.add(p.id);
 }

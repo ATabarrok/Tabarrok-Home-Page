@@ -1,0 +1,86 @@
+# Working papers, newest first.
+#
+# Same shape as publications.yaml: id, title, year, and the optional url,
+# links, comment, abstract and citation. `year` is the year the paper was
+# posted, not a publication year.
+#
+# When a working paper is accepted, move its block to the top of
+# publications.yaml, swap the preprint url for the DOI, and keep the preprint
+# under `links` as "working paper version". Keep the id unchanged so any
+# explainer that points at it keeps working.
+
+- id: chaos-and-misallocation-under-price-controls
+  title: Chaos and Misallocation under Price Controls
+  url: https://arxiv.org/abs/2602.12066
+  year: 2026
+  links:
+    - label: "PDF"
+      url: https://briancalbrecht.com/Albrecht_Tabarrok_Whitmeyer_Price_Controls.pdf
+  comment: >-
+    (with Brian C. Albrecht and Mark Whitmeyer)
+  abstract: >-
+    Price controls kill the incentive for arbitrage. We prove a Chaos Theorem: under a binding
+    price ceiling, suppliers are indifferent across destinations, so arbitrarily small cost
+    differences can determine the entire allocation. The economy tips to corner outcomes in
+    which some markets are fully served while others are starved; small parameter changes flip
+    the identity of the corners, generating discontinuous welfare jumps. These corner
+    allocations create a distinct source of cross-market misallocation, separate from the
+    aggregate quantity loss (the Harberger triangle) and from within-market misallocation
+    emphasized in prior work. They also create an identification problem: welfare depends on
+    demand far from the observed equilibrium. We derive sharp bounds on misallocation that
+    require no parametric assumptions. In an efficient allocation, shadow prices are equalized
+    across markets; combined with the adding-up constraint, this collapses the
+    infinite-dimensional welfare problem to a one-dimensional search over a common shadow
+    price, with extremal losses achieved by piecewise-linear demand schedules. Calibrating the
+    bounds to station-level AAA survey data from the 1973–74 U.S. gasoline crisis,
+    misallocation losses range from roughly 1 to 9 times the Harberger triangle.
+  citation: >-
+    Albrecht, Brian C., Alex Tabarrok, and Mark Whitmeyer. 2026. “Chaos and Misallocation under
+    Price Controls.” arXiv:2602.12066 [econ.GN].
+    [https://arxiv.org/abs/2602.12066](https://arxiv.org/abs/2602.12066).
+
+- id: private-school-competition-and-student-achievement-in-chile
+  title: Private School Competition and Student Achievement in Chile
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6842996
+  year: 2026
+  abstract: >-
+    Using Chile's 2005–2024 SIMCE commune panel, this paper studies whether growth in subsidized
+    private-school enrollment raises achievement or mainly reflects cream skimming.
+    Cross-sectional diagnostics reject pure cream skimming but show stronger sorting at high
+    private-share levels. In commune fixed-effects regressions, a 10 percentage point increase
+    in subsidized private share is associated with a 0.85–1.06 point increase in commune mean
+    scores; cohort value-added estimates are slightly larger at 1.32–1.43 points. Controlling
+    for private-public socioeconomic separation barely changes the aggregate slope, but larger
+    SES gaps predict larger sector score gaps and weaker within-sector outcomes in more
+    segregated communes.
+  citation: >-
+    Tabarrok, Alex. 2026. “Private School Competition and Student Achievement in Chile.” SSRN
+    Working Paper 6842996.
+    [https://doi.org/10.2139/ssrn.6842996](https://doi.org/10.2139/ssrn.6842996).
+
+- id: norms-in-conflict-why-ai-advisors-fail-to-improve
+  title: "Norms in Conflict: Why AI Advisors Fail to Improve Human Coordination"
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6350778
+  year: 2026
+  comment: >-
+    (with Zhongheng Qiao, Robertas Zubrickas and Timothy N. Cason)
+  abstract: >-
+    Cooperation failures in social dilemmas persist because individually rational behavior
+    yields inefficient collective outcomes. Advances in AI raise two possibilities: AI may
+    improve outcomes by advising humans or by acting autonomously. We test both in a repeated
+    threshold public-goods experiment with heterogeneous valuations of the public good. Such
+    threshold games model a broad class of burden-sharing problems (crowdfunding, shared
+    infrastructure, multilateral agreements) in which efficiency requires not only coordination
+    but agreement on a cost-sharing norm. We compare a human-only benchmark to treatments with
+    an AI advisor (OpenAI's GPT-5) and to treatments in which AI agents make allocations
+    directly. AI Only groups outperform human groups, reaching the threshold more often. The
+    mechanism is illuminating: AI agents contribute near-equal amounts largely independent of
+    valuations, whereas humans scale contributions with valuations. In contrast, AI advisors do
+    not improve human-only outcomes. We distinguish two bottlenecks to coordination—an
+    information bottleneck, in which parties lack the calculations needed to condition on
+    others' behavior, and a legitimacy bottleneck, in which parties reject cost-sharing rules
+    that conflict with their fairness norms. AI overcomes the first but not the second.
+  citation: >-
+    Qiao, Zhongheng, Alex Tabarrok, Robertas Zubrickas, and Timothy N. Cason. 2026. “Norms in
+    Conflict: Why AI Advisors Fail to Improve Human Coordination.” SSRN Working Paper 6350778.
+    [https://doi.org/10.2139/ssrn.6350778](https://doi.org/10.2139/ssrn.6350778).

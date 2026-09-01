@@ -1,12 +1,27 @@
 # Link repairs
 
-State after the 2026-08-01 audit and repair pass. Re-run `npm run links` to
-refresh. Every replacement below was probed and returns 200, or is a DOI whose
-`doi.org` redirect resolves to the publisher.
+State after the 2026-09-01 pass, which re-ran the 2026-08-01 audit and found
+one new break. Re-run `npm run links` to refresh. Every replacement below was
+probed and returns 200, or is a DOI whose `doi.org` redirect resolves to the
+publisher.
 
-External links resolving: **90 → 105** of 162.
+External links resolving: **113 of 177**. The other 64 are the publisher 403s
+described at the bottom, not breaks.
 
-## Repaired
+## 2026-09-01 pass
+
+Only one link had newly broken since August, and one host looked down but was
+not:
+
+| Was | Now | Why |
+|---|---|---|
+| `elgaronline.com/view/9781783475056.00018.xml` | `https://doi.org/10.4337/9781783475063.00018` | Elgar retired the `/view/<isbn>.xml` scheme. The chapter DOI came from a CrossRef bibliographic query, not a guess. Note the ISBN differs by one digit: the DOI carries the ebook ISBN (…63), the old URL the print one (…56). |
+
+`tealindia.in` answered `503` to the checker and `200` in a browser on the same
+day — a bot rule, not an outage. Treat a bare `503` from that host the way the
+403s below are treated.
+
+## Repaired 2026-08-01
 
 | Was | Now | Why |
 |---|---|---|

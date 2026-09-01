@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Paper from '../components/Paper.astro';
-import { publications, nonrefereed, explainerByPaper, explainerHref } from '../data/schema';
+import { publications, workingPapers, nonrefereed, explainerByPaper, explainerHref } from '../data/schema';
 import { inlineMarkdown } from '../lib/inline';
 
 // An explainer is optional per paper; the chip only appears once one covers it.
@@ -110,10 +110,22 @@ const decades = rows
     </div>
     <div class="jump">
       <span class="jump-label">Jump to</span>
+      {workingPapers.length > 0 && <a href="#working">Working</a>}
       {decades.map((d) => <a href={`#d${d}`}>{d}s</a>)}
       <a href="#other">Other</a>
     </div>
   </div>
+
+  {workingPapers.length > 0 && (
+    <>
+      <p class="section-head" id="working">Working papers</p>
+      <div id="workingpapers">
+        {workingPapers.map((paper) => (
+          <Paper paper={paper} explainer={chipHref(paper.id)} />
+        ))}
+      </div>
+    </>
+  )}
 
   <p class="section-head">Forthcoming and published papers</p>
 
@@ -292,7 +304,10 @@ const decades = rows
     white-space: nowrap;
   }
 
-  #other { scroll-margin-top: var(--anchor-offset); }
+  #other,
+  #working { scroll-margin-top: var(--anchor-offset); }
+
+  #working[hidden] { display: none; }
 </style>
 
 <script>
@@ -304,11 +319,19 @@ const decades = rows
   const empty = document.getElementById('empty') as HTMLElement;
   const expand = document.getElementById('expand') as HTMLButtonElement;
 
+  // Working papers filter and count alongside the published ones; only the
+  // decade markers belong to the published list.
   const papers = Array.from(
-    document.querySelectorAll<HTMLElement>('#papers .paper'),
+    document.querySelectorAll<HTMLElement>(
+      '#workingpapers .paper, #papers .paper',
+    ),
   );
   const decades = Array.from(
     document.querySelectorAll<HTMLElement>('#papers .decade'),
+  );
+  const workingHead = document.getElementById('working');
+  const workingPapers = Array.from(
+    document.querySelectorAll<HTMLElement>('#workingpapers .paper'),
   );
   const total = papers.length;
 
@@ -341,6 +364,11 @@ const decades = rows
         node = node.nextElementSibling;
       }
       d.hidden = !visible;
+    }
+
+    // The working-papers heading goes with its list.
+    if (workingHead) {
+      workingHead.hidden = !workingPapers.some((p) => !p.hidden);
     }
 
     report(shown);
