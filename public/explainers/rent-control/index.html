@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rent Control: The Ceiling Trap</title>
+<meta name="description" content="Rent Control: The Ceiling Trap — why the most popular housing policy keeps failing the people it's written for. The theory of price ceilings and a century of evidence, from San Francisco to Mumbai to Stockholm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://alextabarrok.com/explainers/rent-control/">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav class="site-nav" id="site-nav" aria-label="Sections">
+  <a class="wordmark" href="#top">The <b>Ceiling</b> Trap</a>
+  <ul>
+    <li><a href="#theory">Theory</a></li>
+    <li><a href="#earthquake">1906 vs. 1946</a></li>
+    <li><a href="#mumbai">Mumbai</a></li>
+    <li><a href="#queues">Queues</a></li>
+    <li><a href="#evidence">Evidence</a></li>
+    <li><a href="#fixes">What Works</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+
+<!-- ================================================================ -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="kicker">A visual essay in housing economics</p>
+    <h1>Rent Control: <em>The Ceiling Trap</em></h1>
+    <p class="dek">
+      Why the most popular housing policy keeps failing the people it’s written for —
+      a story told through an earthquake, a monsoon, a forty&#8209;year waiting list,
+      and a landlord who wanted his tenant to shovel snow.
+    </p>
+    <p class="byline">
+      Drawing on Tyler Cowen &amp; Alex Tabarrok’s <a href="https://marginalrevolution.com/our-textbook">Modern Principles of Economics</a>
+      and a century of empirical research.
+    </p>
+  </div>
+
+  <!-- Hero photo: the South Bronx, "Broken Promises" -->
+  <figure class="hero-photo">
+    <img src="images/south-bronx-broken-promises-1980.jpg"
+         alt="A gutted, abandoned five-story apartment building in the South Bronx with the words 'Falsas Promesas — Broken Promises' stenciled on its walls">
+    <figcaption>
+      Charlotte Street, South Bronx, 1980 · stencil &amp; photo:
+      <a href="https://commons.wikimedia.org/wiki/File:BrokenPromises_JohnFekner.jpg"
+      rel="noopener">John Fekner</a> · CC&nbsp;BY-SA&nbsp;3.0
+    </figcaption>
+  </figure>
+
+  <a class="scroll-cue" href="#promise">Scroll</a>
+</header>
+
+<main class="article">
+
+<!-- ================================================================ -->
+<section class="chapter" id="promise">
+  <p class="chapter-no">Chapter I</p>
+  <h2>The most tempting idea in economics</h2>
+  <p class="subhead">Rents are crushing. A law could just… stop them. What could go wrong?</p>
+
+  <p class="dropcap">
+    In every expensive city on Earth, the same conversation repeats. Rents rise faster than
+    paychecks. A family gets a renewal notice with a number that makes their stomach drop.
+    And someone proposes the obvious remedy: <em>make it illegal</em>. Cap the rent. Freeze it.
+    If housing is a human right, why should a landlord be allowed to price a person out of
+    their own neighborhood?
+  </p>
+  <p>
+    The appeal is real, and so is the problem it responds to. In big, productive cities, a third
+    or more of renter households spend over 30 percent of their income on housing — the standard
+    threshold for being “rent burdened.” Rent control promises relief, and it delivers something
+    voters can feel immediately: <em>my</em> rent stops rising, starting now.
+    <span class="sn-ref">1</span>
+  </p>
+  <span class="sidenote"><span class="sn-no">1</span> “Rent control” is a family of policies.
+    <b>First-generation</b> controls (1940s-style) freeze nominal rents outright.
+    <b>Second-generation</b> controls, common today, cap annual increases, often with exemptions
+    for new buildings and rent resets between tenants. The economist Richard Arnott introduced
+    this taxonomy in 1995. The distinction matters — and, as we’ll see, so does everything a
+    ceiling doesn’t change.</span>
+
+  <p>
+    Yet among economists, rent control has achieved something remarkable: near-consensus in a
+    field famous for disagreement. In a 1992 survey of American economists, 93 percent agreed
+    that rent ceilings reduce the quantity and quality of housing available. When the IGM panel
+    of elite economists — left, right, and center — was asked in 2012 whether rent control had
+    improved affordable housing in New York and San Francisco over the prior three decades,
+    <em>2 percent</em> agreed.<span class="sn-ref">2</span>
+  </p>
+  <span class="sidenote"><span class="sn-no">2</span> Alston, Kearl &amp; Vaughan,
+    “Is There a Consensus Among Economists in the 1990’s?” <em>American Economic Review</em>
+    (1992); IGM Economic Experts Panel, “Rent Control,” February 2012. The IGM panel includes
+    Nobel laureates from across the political spectrum.</span>
+
+  <p>
+    This essay is about the gap between those two intuitions — the voter’s and the economist’s.
+    It isn’t a story about greedy landlords versus deserving tenants. It’s a story about what a
+    price <em>is</em>, what happens when you silence one, and what a hundred years of natural
+    experiments — earthquakes, wars, monsoons, referenda — have revealed about cities that tried.
+  </p>
+
+  <div class="statline reveal">
+    <div class="stat"><b>−9.4%</b><span>average rent reduction in controlled units, across 112 published studies</span></div>
+    <div class="stat bad"><b>+4.8%</b><span>average rent <em>increase</em> in uncontrolled units nearby</span></div>
+    <div class="stat bad"><b>−15%</b><span>rental housing supplied by San Francisco landlords hit by rent control</span></div>
+    <div class="stat"><b>2%</b><span>of top economists who think rent control made NYC &amp; SF more affordable</span></div>
+  </div>
+
+  <figure class="reveal">
+    <img src="images/nyc-apartments.jpg"
+         alt="A large brick apartment complex in New York City against a blue sky">
+    <figcaption>
+      New York has had some form of rent regulation continuously since wartime controls in 1943.
+      Roughly a million apartments — close to half the city’s rental stock — remain rent-stabilized
+      today. The city is also, decade after decade, among the least affordable places to move to
+      in the United States.
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ================================================================ -->
+<section class="chapter" id="theory">
+  <p class="chapter-no">Chapter II</p>
+  <h2>A Price is a Signal</h2>
+  <p class="subhead">Rent control doesn’t repeal scarcity. It just deletes the signal that manages it.</p>
+
+  <p class="dropcap">
+    A rent is not merely a bill. It is a message flashed between strangers. To renters it says:
+    <em>housing here is scarce — economize on it, share it, or consider the next neighborhood over.</em>
+    To builders and landlords it says: <em>people desperately want to live here — build, convert,
+    renovate, rent out the basement.</em> High rents are how a city calls for more housing, the way
+    a fever calls for antibodies.
+  </p>
+  <p>
+    In <em>Modern Principles of Economics</em>, Tyler Cowen and Alex Tabarrok put it simply:
+    a price is a signal wrapped up in an incentive. A price ceiling doesn’t make housing cheaper
+    any more than smashing a thermometer makes a fever go down. It makes the <em>signal</em>
+    illegal while leaving the scarcity untouched — and then the scarcity finds other, crueler ways
+    to express itself.<span class="sn-ref">3</span>
+  </p>
+  <span class="sidenote"><span class="sn-no">3</span> Cowen &amp; Tabarrok,
+    <em>Modern Principles of Economics</em>, chapter on price ceilings. Their canonical list of
+    what ceilings produce: shortages, reduced quality, wasteful search, lost gains from trade,
+    and misallocation. This essay is organized around watching each one appear in the wild.</span>
+
+  <p>
+    Below the market rent, two things happen at once. Renters demand <em>more</em> housing —
+    people who would have shared, stayed with parents, or lived a suburb out now want their own
+    place downtown. And owners supply <em>less</em> — apartments quietly become condos, offices,
+    short-term rentals, or the landlord’s own in-law unit, and new rental construction loses its
+    reason to exist. The gap between those two curves is the shortage. Drag the ceiling yourself:
+  </p>
+
+  <!-- Interactive supply & demand widget -->
+  <div class="widget reveal" id="widget-sd">
+    <h4>Set the rent ceiling for a city</h4>
+    <p class="hint">Drag the slider. The market alone would settle at $1,400 and 120,000 homes rented.</p>
+
+    <svg class="chart" id="sd-chart" viewBox="0 0 720 480" role="img"
+         aria-label="Interactive supply and demand diagram showing the shortage and deadweight loss created by a rent ceiling">
+      <!-- axes -->
+      <line class="axis" x1="70" y1="30" x2="70" y2="430"/>
+      <line class="axis" x1="70" y1="430" x2="690" y2="430"/>
+      <text class="axis-label" x="380" y="462" text-anchor="middle">Apartments (thousands)</text>
+      <text class="axis-label" x="24" y="230" text-anchor="middle" transform="rotate(-90 24 230)">Monthly rent</text>
+
+      <!-- deadweight loss -->
+      <polygon id="dwl" points="" fill="#b6432c" fill-opacity="0.16"/>
+
+      <!-- curves -->
+      <line x1="70" y1="59" x2="690" y2="401" stroke="#22585e" stroke-width="2.5"/>
+      <line x1="70" y1="401" x2="690" y2="59" stroke="#ac7d2c" stroke-width="2.5"/>
+      <text class="direct-label" x="612" y="392" fill="#22585e">Demand (renters)</text>
+      <text class="direct-label" x="608" y="72"  fill="#ac7d2c">Supply (owners)</text>
+
+      <!-- market equilibrium -->
+      <circle cx="380" cy="230" r="4.5" fill="#2b251c"/>
+      <text class="annot" x="392" y="222">market: $1,400 · 120k homes</text>
+
+      <!-- ceiling -->
+      <line id="ceil-line" x1="70" y1="330" x2="690" y2="330" stroke="#b6432c" stroke-width="2.5" stroke-dasharray="9 6"/>
+      <text id="ceil-label" class="direct-label" x="76" y="322" fill="#b6432c" font-weight="600">ceiling: $700</text>
+
+      <!-- quantity markers -->
+      <circle id="dot-s" cx="199" cy="330" r="4.5" fill="#ac7d2c"/>
+      <circle id="dot-d" cx="561" cy="330" r="4.5" fill="#22585e"/>
+
+      <!-- shortage bracket -->
+      <g id="short-g">
+        <line id="short-line" x1="199" y1="352" x2="561" y2="352" stroke="#b6432c" stroke-width="1.6"/>
+        <line id="short-tick1" x1="199" y1="345" x2="199" y2="359" stroke="#b6432c" stroke-width="1.6"/>
+        <line id="short-tick2" x1="561" y1="345" x2="561" y2="359" stroke="#b6432c" stroke-width="1.6"/>
+        <text id="short-label" class="annot" x="380" y="374" text-anchor="middle" fill="#b6432c" font-weight="600">
+          shortage: 140,000 households with no home to rent
+        </text>
+      </g>
+      <text id="dwl-label" class="annot" x="388" y="300" fill="#b6432c">lost gains from trade</text>
+    </svg>
+
+    <input type="range" id="ceil-slider" min="500" max="1400" step="25" value="700"
+           aria-label="Rent ceiling level">
+
+    <div class="widget-readout">
+      <div class="r-rent"><b id="ro-rent">$700</b>legal maximum rent</div>
+      <div class="r-supplied"><b id="ro-supplied">50k</b>homes owners supply</div>
+      <div class="r-demanded"><b id="ro-demanded">190k</b>homes renters want</div>
+      <div class="r-short"><b id="ro-short">140k</b>the shortage</div>
+    </div>
+  </div>
+
+  <p>
+    Two subtleties make rent control especially seductive — and especially damaging. First,
+    <b>housing is durable</b>. Buildings don’t vanish the day a ceiling passes; they erode over
+    decades of skipped paint jobs, cancelled projects, and quiet conversions. The costs arrive
+    on a lag, long after the politicians who passed the law have taken their bows. Second,
+    <b>the beneficiaries are visible and the victims are hypothetical</b>. The tenant whose rent
+    is frozen knows it. The family that never moved to the city because no apartment was listed
+    doesn’t even know it was the victim of a policy.
+  </p>
+
+  <p>Economic theory predicts a ceiling held below market rent will produce five things:</p>
+
+  <div class="effects reveal">
+    <div class="effect"><b>Shortages</b>
+      <p>More renters chase fewer homes. The gap can’t close through price, so it doesn’t close at all.</p></div>
+    <div class="effect"><b>Quality decay</b>
+      <p>Maintenance is how a landlord competes for tenants. With a queue at the door, why fix the boiler?</p></div>
+    <div class="effect"><b>Wasteful search</b>
+      <p>Queues, waiting lists, key money, connections. People pay in time and favors what they may not pay in rent.</p></div>
+    <div class="effect"><b>Lost gains from trade</b>
+      <p>Apartments that renters value far above the cost of supplying them simply never exist. Pure loss, to everyone.</p></div>
+    <div class="effect"><b>Misallocation</b>
+      <p>Who gets the scarce homes? Not those who need them most — those who got there first, and never leave.</p></div>
+  </div>
+
+  <p>
+    That’s the theory. The rest of this essay is the evidence — five predictions, checked against
+    a century of cities.
+  </p>
+</section>
+
+<!-- ================================================================ -->
+<section class="chapter" id="earthquake">
+  <p class="chapter-no">Chapter III</p>
+  <h2>The earthquake and the law</h2>
+  <p class="subhead">San Francisco lost half its housing in 1906 and had no housing crisis. In 1946 it lost nothing — and had one.</p>
+
+  <p class="dropcap">
+    On April 18, 1906, an earthquake and three days of fire destroyed 3,400 acres in the heart of
+    San Francisco. “Not a hotel of note or importance was left standing,” wrote the general
+    commanding federal troops. “The great apartment houses had vanished.” Two hundred twenty-five
+    thousand people — more than half the city — were homeless. The survivors’ housing stock had to
+    absorb, on average, 40 percent more people per remaining home.
+  </p>
+  <p>
+    Now open the <em>San Francisco Chronicle</em> of May 24, 1906, the first issue published after
+    the disaster, and look for the housing crisis. You won’t find it. There is not a single
+    mention of a housing shortage. The classifieds that day carried <b>64 advertisements offering
+    flats and houses for rent</b> — against 5 ads from people seeking one.<span class="sn-ref">4</span>
+  </p>
+  <span class="sidenote"><span class="sn-no">4</span> All figures from Milton Friedman and George
+    Stigler, <em>Roofs or Ceilings? The Current Housing Problem</em> (Foundation for Economic
+    Education, 1946) — the first popular economics pamphlet either man wrote, years before either
+    won a Nobel Prize.</span>
+  <p>
+    Forty years later, in 1946, San Francisco faced a far milder squeeze. Wartime migration meant
+    the city had to fit about 10 percent more people per dwelling than before the war — a shortage
+    Friedman and Stigler reckoned <em>one-quarter as acute</em> as 1906’s. This time the governor
+    called housing “the most critical problem facing California.” In the first five days of 1946
+    the classifieds carried <b>4 ads offering apartments for rent — and 30 ads a day from people
+    begging for one</b>.
+  </p>
+
+  <figure class="reveal">
+    <svg class="chart" id="chart-sfads" viewBox="0 0 760 330" role="img"
+         aria-label="Pictogram comparing classified housing ads in 1906 and 1946: 64 for-rent offers versus 5 wanted ads in 1906; under rent control in 1946, under one for-rent offer per day versus 30 wanted ads"></svg>
+    <figcaption>
+      <b>Each square is one classified ad per day in the <em>San Francisco Chronicle</em>.</b>
+      After the 1906 earthquake, with rents free to rise, offers of housing swamped requests.
+      Under the 1946 rent ceiling — with the housing stock fully intact — the market inverted:
+      people advertised for homes, and almost no one offered one.
+      Source: Friedman &amp; Stigler (1946).
+    </figcaption>
+  </figure>
+
+  <div class="photo-pair reveal">
+    <figure style="margin:0">
+      <img src="images/roofs-or-ceilings-pamphlet.jpg"
+           alt="Cover of the 1946 pamphlet Roofs or Ceilings? by Milton Friedman and George J. Stigler">
+      <figcaption>The 1946 pamphlet, priced at ten cents.</figcaption>
+    </figure>
+    <div>
+      <p>
+        What was different? Not scarcity — 1906’s was vastly worse. What differed was the
+        <em>rationing mechanism</em>. In 1906, higher rents did the rationing: families squeezed
+        into fewer rooms, rented out spares, and builders raced to supply more. Every roof found
+        the people who needed it most urgently. In 1946, raising rents was illegal.
+      </p>
+      <blockquote class="pull" style="margin:28px 0">
+        In 1906 the rationing was done by higher rents. In 1946 … the rationing is by chance
+        and favoritism.
+        <footer>— Milton Friedman &amp; George J. Stigler, <em>Roofs or Ceilings?</em> (1946)</footer>
+      </blockquote>
+      <p>
+        “Chance and favoritism” was not a rhetorical flourish. It was a prediction about
+        <em>who</em> gets housing when prices can’t decide — a prediction we can now test with
+        seventy more years of data. Keep it in mind when we reach Stockholm’s queue and Oslo’s
+        babysitting clauses.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<div class="panel" id="mumbai">
+  <div class="panel-inner">
+    <p class="kicker">Chapter IV · Quality</p>
+    <h3>Mumbai: the city where the rent stood still</h3>
+    <p>
+      In 1947, Bombay froze rents at roughly their 1940 levels. The freeze was temporary —
+      and was then extended, and extended, and extended, for more than half a century. In the
+      heart of one of the most expensive property markets on Earth, tenants in grand old
+      buildings still pay a few dollars a month, protected by law, passing tenancies down
+      through generations.
+    </p>
+    <p>
+      The law could freeze the rent. It could not freeze the buildings. A landlord collecting
+      1940 rent in a 2020 economy cannot pay for waterproofing, rebar, or repairs — and has no
+      reason to try, since a queue of tenants waits regardless, and the sitting ones can never
+      be moved. So the buildings age, sag, and crumble. Mumbai keeps an official register of
+      dilapidated structures; the island city’s stock of “cessed” buildings — over 14,000 of
+      them, nearly all rent-controlled — is so hazardous that the state levies a special tax
+      to fund a public board whose job is repairing private buildings their owners long ago
+      abandoned to entropy. Every monsoon season, some of them come down, and people die in
+      the rubble.
+    </p>
+
+    <div class="video-frame reveal">
+      <iframe src="https://www.youtube-nocookie.com/embed/2fh4tPWYeks"
+              title="Price Ceilings: Rent Controls — Marginal Revolution University (rent control in Mumbai)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p style="font-size:15px; font-style:italic; color:#a99f86; max-width:820px;">
+      Alex Tabarrok on rent control in Mumbai — crumbling buildings, monsoon collapses, and why
+      a frozen rent becomes a falling roof. (Marginal Revolution University, from the
+      <em>Modern Principles</em> video series.)
+    </p>
+
+    <div class="panel-cols" style="margin-top:44px">
+      <blockquote class="pull" style="margin:0">
+        In many cases rent control appears to be the most efficient technique presently known
+        to destroy a city — except for bombing.
+        <footer>— Assar Lindbeck, Swedish economist and longtime chair of the Nobel Prize committee in economics (1971)</footer>
+      </blockquote>
+      <blockquote class="pull" style="margin:0">
+        The Americans couldn’t destroy Hanoi, but we have destroyed our city by very low rents.
+        <footer>— Nguyen Co Thach, Foreign Minister of Vietnam (1989), on Hanoi’s decaying housing stock</footer>
+      </blockquote>
+    </div>
+
+    <p style="margin-top:44px">
+      The empirical literature backs the war metaphors with tedium: of the dozens of published
+      studies on rent control and housing quality, <b>all but two</b> find that controlled
+      housing deteriorates — less maintenance, less renovation, older systems left to fail.
+      Quality is the escape valve. If a landlord cannot raise the rent to the market level,
+      he can let the apartment <em>fall</em> to the rent’s level instead.
+    </p>
+  </div>
+</div>
+
+<!-- ================================================================ -->
+<section class="chapter" id="queues">
+  <p class="chapter-no">Chapter V</p>
+  <h2>The queue, the key, and the babysitting clause</h2>
+  <p class="subhead">When money can’t ration housing, something else will. That something is rarely fairer.</p>
+
+  <p class="dropcap">
+    Stockholm is a beautiful, orderly city with a beautiful, orderly catastrophe at its center.
+    Rents on first-hand contracts are held far below market by negotiated “utility value”
+    rules, so almost no one gives an apartment up — and getting one means joining the municipal
+    housing queue. Not a metaphorical queue: a literal one, with a number. Nearly one million people are registered (~900,000 as of 2026). The average wait for a contract runs
+    about nine years. For an attractive address in the inner city, expect twenty.<span class="sn-ref">5</span>
+  </p>
+  <span class="sidenote"><span class="sn-no">5</span> Stockholm’s municipal housing agency
+    (Bostadsförmedlingen) publishes queue statistics annually; averages hover around 9–10 years,
+    with central districts far higher. Savvy parents register their children at age 18 — the
+    earliest allowed — as a coming-of-age gift.</span>
+
+  <figure class="reveal">
+    <svg class="chart" viewBox="0 0 760 200" role="img"
+         aria-label="Bar chart of Stockholm housing queue waits: about nine years on average, twenty or more for inner-city addresses">
+      <text class="direct-label" x="20" y="52">Stockholm, average wait</text>
+      <rect x="230" y="38" width="221" height="22" fill="#22585e"/>
+      <text class="num" x="459" y="54" fill="#22585e" font-weight="600">≈ 9 years</text>
+
+      <text class="direct-label" x="20" y="104">Attractive inner-city address</text>
+      <rect x="230" y="90" width="480" height="22" fill="#b6432c"/>
+      <text class="num" x="700" y="82" text-anchor="end" fill="#b6432c" font-weight="600">20+ years</text>
+
+      <line class="axis" x1="230" y1="140" x2="710" y2="140"/>
+      <g class="num" text-anchor="middle">
+        <text x="230" y="160">0</text><text x="350" y="160">5</text><text x="470" y="160">10</text>
+        <text x="590" y="160">15</text><text x="710" y="160">20 yrs</text>
+      </g>
+      <g>
+        <line class="tick" x1="230" y1="140" x2="230" y2="145"/><line class="tick" x1="350" y1="140" x2="350" y2="145"/>
+        <line class="tick" x1="470" y1="140" x2="470" y2="145"/><line class="tick" x1="590" y1="140" x2="590" y2="145"/>
+        <line class="tick" x1="710" y1="140" x2="710" y2="145"/>
+      </g>
+      <text class="annot" x="20" y="188">Wait for a first-hand rental contract via Stockholm’s official housing queue.</text>
+    </svg>
+    <figcaption>
+      <b>The price of a “free” apartment, paid in years.</b> A rent ceiling doesn’t lower the
+      cost of housing; it converts the cost into waiting time — a currency that, unlike rent,
+      is destroyed rather than transferred. Nobody receives the years you spend in a queue.
+    </figcaption>
+  </figure>
+
+  <h3>Oslo ran the experiment in reverse</h3>
+  <p>
+    Norway abolished its rent control in 1982, and the economist Are Oust realized the
+    newspapers had been quietly recording the whole experiment. He collected housing
+    classifieds from Oslo’s <em>Aftenposten</em> from 1970 to 2008 and watched the market
+    turn inside out.<span class="sn-ref">6</span>
+  </p>
+  <span class="sidenote"><span class="sn-no">6</span> Are Oust, “The removal of rent control
+    and its impact on search and mismatching costs: evidence from Oslo” — one of the four
+    papers in this project’s source folder. The details below (employer ads, service offers,
+    deposits) are all from his Tables 4–5.</span>
+  <p>
+    Under rent control, Oslo’s listings pages looked nothing like a housing market. It was
+    <em>tenants</em> who advertised, pleading their qualities to landlords — “housing wanted” ads
+    outnumbered “housing for rent.” Ten to fifteen percent of those ads were placed by the
+    tenant’s <em>employer</em>, vouching for them the way a bank vouches for a borrower. Tenants
+    offered babysitting, gardening, snow-shoveling, and janitorial work on the side to sweeten
+    the deal. Landlords, for their part, could demand a tenant of a particular gender, age,
+    occupation, region of origin — some ads specified “strong Christian beliefs.” Deposits
+    commonly ran to 50 or 60 months’ rent, occasionally 100 or more: tenants effectively lent
+    the landlord the equity of the flat, interest free. And only about 20 percent of “for rent”
+    ads dared print the rent, much of which would have been illegal.
+  </p>
+  <p>
+    Then the ceiling lifted. Within a few years the page flipped: landlords advertised to
+    tenants, roughly 80 percent of listings printed an asking rent, the mega-deposits vanished,
+    and the demands for snow-shoveling Christians of specified gender dwindled to nothing.
+    The price went back to doing the rationing — so nothing else had to.
+  </p>
+
+  <figure class="reveal">
+    <svg class="chart" viewBox="0 0 760 380" role="img"
+         aria-label="Line chart, Oslo 1970 to 2008: share of ads specifying a desired type of tenant falls from 34 percent to zero, and housing-wanted ads placed by employers fall from about 14 percent to zero, after rent control ends in 1982">
+      <!-- y ticks -->
+      <g class="num" text-anchor="end">
+        <text x="62" y="324">0</text><text x="62" y="250">10</text><text x="62" y="175">20</text><text x="62" y="101">30%</text>
+      </g>
+      <g>
+        <line class="tick" x1="66" y1="320" x2="70" y2="320"/><line class="tick" x1="66" y1="246" x2="70" y2="246"/>
+        <line class="tick" x1="66" y1="171" x2="70" y2="171"/><line class="tick" x1="66" y1="97" x2="70" y2="97"/>
+      </g>
+      <line class="axis" x1="70" y1="320" x2="660" y2="320"/>
+      <g class="num" text-anchor="middle">
+        <text x="80" y="344">1970</text><text x="227" y="344">1980</text><text x="375" y="344">1990</text>
+        <text x="522" y="344">2000</text><text x="640" y="344">2008</text>
+      </g>
+
+      <!-- 1982 abolition -->
+      <line x1="257" y1="80" x2="257" y2="320" stroke="#b6432c" stroke-width="1.4" stroke-dasharray="5 5"/>
+      <text class="annot" x="265" y="94" fill="#b6432c">rent control abolished, June 1982</text>
+
+      <!-- series A: type of tenant wanted -->
+      <path d="M80,70 L154,137 L227,249 L301,281 L375,311 L448,312 L522,312 L596,315 L640,320"
+            fill="none" stroke="#22585e" stroke-width="2.5"/>
+      <g fill="#22585e">
+        <circle cx="80" cy="70" r="3.5"/><circle cx="154" cy="137" r="3.5"/><circle cx="227" cy="249" r="3.5"/>
+        <circle cx="301" cy="281" r="3.5"/><circle cx="375" cy="311" r="3.5"/><circle cx="448" cy="312" r="3.5"/>
+        <circle cx="522" cy="312" r="3.5"/><circle cx="596" cy="315" r="3.5"/><circle cx="640" cy="320" r="3.5"/>
+      </g>
+      <text class="direct-label" x="100" y="46" fill="#22585e">“For rent” ads demanding a<tspan x="100" dy="18">particular <tspan font-style="italic">type</tspan> of tenant</tspan></text>
+
+      <!-- series B: employer-posted wanted ads -->
+      <path d="M80,215 L154,242 L227,200 L301,224 L375,299 L448,296 L522,296 L596,315 L640,320"
+            fill="none" stroke="#ac7d2c" stroke-width="2.5" stroke-dasharray="1 0"/>
+      <g fill="#ac7d2c">
+        <circle cx="80" cy="215" r="3.5"/><circle cx="154" cy="242" r="3.5"/><circle cx="227" cy="200" r="3.5"/>
+        <circle cx="301" cy="224" r="3.5"/><circle cx="375" cy="299" r="3.5"/><circle cx="448" cy="296" r="3.5"/>
+        <circle cx="522" cy="296" r="3.5"/><circle cx="596" cy="315" r="3.5"/><circle cx="640" cy="320" r="3.5"/>
+      </g>
+      <text class="direct-label" x="290" y="195" fill="#ac7d2c">“Housing wanted” ads placed by the tenant’s employer</text>
+    </svg>
+    <figcaption>
+      <b>Non-price rationing, measured in newsprint.</b> Share of Oslo housing classifieds with
+      each feature, at five-year intervals. When landlords couldn’t select tenants by price, they
+      selected by gender, age, religion, and connections — legal discrimination doing the work
+      rents were forbidden to do. Both practices collapsed after decontrol.
+      Source: Oust, Table 4.
+    </figcaption>
+  </figure>
+
+  <p>
+    This is the answer to “chance and favoritism.” Under a binding ceiling the apartment goes
+    not to the family that needs it most, but to the applicant with the right employer, the
+    right connections, the right demographic profile, the cash for key money — or simply the
+    luck to already be inside. Economists call these <b>search costs</b> and they are the
+    cruelest part of the bargain: rent paid to a landlord is at least a transfer that keeps
+    housing supplied. Years in a queue, favors, and discrimination benefit no one at all.
+  </p>
+</section>
+
+<!-- ================================================================ -->
+<section class="chapter" id="misallocation">
+  <p class="chapter-no">Chapter VI</p>
+  <h2>Musical chairs, with no music</h2>
+  <p class="subhead">Rent control decides who gets housing by one rule: never move.</p>
+
+  <p class="dropcap">
+    Picture a widow in a rent-controlled classic six on the Upper West Side. Her children are
+    grown and gone; the second and third bedrooms hold boxes. Three subway stops away, a family
+    of five squeezes into a one-bedroom. In a normal market this problem solves itself — the
+    big apartment’s market rent nudges her toward a place that fits, and the family gladly pays
+    for the space. Under rent control, swapping is financial suicide: her rent is a relic of
+    1985, and the moment she moves she loses it forever. So the boxes keep the bedrooms, the
+    family keeps the crowding, and the law congratulates itself on protecting them both.
+  </p>
+  <p>
+    Ed Glaeser and Erzo Luttmer put a number on this. Comparing who lives in what across New
+    York City, they estimated that <b>21 percent of rent-controlled apartments were occupied by
+    the “wrong” household</b> — wrong at least in size, singles in family flats and families in
+    studios — relative to how an unregulated market would sort them.<span class="sn-ref">7</span>
+  </p>
+  <span class="sidenote"><span class="sn-no">7</span> Glaeser &amp; Luttmer, “The Misallocation
+    of Housing Under Rent Control,” <em>American Economic Review</em> (2003). Their point is
+    subtle and damning: the usual deadweight-loss triangle <em>understates</em> the harm,
+    because it assumes the scarce apartments at least go to those who value them most. Under
+    rent control, they don’t.</span>
+
+  <figure class="reveal">
+    <svg class="chart" id="chart-misalloc" viewBox="0 0 760 260" role="img"
+         aria-label="Grid of 100 squares representing New York rental apartments; 21 are highlighted to show the share estimated to be occupied by mismatched households"></svg>
+    <figcaption>
+      <b>One square = 1 percent of New York’s rent-regulated apartments.</b> Vermilion squares
+      are homes estimated to be occupied by a household of the “wrong” size for the unit —
+      the visible cost of telling people that moving means losing their deal.
+      Source: Glaeser &amp; Luttmer (2003).
+    </figcaption>
+  </figure>
+
+  <p>
+    The lock-in shows up everywhere researchers look. In Copenhagen, tenants in the most
+    tightly controlled units stay dramatically longer than comparable tenants in freer
+    segments. In the 112-study literature we’ll meet properly in the next chapter, the effect
+    of rent control on tenant mobility is one of the most consistent findings in all of housing
+    economics: <em>nearly every study finds it falls</em>. That is partly the policy working —
+    stability is the point — and partly the policy failing, because a city where no one can
+    afford to move is a city where workers can’t follow jobs, growing families can’t find
+    space, and every apartment is a lottery ticket its holder dares not cash.
+  </p>
+  <p>
+    Misallocation also has a distributional sting: the winners of the never-move lottery are
+    not especially poor. Rent control is almost never means-tested. New York’s stabilized
+    apartments have sheltered celebrities and congressmen; the film director’s $1,500 classic
+    eight and the four rent-stabilized units famously combined by a sitting congressman made
+    headlines precisely because the law never asks who you are — only when you arrived.
+  </p>
+</section>
+
+<!-- ================================================================ -->
+<section class="chapter" id="evidence">
+  <p class="chapter-no">Chapter VII</p>
+  <h2>The verdict from the field</h2>
+  <p class="subhead">Modern economics runs on natural experiments. Rent control has provided some beauties.</p>
+
+  <h3>San Francisco, 1994: the law that fed on itself</h3>
+  <p class="dropcap">
+    The cleanest evidence we have comes from an accident of ballot design. San Francisco’s 1979
+    rent control law exempted small buildings — “mom and pop” landlords — until a 1994 initiative
+    suddenly removed the exemption. But the initiative only touched buildings constructed before
+    1980. The result was a razor-sharp natural experiment: nearly identical small buildings and
+    tenants, divided by a construction date, half of them abruptly rent-controlled.
+    Rebecca Diamond, Tim McQuade, and Franklin Qian followed both groups for decades using
+    address-level migration data.<span class="sn-ref">8</span>
+  </p>
+  <span class="sidenote"><span class="sn-no">8</span> Diamond, McQuade &amp; Qian, “The Effects
+    of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San
+    Francisco,” <em>American Economic Review</em> (2019) — in the source folder. The mobility
+    figure: beneficiaries were 3.5 percentage points more likely to remain at their 1994
+    address, against a control-group baseline of 18 percent — a 19.4 percent increase.</span>
+
+  <p>
+    The tenants who won coverage clearly valued it. They were about 20 percent more likely to
+    remain at their address, and 4.5 percentage points more likely to still be in San Francisco
+    at all — rent control genuinely protected sitting tenants from displacement, exactly as
+    intended. Then the landlords responded.
+  </p>
+
+  <figure class="reveal">
+    <svg class="chart" viewBox="0 0 760 350" role="img"
+         aria-label="Diverging bar chart of Diamond, McQuade and Qian's San Francisco findings: tenants staying up 19.4 percent, probability of remaining in San Francisco up 4.5 points, renters housed in treated buildings down 14.5 percent, rental supply down 15 percent">
+      <line class="axis" x1="390" y1="26" x2="390" y2="310"/>
+
+      <text class="direct-label" x="398" y="40">Covered tenants still at their 1994 address</text>
+      <rect x="390" y="48" width="107" height="20" fill="#22585e"/>
+      <text class="num" x="503" y="63" fill="#22585e" font-weight="600">+19.4%</text>
+
+      <text class="direct-label" x="398" y="100">Covered tenants remaining in San Francisco</text>
+      <rect x="390" y="108" width="25" height="20" fill="#22585e"/>
+      <text class="num" x="421" y="123" fill="#22585e" font-weight="600">+4.5 pp</text>
+
+      <text class="direct-label" x="382" y="160" text-anchor="end">Renters housed in rent-controlled buildings</text>
+      <rect x="310" y="168" width="80" height="20" fill="#b6432c"/>
+      <text class="num" x="304" y="183" text-anchor="end" fill="#b6432c" font-weight="600">−14.5%</text>
+
+      <text class="direct-label" x="382" y="220" text-anchor="end">Rental housing supplied by treated landlords</text>
+      <rect x="307" y="228" width="83" height="20" fill="#b6432c"/>
+      <text class="num" x="301" y="243" text-anchor="end" fill="#b6432c" font-weight="600">−15%</text>
+
+      <text class="direct-label" x="398" y="280">Owner-occupiers in treated buildings</text>
+      <rect x="390" y="288" width="45" height="20" fill="#ac7d2c"/>
+      <text class="num" x="441" y="303" fill="#ac7d2c" font-weight="600">+8.1%</text>
+
+      <text class="annot" x="390" y="340" text-anchor="middle">change caused by rent control coverage, treated vs. control buildings</text>
+    </svg>
+    <figcaption>
+      <b>Both sides of the ledger, from one experiment.</b> Rent control worked for the tenants
+      it covered (teal) — and shrank the rental market around them (vermilion), as landlords
+      converted to condos, moved in themselves, or redeveloped into exempt buildings (ochre).
+      Source: Diamond, McQuade &amp; Qian (2019).
+    </figcaption>
+  </figure>
+
+  <p>
+    Landlords hit by the law cut the housing they supplied to renters by 15 percent — not by
+    letting buildings rot, mostly, but by lawful exit: selling units to owner-occupants,
+    converting to condos, or demolishing and rebuilding into exempt new construction. The
+    replacement housing catered to higher-income buyers. The authors’ conclusion is a small
+    masterpiece of economic irony: by shrinking rental supply, the law “likely drove up market
+    rents in the long run, ultimately undermining the goals of the law.” Rent control taxed
+    landlords to insure sitting tenants — and the tax was paid by <em>future renters</em>, in
+    the form of a smaller, pricier, more gentrified rental market.
+  </p>
+
+  <h3>Cambridge, 1995: the ghost premium</h3>
+  <p>
+    Massachusetts voters abolished rent control statewide in 1994, decontrolling Cambridge
+    overnight. David Autor, Christopher Palmer, and Parag Pathak tracked what happened to
+    property values: decontrolled buildings appreciated sharply, as expected — but so did
+    <em>never-controlled buildings on the same blocks</em>. Decontrol added roughly
+    <b>$2 billion</b> to Cambridge property values over the following decade, and most of the
+    gain came from those spillovers.<span class="sn-ref">9</span> Rent-controlled buildings had
+    been dragging down whole neighborhoods — through disrepair, underinvestment, and blight —
+    and the market had been quietly billing everyone for it.
+  </p>
+  <span class="sidenote"><span class="sn-no">9</span> Autor, Palmer &amp; Pathak, “Housing Market
+    Spillovers: Evidence from the End of Rent Control in Cambridge, Massachusetts,”
+    <em>Journal of Political Economy</em> (2014). Related: Sims (2007) finds Massachusetts
+    decontrol raised rental supply and maintenance.</span>
+
+  <h3>112 studies, one scoreboard</h3>
+  <p>
+    In 2024 Konstantin Kholodilin published what he calls an “almost complete review” of the
+    empirical rent control literature: 206 works, of which 112 are published empirical studies,
+    spanning 1967–2023 and every continent that has tried the policy.<span class="sn-ref">10</span>
+    The headline result: rent control <em>does</em> lower rents in controlled units — by 9.4
+    percent on average — and raises them in uncontrolled units by 4.8 percent, as the squeezed-out
+    overflow bids up whatever the law doesn’t reach. The relief is real, and so is the bill;
+    it’s just mailed to someone else.
+  </p>
+  <span class="sidenote"><span class="sn-no">10</span> Kholodilin, “Rent control effects through
+    the lens of empirical research,” <em>Journal of Housing Economics</em> (2024) — in the source
+    folder. The scoreboard: mobility ↓ in nearly every study; quality ↓ in all but two;
+    new construction ↓ in about two-thirds; homeownership ↑ in the majority (condo conversion,
+    again); uncontrolled rents ↑ almost everywhere.</span>
+
+  <figure class="reveal">
+    <svg class="chart" viewBox="0 0 760 230" role="img"
+         aria-label="Range plot of estimated rent effects across the literature: controlled rents fall between 57 and 1 percent with an average of minus 9.4; uncontrolled rents move between minus 2 and plus 14.8 percent with an average of plus 4.8">
+      <!-- zero line -->
+      <line x1="540" y1="36" x2="540" y2="180" stroke="#cfc2a6" stroke-width="1.2"/>
+
+      <text class="direct-label" x="90" y="62">Rents in <tspan font-weight="600">controlled</tspan> units</text>
+      <line x1="113" y1="86" x2="533" y2="86" stroke="#22585e" stroke-width="2" opacity=".45"/>
+      <line x1="113" y1="79" x2="113" y2="93" stroke="#22585e" stroke-width="2" opacity=".45"/>
+      <line x1="533" y1="79" x2="533" y2="93" stroke="#22585e" stroke-width="2" opacity=".45"/>
+      <circle cx="470" cy="86" r="6.5" fill="#22585e"/>
+      <text class="num" x="470" y="72" text-anchor="middle" fill="#22585e" font-weight="600">−9.4% avg</text>
+
+      <text class="direct-label" x="90" y="128">Rents in <tspan font-weight="600">uncontrolled</tspan> units nearby</text>
+      <line x1="525" y1="152" x2="651" y2="152" stroke="#b6432c" stroke-width="2" opacity=".5"/>
+      <line x1="525" y1="145" x2="525" y2="159" stroke="#b6432c" stroke-width="2" opacity=".5"/>
+      <line x1="651" y1="145" x2="651" y2="159" stroke="#b6432c" stroke-width="2" opacity=".5"/>
+      <circle cx="576" cy="152" r="6.5" fill="#b6432c"/>
+      <text class="num" x="576" y="138" text-anchor="middle" fill="#b6432c" font-weight="600">+4.8% avg</text>
+
+      <line class="axis" x1="90" y1="180" x2="690" y2="180"/>
+      <g class="num" text-anchor="middle">
+        <text x="90" y="200">−60%</text><text x="240" y="200">−40</text><text x="390" y="200">−20</text>
+        <text x="540" y="200">0</text><text x="690" y="200">+20%</text>
+      </g>
+      <text class="annot" x="90" y="224">Range and average of estimated effects on rents, 112 published studies, 1967–2023.</text>
+    </svg>
+    <figcaption>
+      <b>The policy works — and leaks.</b> Controlled rents fall; rents on everything the law
+      doesn’t cover rise, because the shortage has to go somewhere. Whether a given renter wins
+      or loses depends on which side of the line they happen to stand.
+      Source: Kholodilin (2024).
+    </figcaption>
+  </figure>
+
+  <h3>Three cities, one decade: the replication era</h3>
+  <p>
+    The 2020s have run the experiment three more times, in fast-forward.
+  </p>
+  <p>
+    <b>Berlin</b> froze rents on most of its housing stock in February 2020 — the
+    <em>Mietendeckel</em>. Rents on covered flats duly fell. So did the number of covered flats
+    anyone could actually rent: listings of controlled apartments collapsed by more than half
+    within a year, as owners sold, held units empty, or waited out a law they expected to die.
+    Germany’s constitutional court obliged in April 2021, voiding the freeze — and Berlin tenants
+    got retroactive back-rent bills.
+  </p>
+  <p>
+    <b>St. Paul, Minnesota</b> passed one of America’s strictest ordinances by referendum in
+    November 2021: 3 percent annual cap, no inflation indexing, and — unusually — <em>no exemption
+    for new construction</em>. Multifamily building permits slumped while neighboring Minneapolis’s
+    rose, and researchers found property values fell by 6–7 percent, with losses concentrated in
+    exactly the neighborhoods the law meant to help. Within a year the city council exempted new
+    construction for twenty years — a referendum result, amended by its own consequences.<span class="sn-ref">11</span>
+  </p>
+  <span class="sidenote"><span class="sn-no">11</span> Ahern &amp; Giacoletti, “Robbing Peter to
+    Pay Paul? The Redistribution of Wealth Caused by Rent Control” (NBER working paper, 2022),
+    on St. Paul; on Berlin, see Hahn, Kholodilin, Waltl &amp; Fongoni, “Forward to the Past:
+    Short-Term Effects of the Rent Freeze in Berlin,” <em>Management Science</em> (2024).</span>
+  <p>
+    <b>Buenos Aires</b> ran both arms of the trial. A 2020 national rental law — mandatory
+    three-year contracts, indexed increases — was followed by landlords pulling apartments from
+    the long-term market en masse; the rental supply visible on listing sites shriveled while
+    asking rents soared. In December 2023 the law was repealed outright. Within a year, listings
+    had multiplied severalfold and inflation-adjusted asking rents had fallen substantially.
+    Few policies have ever been switched off and on so cleanly, with the market answering both
+    times.
+  </p>
+
+  <blockquote class="pull">
+    Next to bombing, rent control seems in many cases to be the most efficient technique so far
+    known for destroying cities — and yet, unlike bombing, it is a policy cities keep choosing
+    for themselves.
+    <footer>— after Lindbeck; the second clause is the puzzle this essay ends on</footer>
+  </blockquote>
+</section>
+
+<!-- ================================================================ -->
+<section class="chapter" id="winners">
+  <p class="chapter-no">Chapter VIII</p>
+  <h2>Who wins, who loses</h2>
+  <p class="subhead">Rent control isn’t a transfer from landlords to tenants. It’s a transfer from future tenants to present ones.</p>
+
+  <p class="dropcap">
+    Honesty requires saying plainly what rent control gets right. Renters face a genuine
+    hardship: build a life in a neighborhood — job, school, friendships, aging parents — and a
+    rent spike can confiscate all of it at lease renewal. Homeowners are shielded from this
+    automatically; renters are not. Diamond, McQuade, and Qian found that San Francisco’s
+    covered tenants really did stay, and most of those who stayed would otherwise have left the
+    city entirely. Rent control is, at its core, <b>insurance against displacement</b> — and the
+    problem it responds to is real.
+  </p>
+  <p>
+    But a lack of housing is a hardship too — every bit as heavy as a rent increase, and usually
+    heavier. The family doubled up with in-laws, the worker turning down a better job because
+    there’s nothing to rent near it, the couple whose apartment search stretches into its second
+    year: these are the people on the other side of the shortage. The difference between the two
+    hardships is not their size. It is that <b>the tenant facing a rent increase lives in the
+    city and votes there, while the people priced out or queued out mostly don’t live there yet</b> —
+    and never will, precisely because of the policy. One hardship has a face, an address, and a
+    ballot; the other belongs to strangers the city will never meet. Democracy weighs the first
+    and cannot even see the second.
+  </p>
+  <p>
+    And the premium still has to be paid by someone. It falls first on landlords — but landlords
+    can exit, and do: condo conversions, redevelopment, deferred maintenance. As supply shrinks,
+    the cost shifts to everyone <em>outside</em> the walls: the young, the newcomers, the growing
+    families — who face fewer listings, higher market rents, longer queues, and landlords choosy
+    enough to demand references from employers. The benefits are untargeted (the sitting tenant
+    might be a retired banker; the excluded outsider a night-shift nurse), and they decay: even
+    in San Francisco, the displacement protection eroded year by year as buildings left the
+    rental stock. Rent control is a policy whose costs compound and whose benefits evaporate —
+    the exact reverse of what good insurance looks like.
+  </p>
+  <p>
+    Gunnar Myrdal — Swedish social democrat, architect of the welfare state, Nobel laureate —
+    watched his own country’s version and called rent control “perhaps the worst example of poor
+    planning by governments lacking courage and vision.” It takes nothing away from the
+    seriousness of the affordability crisis to notice that this particular answer keeps failing
+    the people it is written for.
+  </p>
+</section>
+
+<!-- ================================================================ -->
+<section class="chapter" id="fixes">
+  <p class="chapter-no">Chapter IX</p>
+  <h2>What would actually work</h2>
+  <p class="subhead">High rents are a shortage of homes wearing a price tag. Treat the shortage.</p>
+
+  <p class="dropcap">
+    Rents are high in San Francisco and low in Houston not because Texan landlords are kinder,
+    but because Houston lets people build. Where zoning, permitting, and land-use rules allow
+    supply to answer demand, demand shocks show up as construction cranes; where they don’t,
+    demand shows up as rent. The deepest fix for expensive housing is embarrassingly literal:
+    <b>more housing</b>. When Auckland broadly upzoned in 2016, construction surged and rents
+    fell relative to trend. Tokyo, which permits housing by right at a pace American cities
+    would consider reckless, has kept rents remarkably flat through decades of population
+    inflow into the metro core.
+  </p>
+  <p>
+    For the households that markets alone won’t reach, help them directly: <b>housing vouchers
+    and cash assistance</b> subsidize the tenant without taxing the existence of rental housing —
+    the subsidy arrives <em>through</em> the price signal instead of jamming it. And the
+    displacement-insurance problem that gives rent control its moral force can be addressed as
+    insurance: longer optional leases, or graduated tenure protections that smooth rent shocks
+    for genuinely settled tenants without freezing the whole stock.
+  </p>
+
+  <h3>If a city insists on rent control anyway…</h3>
+  <p>
+    Second-generation designs can blunt the worst damage. Each rule below is a lesson some city
+    paid to learn — and notice the fine print: every fix works by weakening the control, which
+    is the quiet admission at the heart of the policy.
+  </p>
+
+  <ol class="rules">
+    <li><b>Exempt new construction, permanently.</b>
+      <p>St. Paul’s lesson. Tax the existence of future buildings and they don’t exist. Every workable ordinance shields them — which is why rent control can never make <em>more</em> housing affordable, only redistribute today’s.</p></li>
+    <li><b>Cap increases; don’t freeze levels.</b>
+      <p>Mumbai’s lesson. Allow inflation plus a margin, or maintenance becomes a charity project and buildings decay to match their rents.</p></li>
+    <li><b>Let rents reset between tenants.</b>
+      <p>Vacancy decontrol preserves the insurance for sitting tenants while keeping landlords in the rental business — at the price of giving them a reason to want tenants gone, so pair it with strong anti-harassment enforcement.</p></li>
+    <li><b>Reward upkeep.</b>
+      <p>Tie permitted increases to documented improvements, or quality becomes the escape valve.</p></li>
+    <li><b>Ask who’s being helped.</b>
+      <p>Untargeted control protects celebrities in classic sixes as fiercely as night-shift nurses. Means-tested assistance does not.</p></li>
+    <li><b>Pair any control with a building boom.</b>
+      <p>Rent control at best manages a shortage. Only supply ends one. A city that caps rents while blocking construction has chosen the queue, the key money, and the crumbling roof — it just hasn’t received them yet.</p></li>
+  </ol>
+
+  <p>
+    The ceiling trap, in the end, is a trap of timing. The benefits of rent control arrive
+    immediately and visibly, to people with names and leases. The costs arrive slowly and
+    anonymously — a building not built, a listing never posted, a family that settled elsewhere.
+    Politics counts the first kind and not the second. Economics exists, in large part, to
+    count both.
+  </p>
+
+  <hr class="sep">
+</section>
+
+<!-- ================================================================ -->
+<section class="sources" id="sources">
+  <h2>Sources &amp; further reading</h2>
+  <ul>
+    <li><b>Cowen, T. &amp; Tabarrok, A.</b> <em><a href="https://www.macmillanlearning.com/college/us/product/Modern-Principles-of-Economics/p/1319421237" rel="noopener">Modern Principles of Economics</a></em> (Macmillan) — chapters on price ceilings and rent control; the framework of shortages, quality decay, search costs, lost gains from trade, and misallocation used throughout this essay.</li>
+    <li><b>Tabarrok, A.</b> “Price Ceilings: Rent Controls,” Marginal Revolution University video (embedded above) — rent control in Mumbai. <a href="https://youtu.be/2fh4tPWYeks" rel="noopener">youtu.be/2fh4tPWYeks</a></li>
+    <li><b>Friedman, M. &amp; Stigler, G. J.</b> (1946). <em><a href="https://fee.org/ebooks/roofs-or-ceilings-the-current-housing-problem/" rel="noopener">Roofs or Ceilings? The Current Housing Problem.</a></em> Foundation for Economic Education. The 1906/1946 San Francisco comparison.</li>
+    <li><b>Diamond, R., McQuade, T. &amp; Qian, F.</b> (2019). “The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San Francisco.” <em>American Economic Review</em> 109(9): 3365–3394. <a href="https://doi.org/10.1257/aer.20181289" rel="noopener">doi.org/10.1257/aer.20181289</a></li>
+    <li><b>Kholodilin, K. A.</b> (2024). “Rent control effects through the lens of empirical research: An almost complete review of the literature.” <em>Journal of Housing Economics</em> 63: 101983. <a href="https://doi.org/10.1016/j.jhe.2024.101983" rel="noopener">doi.org/10.1016/j.jhe.2024.101983</a></li>
+    <li><b>Oust, A.</b> (2018). “The Removal of Rent Control and Its Impact on Search and Mismatching Costs: Evidence from Oslo.” <em>International Journal of Housing Policy</em> 18(3): 433–453. <a href="https://doi.org/10.1080/19491247.2017.1336876" rel="noopener">doi.org/10.1080/19491247.2017.1336876</a></li>
+    <li><b>Autor, D., Palmer, C. &amp; Pathak, P.</b> (2014). “Housing Market Spillovers: Evidence from the End of Rent Control in Cambridge, Massachusetts.” <em>Journal of Political Economy</em> 122(3): 661–717. <a href="https://doi.org/10.1086/675536" rel="noopener">doi.org/10.1086/675536</a></li>
+    <li><b>Glaeser, E. &amp; Luttmer, E.</b> (2003). “The Misallocation of Housing Under Rent Control.” <em>American Economic Review</em> 93(4): 1027–1046. <a href="https://doi.org/10.1257/000282803769206188" rel="noopener">doi.org/10.1257/000282803769206188</a></li>
+    <li><b>Sims, D.</b> (2007). “Out of control: What can we learn from the end of Massachusetts rent control?” <em>Journal of Urban Economics</em> 61(1): 129–151. <a href="https://doi.org/10.1016/j.jue.2006.06.004" rel="noopener">doi.org/10.1016/j.jue.2006.06.004</a></li>
+    <li><b>Ahern, K. &amp; Giacoletti, M.</b> (2022). “Robbing Peter to Pay Paul? The Redistribution of Wealth Caused by Rent Control.” <a href="https://www.nber.org/papers/w30083" rel="noopener">NBER Working Paper 30083</a> — St. Paul, Minnesota.</li>
+    <li><b>Alston, R., Kearl, J. &amp; Vaughan, M.</b> (1992). “Is There a Consensus Among Economists in the 1990’s?” <em>American Economic Review</em> 82(2); and <a href="https://kentclarkcenter.org/surveys/rent-control/" rel="noopener">IGM Economic Experts Panel, “Rent Control” (2012)</a>.</li>
+    <li><b>Lindbeck, A.</b> (1971). <em>The Political Economy of the New Left.</em> Harper &amp; Row. Source of the bombing quotation.</li>
+    <li><b>Hahn, A., Kholodilin, K., Waltl, S. &amp; Fongoni, M.</b> (2024). “Forward to the Past: Short-Term Effects of the Rent Freeze in Berlin.” <em>Management Science</em>. <a href="https://doi.org/10.1287/mnsc.2023.4775" rel="noopener">doi.org/10.1287/mnsc.2023.4775</a></li>
+    <li><b>Stockholm Bostadsförmedlingen</b>, <a href="https://bostad.stockholm.se/statistik/" rel="noopener">annual queue statistics</a>.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="colophon">
+  <div class="swatches" aria-hidden="true">
+    <span style="background:#f5efe1"></span><span style="background:#22585e"></span>
+    <span style="background:#ac7d2c"></span><span style="background:#b6432c"></span>
+    <span style="background:#c08e79"></span><span style="background:#23312f"></span>
+  </div>
+  <p>
+    Set in Newsreader. Layout and graphics after Edward Tufte — data-ink, direct labels, sidenotes.<br>
+    Colors after Sanzo Wada, <em>A Dictionary of Color Combinations</em> (1933).<br>
+    All charts are hand-drawn SVG; all numbers are from the sources above.<br>
+    <a href="/explainers/">More explainers</a> · <a href="/">Alex Tabarrok</a>
+  </p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

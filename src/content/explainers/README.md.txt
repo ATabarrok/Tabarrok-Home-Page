@@ -5,7 +5,7 @@ together several of Alex's papers; others are about a subject he has never
 written up formally. Every one of them is declared as a block in
 src/data/explainers.yaml and listed on /explainers/.
 
-There are three flavours, and at most one field in the block says which.
+There are four flavours, and at most one field in the block says which.
 
 1. MARKDOWN — body: something.md
 
@@ -50,7 +50,20 @@ route skips entries without a `body` in any case, so the two never collide.
 
 A piece that already lives at its own address. Nothing is built; the index and
 any paper chips link straight out to it, and the index shows the host so a
-reader knows the link leaves the site. See the rent-control entry.
+reader knows the link leaves the site. Nothing uses this at the moment.
+
+4. A SELF-CONTAINED BUNDLE — no body, no url
+
+A page that brings its own HTML, CSS, JavaScript and images and wants the site
+only for its address. Drop the whole thing in public/explainers/<slug>/ as
+index.html plus whatever it needs, and leave the block bare like flavour 2.
+
+Astro copies public/ across untouched, so the page keeps its own typography and
+palette rather than the site frame, and none of the shared furniture applies.
+Two consequences worth knowing. Give the page a <link rel="canonical"> itself,
+since no layout is there to do it. And because nothing routes it, the sitemap
+integration cannot see it either — add the URL to `customPages` in
+astro.config.mjs or it ships absent from the sitemap. See rent-control.
 
 PAPERS ARE OPTIONAL
 
