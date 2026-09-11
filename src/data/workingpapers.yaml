@@ -14,21 +14,22 @@
   url: https://alextabarrok.com/papers/how-much-redistribution-will-ai-require.pdf
   year: 2026
   abstract: >-
-    Artificial intelligence may raise output while reducing labor’s share of income. This paper
-    derives an accounting rule for the transfer required to keep aggregate real labor income per
-    capita on its no-AI path. The required share of AI-path GDP depends on relative GDP and
-    labor’s share. Faster growth permits a lower labor share without reducing aggregate labor
-    income. Suppose GDP would otherwise grow by 2 percent annually, with labor receiving 60
-    percent. No transfer is needed if AI raises annual growth to 5 percent and labor’s share
-    remains at least 45 percent. At 10 percent growth, labor’s share can fall to 28 percent and
-    labor as a whole would remain as well off as under the no-AI path. A three-parameter
-    translator connects beliefs about displacement, productivity, and labor’s share of new output
-    to this forecast space. Across three stylized views, including one in which labor’s share falls
-    to 23 percent, the required transfer remains below 6 percent of GDP. At that scale, making
-    labor recipients whole while preserving gains for capital recipients appears politically
-    feasible.
+    Artificial intelligence may raise output while reducing labor’s share of income. This
+    paper derives an accounting rule for the transfer required to keep aggregate real labor
+    income per capita on its no-AI path. The required share of AI-path GDP depends on
+    relative GDP and labor’s share. Faster growth permits a lower labor share without
+    reducing aggregate labor income. Suppose real GDP per capita would otherwise grow by 2
+    percent annually over ten years, with labor receiving 60 percent. No transfer is needed
+    if AI raises annual growth to 5 percent and labor’s share remains at least 45 percent.
+    At 10 percent growth, labor’s share can fall to approximately 28 percent and labor as a
+    whole would remain as well off as under the no-AI path. A three-parameter translator
+    connects beliefs about displacement, productivity, and labor’s share of new output to
+    this forecast space. Across three stylized views, including one in which labor’s share
+    falls to 23 percent, the required transfer remains below 6 percent of GDP. At that
+    scale, making labor recipients whole while preserving gains for capital recipients
+    appears politically feasible.
   citation: >-
-    Tabarrok, Alex. 2026. “How Much Redistribution Will AI Require?” Working paper, August.
+    Tabarrok, Alex. 2026. “How Much Redistribution Will AI Require?” Working paper, September.
     [PDF](https://alextabarrok.com/papers/how-much-redistribution-will-ai-require.pdf).
 
 - id: chaos-and-misallocation-under-price-controls
