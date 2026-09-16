@@ -37,7 +37,7 @@
   },
   "rewrites": [
     {
-      "source": "/api/chile/:path*",
+      "source": "/api/chile/:path*/",
       "destination": "/api/chile.py"
     }
   ]
