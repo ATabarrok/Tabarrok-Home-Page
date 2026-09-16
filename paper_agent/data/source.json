@@ -1,0 +1,15 @@
+{
+  "description": "Pinned local scientific source snapshot; full original paths omitted from runtime metadata",
+  "files": {
+    "output/python_validation/validate.py": "09fa2975c91f1767f736f4803994cfcdf4b6a7ac40167a11a33035519f50523c",
+    "output/python_validation/stata_reference.csv": "b052a47abd4d8b29738cff4cefb5c40373990b68125ac3cd078c6e4f47318eb4",
+    "output/python_validation/stata_samples.csv": "fee09cefaa47604072e4680677a4c145df532951846fd9dfd97ac4e928b288aa",
+    "output/python_validation/stata_reference.do": "17e05ff767297bef5f074809e54f6aefdd43fe1479145dcf19972ca6178d7f18",
+    "output/python_validation/REPORT.md": "6078020e1b1612746ab56bac71349364fee47279993a55fc2f59de8ed16a2f20",
+    "output/python_validation/requirements.lock.txt": "6e913983dfdae6f60f143e65fb3184a1da51a8b5d6b84e7b63a9f496a1a1f4f0",
+    "data_intermediate/cohort_va.dta": "fb64d3b82cbb46f86ca5d4407797533df9353bfa745f6e25454e528067e5df95",
+    "scripts/16_paper_regressions_ordered.do": "f6d78eda4f3f83f2c8c68c5c4a4705bb1e9f4e6c1a362813639c6bd1dd754b28",
+    "scripts/20_effect_sizes.do": "9e88e82626e026b60dc3747748ab9b404bf7f7d87f7bdc96002570957b8597bc",
+    "Paper/Latex/findings.tex": "ebcd614102a1dbe11cc1cf9933c244f15760e9414a85b7f2a49029e053d1a6af"
+  }
+}

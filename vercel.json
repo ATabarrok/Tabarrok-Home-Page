@@ -18,9 +18,27 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
+    }
+  ],
+  "functions": {
+    "api/chile.py": {
+      "maxDuration": 180,
+      "excludeFiles": "{node_modules/**,public/**,dist/**,.git/**,src/**,scripts/**,tests/**}"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/chile/:path*",
+      "destination": "/api/chile"
     }
   ]
 }
