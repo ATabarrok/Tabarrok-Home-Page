@@ -1,0 +1,17 @@
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+            &\multicolumn{1}{c}{VA}&\multicolumn{1}{c}{VA+4Bshr}&\multicolumn{1}{c}{Reading}&\multicolumn{1}{c}{Math}\\
+\hline
+share\_priv\_2m&       14.05\sym{***}&       14.94\sym{***}&       9.114\sym{***}&       18.40\sym{***}\\
+            &     (2.471)         &     (3.833)         &     (1.948)         &     (3.156)         \\
+[1em]
+score\_4b    &       0.734\sym{***}&       0.740\sym{***}&       0.555\sym{***}&       0.841\sym{***}\\
+            &    (0.0708)         &    (0.0634)         &    (0.0590)         &    (0.0827)         \\
+[1em]
+share\_priv\_4b&                     &      -1.472         &                     &                     \\
+            &                     &     (4.785)         &                     &                     \\
+\hline
+Commune FE  &          No         &          No         &          No         &          No         \\
+Other FE    &Subject x cohort         &Subject x cohort         &      Cohort         &      Cohort         \\
+Observations&       6,142         &       6,142         &       3,070         &       3,072         \\
+Clusters    &         315         &         315         &         315         &         314         \\
+R2          &       0.513         &       0.513         &       0.405         &       0.495         \\

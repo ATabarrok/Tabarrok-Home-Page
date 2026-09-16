@@ -1,0 +1,36 @@
+{
+  "snapshot": "2026-09-16",
+  "status": "Reported manuscript results; not newly estimated",
+  "uncertainty": "Displayed intervals are coefficient ± one reported standard error, not confidence intervals.",
+  "files": [
+    {
+      "path": "Paper/Latex/tables/tab_cohort_va.tex",
+      "sha256": "9b59fed349cbbdeecd5f855e7f6dc9bee8713bd9c45c138996ad305641b68473"
+    },
+    {
+      "path": "Paper/Latex/findings.tex",
+      "sha256": "ebcd614102a1dbe11cc1cf9933c244f15760e9414a85b7f2a49029e053d1a6af"
+    },
+    {
+      "path": "Paper/Latex/tables/tab_panel_full.tex",
+      "sha256": "83b58593123a3583079443b9a3399f9441ec24edf913243ccb034908d30ccb20"
+    },
+    {
+      "path": "Paper/Latex/tables/tab_hu_benchmark.tex",
+      "sha256": "5f9caa9e215cbe9415ca37c63c9cf610ad1e354517240fa31d160f3edec5163c"
+    },
+    {
+      "path": "Paper/Latex/tables/tab_robust_market.tex",
+      "sha256": "bfe111eb350cadff3871ad8b102fab4ea8e0030ce2811c8d91317e5fb2e0936f"
+    },
+    {
+      "path": "Paper/Latex/tables/tab_exposure.tex",
+      "sha256": "bb59a9ece7e46d6bc0c9afbea4a39b027b563c19c8d43ab496aeb8570c612283"
+    },
+    {
+      "path": "Paper/Latex/findings.pdf",
+      "sha256": "5ad303bf06481d281216a99df958d00f18aabc91e0eb0a93e1c74646eb30ae72",
+      "note": "Existing supplied PDF. Its build predates the last saved LaTeX source; displayed estimates are extracted from source tables/text."
+    }
+  ]
+}

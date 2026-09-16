@@ -1,0 +1,11 @@
+          &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+          &\multicolumn{1}{c}{LD 4B (H--U margin)}&\multicolumn{1}{c}{LD 2M}&\multicolumn{1}{c}{Panel 2M}&\multicolumn{1}{c}{Cohort VA}\\
+\midrule
+share\_priv&     4.16         &    11.45\sym{**} &     6.17\sym{**} &    14.05\sym{***}\\
+          &   (4.46)         &   (5.67)         &   (3.01)         &   (2.47)         \\
+\midrule
+Baseline controls&      Yes         &      Yes         &       No         &      Yes         \\
+Lag 4B score&       No         &       No         &       No         &      Yes         \\
+N         &      333         &      294         &     7927         &     6142         \\
+Clusters  &      333         &      294         &      315         &      315         \\
+R2        &    0.437         &    0.474         &    0.761         &    0.513         \\

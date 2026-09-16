@@ -1,0 +1,19 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Robustness: Market Definition\label{tab:robustmarket}}
+\begin{tabular}{l*{5}{c}}
+\toprule
+            &\multicolumn{3}{c}{Panel FE}                                     &\multicolumn{2}{c}{Cohort VA}              \\\cmidrule(lr){2-4}\cmidrule(lr){5-6}
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+            &\multicolumn{1}{c}{Communes}&\multicolumn{1}{c}{GS one mkt.}&\multicolumn{1}{c}{Excl. RM}&\multicolumn{1}{c}{GS one mkt.}&\multicolumn{1}{c}{Excl. RM}\\
+\midrule
+Private share&       10.52\sym{***}&        8.41\sym{***}&       10.32\sym{***}&       16.62\sym{***}&       17.72\sym{***}\\
+            &      (2.90)         &      (2.81)         &      (3.14)         &      (2.42)         &      (2.79)         \\
+\midrule
+Observations&      19,221         &      17,601         &      16,523         &       5,602         &       5,242         \\
+Markets     &         336         &         309         &         291         &         288         &         270         \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

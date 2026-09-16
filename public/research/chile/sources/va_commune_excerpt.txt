@@ -1,0 +1,5 @@
+Manuscript: Cohort Value-Added Evidence / Robustness / Commune fixed effects
+
+Adding commune fixed effects to equation~(\ref{eq:va}) yields 0.40 (SE $= 4.39$). This is uninformative rather than contradictory: within commune, across the ten matched cohorts, the standard deviation of the 2M private share is only 4.1 percentage points (against 22.7 raw), so that specification discards nearly all identifying variation. The within-commune evidence at horizons long enough to contain real share variation is the panel of Section~\ref{sec:panel} and the long differences of Table~\ref{tab:hubenchmark}.
+
+Observation and cluster counts are not specified in this paragraph and are not inferred here.

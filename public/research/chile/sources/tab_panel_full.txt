@@ -1,0 +1,9 @@
+          &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+          &\multicolumn{1}{c}{Commune FE}&\multicolumn{1}{c}{4B only}&\multicolumn{1}{c}{2M only}&\multicolumn{1}{c}{Reading}&\multicolumn{1}{c}{Math}&\multicolumn{1}{c}{C$\times$G FE}\\
+\midrule
+share\_priv&    10.52\sym{***}&     4.32         &     6.17\sym{**} &     9.41\sym{***}&    11.63\sym{***}&     5.42\sym{**} \\
+          &   (2.90)         &   (4.10)         &   (3.01)         &   (2.29)         &   (3.71)         &   (2.74)         \\
+\midrule
+N         &    19221         &    11293         &     7927         &     9609         &     9610         &    19220         \\
+Clusters  &      336         &      336         &      315         &      335         &      335         &      336         \\
+R$^2$     &    0.737         &    0.840         &    0.761         &    0.804         &    0.707         &    0.813         \\

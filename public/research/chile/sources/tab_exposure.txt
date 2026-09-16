@@ -1,0 +1,37 @@
+\begin{table}[htbp]\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Cohort Exposure Paths: Alternative Treatment Timings\label{tab:exposure}}
+\begin{tabular}{l*{5}{c}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+                    &\multicolumn{1}{c}{Grade 4}&\multicolumn{1}{c}{Exposure}&\multicolumn{1}{c}{Level + change}&\multicolumn{1}{c}{Pre-outcome}&\multicolumn{1}{c}{Grade 10}\\
+\midrule
+PS share, grade 4   &       12.41\sym{***}&                     &       13.46\sym{***}&                     &                     \\
+                    &      (3.36)         &                     &      (3.11)         &                     &                     \\
+\addlinespace
+Exposure, grades 5--10&                     &       15.17\sym{***}&                     &                     &                     \\
+                    &                     &      (3.18)         &                     &                     &                     \\
+\addlinespace
+Change, grades 4--10&                     &                     &       14.94\sym{***}&                     &                     \\
+                    &                     &                     &      (3.83)         &                     &                     \\
+\addlinespace
+Exposure, grades 5--9&                     &                     &                     &       14.57\sym{***}&                     \\
+                    &                     &                     &                     &      (3.29)         &                     \\
+\addlinespace
+PS share, grade 10  &                     &                     &                     &                     &       14.05\sym{***}\\
+                    &                     &                     &                     &                     &      (2.47)         \\
+\addlinespace
+Baseline score (4B) &        0.70\sym{***}&        0.71\sym{***}&        0.74\sym{***}&        0.71\sym{***}&        0.73\sym{***}\\
+                    &      (0.06)         &      (0.07)         &      (0.06)         &      (0.07)         &      (0.07)         \\
+\midrule
+Observations        &       6,142         &       6,142         &       6,142         &       6,142         &       6,142         \\
+Communes            &         315         &         315         &         315         &         315         &         315         \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{6}{l}{\footnotesize All columns control for the same-subject 4B commune mean and}\\
+\multicolumn{6}{l}{\footnotesize subject $\times$ cohort fixed effects, weighted by 2M tested students.}\\
+\multicolumn{6}{l}{\footnotesize Pre-outcome: average share over grades 5--9, measured entirely before the outcome year.}\\
+\multicolumn{6}{l}{\footnotesize Standard errors clustered by commune. Common sample.}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}
