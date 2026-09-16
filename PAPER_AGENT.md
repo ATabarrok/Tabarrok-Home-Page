@@ -1,3 +1,7 @@
+# Website integration
+
+This checkout uses `paper_agent/` where the standalone package uses `src/`. The installation instructions below describe the downloadable `public/research/chile/chile-mcp.zip`, which also includes the bound scientific source scripts. For this website run `python -m uvicorn webapp:app --app-dir paper_agent --port 8765` after installing root `requirements.txt`. Vercel loads `api/chile.py`; Astro continues to build the existing static site.
+
 # Chile paper agent
 
 An executable companion to Alex Tabarrok's *Private School Competition and Student Achievement in Chile*. Built using Paper2Agent's Paper2MCP workflow, pinned at `c5ce59cc726eddebd6623cc70ad2a80ae55c224e`.

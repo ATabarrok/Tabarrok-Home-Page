@@ -50,7 +50,9 @@
     const entry=document.createElement('div');entry.className='agent-turn';target.append(entry);paragraph(entry,question,'agent-user');
     const pending=paragraph(entry,'Reading the paper and running any requested calculations…');
     try {
-      const data=await call('chat',{question,history:history.slice(-6)},$('agent-access').value);
+      const recent=history.slice(-6);
+      while(recent.length && new TextEncoder().encode(JSON.stringify({question,history:recent})).length>11000)recent.splice(0,2);
+      const data=await call('chat',{question,history:recent},$('agent-access').value);
       pending.remove();paragraph(entry,data.answer,'agent-answer');
       for(const run of data.runs||[])result(entry,run.result);
       const link=document.createElement('a');link.href='/research/chile/paper.pdf';link.textContent='Read the source manuscript ↗';entry.append(link);
