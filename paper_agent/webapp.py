@@ -100,7 +100,7 @@ async def conversation(question,history,client):
 async def chat(request):
     if not configured():return response({'error':'Conversation is awaiting server configuration. You can still run the two models below.'},503)
     provided=request.headers.get('authorization','').removeprefix('Bearer ')
-    if not hmac.compare_digest(provided,os.environ['CHILE_AGENT_ACCESS_CODE']):return response({'error':'Enter the pilot access code.'},401)
+    if not hmac.compare_digest(provided.encode('utf8'),os.environ['CHILE_AGENT_ACCESS_CODE'].encode('utf8')):return response({'error':'Enter the pilot access code.'},401)
     try:
         data=await body(request);question=data.get('question');history=data.get('history',[])
         if not isinstance(question,str) or not 1<=len(question.strip())<=2000:raise ValueError()
