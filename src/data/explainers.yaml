@@ -24,6 +24,14 @@
 # "Explainer" chip on /research/ pointing here; an id matching no paper fails
 # the build. Leave it out for a piece that belongs to no paper.
 
+- slug: chile-school-competition
+  title: "Private school competition in Chile"
+  description: >-
+    How does the private share of schooling relate to average achievement across
+    public and private schools? Explore the evidence through interactive charts
+    comparing grades, cohorts, and years of exposure.
+  url: https://alextabarrok.com/research/chile/
+
 - slug: rent-control
   title: "Rent control: the ceiling trap"
   description: >-
