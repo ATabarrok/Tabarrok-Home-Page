@@ -6,7 +6,7 @@
   <link rel="canonical" href="https://alextabarrok.com/research/chile/">
   <meta name="description" content="Explore the evidence on private school competition and student achievement in Chile. Compare grades, subjects, fixed effects, and market definitions.">
   <link rel="icon" type="image/svg+xml" href="/research/chile/favicon.svg">
-  <link rel="stylesheet" href="/research/chile/style.css"><script is:inline defer src="/research/chile/results.js"></script><script is:inline defer src="/research/chile/app.js?v=20260918"></script>
+  <link rel="stylesheet" href="/research/chile/style.css"><script is:inline defer src="/research/chile/results.js"></script><script is:inline defer src="/research/chile/app.js?v=20260918b"></script>
   <link rel="stylesheet" href="/research/chile/agent.css"><script is:inline defer src="/research/chile/agent.js?v=20260916"></script>
 </head>
 <body>
@@ -25,7 +25,6 @@
       </div>
       <div class="takeaway"><span>What to take from this</span><p id="takeaway">The main pooled estimate is 10.52. With commune × grade fixed effects it falls to 5.42. The grade-specific estimates do not depend on that fixed-effect choice.</p></div>
     </section>
-    <section class="magnitude-section" aria-labelledby="magnitude-title"><div class="magnitude-intro"><span class="eyebrow">Put the estimate in context</span><h2 id="magnitude-title">What does a change in private share imply?</h2><p>Translate the selected coefficient into a change in the population’s mean score.</p><label for="share-change">Increase in private share <output id="share-output" for="share-change">10 percentage points</output></label><input type="range" id="share-change" min="1" max="30" value="10"><div class="range-labels"><span>1 pp</span><span>30 pp</span></div></div><div class="magnitude-results" aria-live="polite"><div><span>Commune mean</span><strong id="points">+1.052</strong><span>SIMCE points</span></div><div><span>In individual test-score units</span><strong id="sd">+0.0210</strong><span>standard deviations</span></div><p id="formula">10.52 × 0.10 = 1.052 points. The paper uses an individual test-score SD of 50.</p><details><summary>How does this relate to the per-student benchmark?</summary><p id="per-student">The implied per-student benchmark is 0.210 SD if gains accrue to students moving sectors and competition and peer effects on non-movers are small. It is not the population-mean effect shown above.</p></details></div></section>
     <section id="paper-agent" class="agent-section" aria-labelledby="agent-title">
       <div class="section-heading"><div><span class="eyebrow">Run the evidence</span><h2 id="agent-title">Ask the paper. Inspect the calculation.</h2></div><span class="provenance">Paper2Agent · Pilot</span></div>
       <p>The agent can run the main cohort model and its commune fixed-effects alternative on the paper’s data. Each run returns uncertainty, sample counts, and a downloadable record. Other specifications above remain reported manuscript results.</p>
