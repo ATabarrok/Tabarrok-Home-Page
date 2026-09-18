@@ -7,7 +7,7 @@
   <meta name="description" content="Explore the evidence on private school competition and student achievement in Chile. Compare grades, subjects, fixed effects, and market definitions.">
   <link rel="icon" type="image/svg+xml" href="/research/chile/favicon.svg">
   <link rel="stylesheet" href="/research/chile/style.css"><script is:inline defer src="/research/chile/results.js"></script><script is:inline defer src="/research/chile/app.js?v=20260918b"></script>
-  <link rel="stylesheet" href="/research/chile/agent.css"><script is:inline defer src="/research/chile/agent.js?v=20260916"></script>
+  <link rel="stylesheet" href="/research/chile/agent.css?v=20260918"><script is:inline defer src="/research/chile/agent.js?v=20260918"></script>
 </head>
 <body>
   <a class="skip" href="#explorer">Skip to results</a>
@@ -34,10 +34,6 @@
           <form id="agent-chat-form"><label for="agent-question">Your question</label><textarea id="agent-question" maxlength="2000" rows="3" placeholder="Compare the two models. What does a 10-point increase in private share imply?" required></textarea>
           <label for="agent-access">Pilot access code</label><input id="agent-access" type="password" autocomplete="off" placeholder="Provided by the author"><p class="context-note">Questions and recent conversation are sent to OpenAI to generate an answer. Do not enter confidential information.</p><button id="agent-send" class="primary-link" type="submit" disabled>Ask the paper</button></form>
           <div id="agent-conversation" aria-live="polite"></div>
-        </div>
-        <div class="agent-run"><h3>Run a model directly</h3><p>No AI conversation is needed for these calculations.</p>
-          <form id="agent-run-form"><label for="agent-model">Cohort specification</label><select id="agent-model"><option value="baseline">Main cohort model</option><option value="commune">With commune fixed effects</option></select><label for="agent-pp">Change in private share (percentage points)</label><input id="agent-pp" type="number" min="-100" max="100" step="any" value="10" required><button class="primary-link" type="submit">Run the regression</button></form>
-          <div id="agent-result" aria-live="polite"></div>
         </div>
       </div>
       <p class="context-note">Built with Paper2Agent’s conversion and verification workflow. Python calculations were checked against Stata. The agent supports two cohort specifications; it does not identify individual student effects or establish causality by itself. <a href="https://github.com/jmiao24/Paper2Agent">About Paper2Agent ↗</a></p>

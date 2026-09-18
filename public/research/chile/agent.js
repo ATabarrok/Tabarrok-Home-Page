@@ -20,30 +20,33 @@
   }
   function result(parent,data) {
     const box=document.createElement('div');box.className='agent-record';
-    paragraph(box, 'Fresh regression result', 'eyebrow');
-    paragraph(box, data.model==='commune'?'With commune fixed effects':'Main cohort model');
-    paragraph(box, `Coefficient ${data.coefficient.toFixed(4)} · standard error ${data.se.toFixed(4)}`);
-    paragraph(box, `95% confidence interval: ${data.ci95[0].toFixed(4)} to ${data.ci95[1].toFixed(4)}. ${data.N.toLocaleString()} observations; ${data.clusters} commune clusters.`);
-    paragraph(box, `${data.effect.share_change_pp} percentage points in private share implies ${data.effect.score_points.toFixed(4)} SIMCE points (${data.effect.individual_test_sd.toFixed(4)} individual test-score SD) in the commune mean.`);
-    paragraph(box, 'This is the fitted association, not an individual treatment prediction.', 'context-note');
+    paragraph(box, 'Fresh calculation', 'eyebrow');
+    paragraph(box, data.title || data.message || (data.model==='commune'?'With commune fixed effects':'Cohort analysis'));
+    const rows=Array.isArray(data.results)?data.results:(Number.isFinite(data.coefficient)?[data]:[]);
+    if(rows.length){
+      const wrap=document.createElement('div');wrap.className='agent-table-wrap';
+      const table=document.createElement('table');const head=document.createElement('thead');const header=document.createElement('tr');
+      for(const title of ['Model / sample','Coefficient','Standard error','95% interval','Observations','Communes']){const cell=document.createElement('th');cell.scope='col';cell.textContent=title;header.append(cell);}head.append(header);table.append(head);
+      const body=document.createElement('tbody');
+      for(const row of rows){const r=row.result||row;if(!Number.isFinite(r.coefficient))continue;const tr=document.createElement('tr');
+        const values=[row.label||r.label||r.model||'Cohort model',r.coefficient.toFixed(4),Number.isFinite(r.se)?r.se.toFixed(4):'—',Array.isArray(r.ci95)?r.ci95.map(x=>x.toFixed(4)).join(' to '):'—',r.N?.toLocaleString()||'—',r.clusters?.toLocaleString()||'—'];
+        for(const value of values){const td=document.createElement('td');td.textContent=value;tr.append(td);}body.append(tr);
+      }table.append(body);wrap.append(table);box.append(wrap);
+    }
+    if(data.settings_summary)paragraph(box,data.settings_summary,'context-note');
+    if(data.scope)paragraph(box,data.scope,'context-note');
+    for(const warning of data.warnings||[])paragraph(box,warning,'context-note');
     // Full result record is always available, independent of the compact presentation.
     const details=document.createElement('details');const summary=document.createElement('summary');summary.textContent='Inspect calculation and sources';details.append(summary);
     const pre=document.createElement('pre');pre.textContent=JSON.stringify(data,null,2);details.append(pre);box.append(details);
     const download=document.createElement('button');download.type='button';download.className='text-button';download.textContent='Download this run ↓';
-    download.onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='chile-cohort-run.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};box.append(download);parent.append(box);
+    download.onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='chile-research-run.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};box.append(download);parent.append(box);
     return box;
   }
   fetch('/api/chile/health').then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
-    $('agent-status').textContent=data.chat_available?'Ready. Ask about the two cohort models and their interpretation.':'Conversation is awaiting activation. You can run the two models directly.';
+    $('agent-status').textContent=data.chat_available?'Ready. Ask about the cohort models and their interpretation.':'Conversation is awaiting activation.';
     $('agent-send').disabled=!data.chat_available;
   }).catch(()=>{$('agent-status').textContent='The research service is currently unavailable.';});
-  $('agent-run-form').addEventListener('submit',async event=>{
-    event.preventDefault();const button=event.target.querySelector('button');button.disabled=true;
-    const target=$('agent-result');target.replaceChildren();paragraph(target,'Running the regression on the paper’s data…');
-    try {const data=await call('analyze',{specification:$('agent-model').value,share_change_pp:Number($('agent-pp').value)});target.replaceChildren();result(target,data);}
-    catch(error){target.replaceChildren();paragraph(target,error.name==='AbortError'?'The calculation timed out. Please try again.':error.message);}
-    finally{button.disabled=false;}
-  });
   $('agent-chat-form').addEventListener('submit',async event=>{
     event.preventDefault();const button=$('agent-send');button.disabled=true;
     const question=$('agent-question').value.trim();const target=$('agent-conversation');
