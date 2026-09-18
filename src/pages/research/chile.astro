@@ -7,7 +7,7 @@
   <meta name="description" content="Explore the evidence on private school competition and student achievement in Chile. Compare grades, subjects, fixed effects, and market definitions.">
   <link rel="icon" type="image/svg+xml" href="/research/chile/favicon.svg">
   <link rel="stylesheet" href="/research/chile/style.css"><script is:inline defer src="/research/chile/results.js"></script><script is:inline defer src="/research/chile/app.js?v=20260918b"></script>
-  <link rel="stylesheet" href="/research/chile/agent.css?v=20260918b"><script is:inline defer src="/research/chile/agent.js?v=20260918b"></script>
+  <link rel="stylesheet" href="/research/chile/agent.css?v=20260918c"><script is:inline defer src="/research/chile/agent.js?v=20260918c"></script>
 </head>
 <body>
   <a class="skip" href="#explorer">Skip to results</a>
@@ -26,14 +26,17 @@
       <div class="takeaway"><span>What to take from this</span><p id="takeaway">The main pooled estimate is 10.52. With commune × grade fixed effects it falls to 5.42. The grade-specific estimates do not depend on that fixed-effect choice.</p></div>
     </section>
     <section id="paper-agent" class="agent-section" aria-labelledby="agent-title">
-      <div class="section-heading"><div><span class="eyebrow">Run the evidence</span><h2 id="agent-title">Ask the paper. Inspect the calculation.</h2></div><span class="provenance">Paper2Agent · Pilot</span></div>
+      <div class="section-heading"><div><span class="eyebrow">Run the evidence</span><h2 id="agent-title">Ask the paper. Inspect the calculation.</h2></div><span class="provenance">Paper2Agent</span></div>
       <p>Ask a question that goes beyond the tables. The agent can change the cohort sample, compare communes with different initial private enrollment shares, check which communes influence the estimate, and examine alternative baseline-score adjustments. New calculations are exploratory and come with uncertainty, sample counts, and a downloadable record of the choices made.</p>
       <div class="agent-grid">
         <div class="agent-chat">
           <h3>A conversation with the evidence</h3><p id="agent-status" role="status">Checking availability…</p>
           <div class="agent-examples" aria-label="Example questions"><button type="button" data-question="What happens to the cohort estimate if we exclude Greater Santiago? Compare it with the full sample.">Exclude Greater Santiago</button><button type="button" data-question="Compare communes with low and high initial private enrollment shares. Explain how the groups are defined.">Compare initial private shares</button><button type="button" data-question="Does the cohort result depend on a handful of communes? Run the leave-one-commune-out check and exclude the three most influential communes together.">Check influential communes</button><button type="button" data-question="How sensitive is the cohort estimate to the way baseline achievement is controlled for? Compare the supported adjustments.">Vary baseline controls</button></div>
           <form id="agent-chat-form"><label for="agent-question">Your question</label><textarea id="agent-question" maxlength="2000" rows="3" placeholder="What happens if we exclude Greater Santiago?" required></textarea>
-          <label for="agent-access">Pilot access code</label><input id="agent-access" type="password" autocomplete="off" placeholder="Provided by the author"><p class="context-note">Questions and recent conversation are sent to OpenAI to generate an answer. Do not enter confidential information.</p><button id="agent-send" class="primary-link" type="submit" disabled>Ask the paper</button></form>
+          <label for="agent-provider">Your AI provider</label><select id="agent-provider"><option value="openrouter">OpenRouter</option><option value="openai">OpenAI</option></select>
+          <label for="agent-model">Model</label><input id="agent-model" type="text" value="openai/gpt-5-mini" maxlength="200" autocomplete="off" spellcheck="false" required aria-describedby="agent-model-help"><p id="agent-model-help" class="context-note">Use a model that supports tool calling. <a href="https://openrouter.ai/models?supported_parameters=tools" target="_blank" rel="noopener noreferrer">Browse OpenRouter models ↗</a></p>
+          <label for="agent-key">Your API key</label><input id="agent-key" type="password" autocomplete="off" spellcheck="false" maxlength="1024" placeholder="Paste your OpenRouter API key" required aria-describedby="agent-key-help"><button id="agent-clear-key" type="button" class="text-button">Clear key</button>
+          <p id="agent-key-help" class="context-note">Use your own <a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">OpenRouter key</a> or <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">OpenAI key</a>. Usage is billed to your provider account; no author access code is needed. Your key is sent over HTTPS through this site’s server to your selected provider for each request. This app does not save it in browser storage or a database. Clearing the key or leaving this page removes it from the form. Your question, recent conversation, manuscript excerpts and calculation results are sent to the provider; its retention policies apply.</p><button id="agent-send" class="primary-link" type="submit" disabled>Ask the paper</button></form>
           <div id="agent-conversation" aria-live="polite"></div>
         </div>
       </div>

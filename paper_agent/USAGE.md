@@ -54,13 +54,19 @@ The website uses the same tools through an MCP client. To run its backend locall
 Routes:
 
 - `GET /api/chile/health`: availability and scope.
-- `POST /api/chile/chat`: natural-language question and recent conversation. An OpenAI model selects actual MCP tool calls; full calculation records accompany its answer.
+- `POST /api/chile/chat`: natural-language question and recent conversation. The reader's selected model requests actual MCP tool calls; full calculation records accompany its answer.
 - `/api/chile/mcp/`: stateless HTTP MCP endpoint.
 - `POST /api/chile/analyze`: retained compatibility endpoint for the original two cohort models.
 
-Chat requires server-side `OPENAI_API_KEY` and `CHILE_AGENT_ACCESS_CODE`. The latter is the pilot passphrase entered in the page; never enter the API key there. Optional `OPENAI_MODEL` overrides the default `gpt-5-mini`. Environment changes require a new deployment. The access code protects chat; it does not gate the scientific MCP endpoint.
+Chat uses the reader's own API key. Supported providers are `openrouter` (default model `openai/gpt-5-mini`) and `openai` (default model `gpt-5-mini`). Readers can choose another model ID supported by their provider, provided it supports function/tool calling. Keys are provider-specific: an OpenRouter key works with OpenRouter, not the direct OpenAI endpoint. Other providers' direct API keys are not implemented.
 
-The service sends the question, up to six recent messages, public manuscript excerpts and compact aggregate tool results to OpenAI with `store=false`. Full influence records remain available for the reader's download. The app has no chat database; provider retention follows provider settings. Scientific tool execution itself does not consume OpenAI credits.
+Send the key as `Authorization: Bearer <reader-key>`. The JSON body has `question`, optional `history` (up to six user/assistant messages), `provider`, and optional `model`. No API key belongs in the JSON conversation. The backend keeps credentials local to each request, uses fixed HTTPS provider endpoints, and blocks redirects. It never falls back to the website owner's API key. The old `OPENAI_API_KEY`, `CHILE_AGENT_ACCESS_CODE` and `OPENAI_MODEL` environment variables are not used by this version.
+
+The page keeps the key only in its password input, clears it when leaving or switching providers, and provides a Clear key button. It does not put the key in localStorage, sessionStorage, URLs, calculation downloads or a database. Requests carry it over HTTPS through the website backend to the selected provider. Application code does not log keys or return provider error bodies; hosting and provider infrastructure remain subject to their respective policies.
+
+The question, up to six recent messages, public manuscript excerpts and compact aggregate tool results are sent to the selected provider. OpenAI Responses requests set `store=false`; OpenRouter and downstream-provider retention follows their policies. Full influence records remain available for the reader's download. The app has no chat database. AI usage is charged to the reader's provider account; scientific tool execution itself does not consume AI API credits.
+
+Provider protocol references: [OpenRouter tool calling](https://openrouter.ai/docs/guides/features/tool-calling), [OpenAI function calling](https://developers.openai.com/api/docs/guides/function-calling). Protocol tests use simulated model responses with real scientific MCP calls; a funded provider key is needed to verify an actual model answer.
 
 ## Reproducibility
 

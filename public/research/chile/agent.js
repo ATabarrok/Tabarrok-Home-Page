@@ -2,12 +2,12 @@
   'use strict';
   const $ = id => document.getElementById(id);
   const history = [];
-  async function call(route, body, code) {
+  async function call(route, body, key) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 165000);
     try {
       const headers = {'Content-Type':'application/json'};
-      if (code) headers.Authorization = `Bearer ${code}`;
+      if (key) headers.Authorization = `Bearer ${key}`;
       const r = await fetch(`/api/chile/${route}`, {method:'POST',headers,body:JSON.stringify(body),signal:controller.signal});
       let data;
       try { data = await r.json(); } catch { throw new Error('The research service is unavailable. Please try again later.'); }
@@ -45,9 +45,20 @@
     return box;
   }
   fetch('/api/chile/health').then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
-    $('agent-status').textContent=data.chat_available?'Ready. Ask a research question or choose an example below.':'Conversation is awaiting activation.';
+    $('agent-status').textContent=data.chat_available?'Ready. Choose your provider, enter your API key, and ask a question.':'Conversation is unavailable.';
     $('agent-send').disabled=!data.chat_available;
   }).catch(()=>{$('agent-status').textContent='The research service is currently unavailable.';});
+  const clearKey=()=>{$('agent-key').value='';};
+  $('agent-clear-key').addEventListener('click',clearKey);
+  window.addEventListener('pagehide',clearKey);
+  window.addEventListener('pageshow',clearKey);
+  $('agent-provider').addEventListener('change',()=>{
+    clearKey();
+    history.length=0;
+    const router=$('agent-provider').value==='openrouter';
+    $('agent-model').value=router?'openai/gpt-5-mini':'gpt-5-mini';
+    $('agent-key').placeholder=router?'Paste your OpenRouter API key':'Paste your OpenAI API key';
+  });
   document.querySelectorAll('[data-question]').forEach(button=>button.addEventListener('click',()=>{
     $('agent-question').value=button.dataset.question;$('agent-question').focus();
   }));
@@ -59,7 +70,7 @@
     try {
       const recent=history.slice(-6);
       while(recent.length && new TextEncoder().encode(JSON.stringify({question,history:recent})).length>11000)recent.splice(0,2);
-      const data=await call('chat',{question,history:recent},$('agent-access').value);
+      const data=await call('chat',{question,history:recent,provider:$('agent-provider').value,model:$('agent-model').value.trim()},$('agent-key').value.trim());
       pending.remove();paragraph(entry,data.answer,'agent-answer');
       for(const run of data.runs||[])result(entry,run.result);
       const link=document.createElement('a');link.href='/research/chile/paper.pdf';link.textContent='Read the source manuscript ↗';entry.append(link);
