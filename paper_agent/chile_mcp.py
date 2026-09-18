@@ -3,9 +3,11 @@ import json
 from pathlib import Path
 from fastmcp import FastMCP
 from tools.cohort import cohort_mcp
+from tools.cohort_sandbox import cohort_sandbox_mcp
 
-mcp=FastMCP('Chile school competition', instructions='Research companion to Alex Tabarrok\'s paper. Run supported models before claiming fresh numerical results. Read the paper evidence resources for interpretation. Only baseline and commune-FE cohort specifications are validated. Cohorts are commune aggregates, not individual student records. The commune-FE near-zero result must not be hidden.')
+mcp=FastMCP('Chile school competition', strict_input_validation=True, instructions='Research companion to Alex Tabarrok\'s paper. Run supported models before claiming fresh numerical results. Read the paper evidence resources for interpretation. Supported tools cover the baseline and commune-FE cohort models, bounded sample restrictions, fixed initial-share groups, commune influence and baseline sensitivity. Distinguish reported results from exploratory extensions. Panel and exposure models are not executable here. Cohorts are commune aggregates, not individual student records. The commune-FE near-zero result must not be hidden.')
 mcp.mount(cohort_mcp)
+mcp.mount(cohort_sandbox_mcp)
 
 @mcp.resource('chile://paper/cohort')
 def cohort_evidence() -> str:

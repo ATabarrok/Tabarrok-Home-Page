@@ -4,7 +4,7 @@
   const history = [];
   async function call(route, body, code) {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 125000);
+    const timer = setTimeout(() => controller.abort(), 165000);
     try {
       const headers = {'Content-Type':'application/json'};
       if (code) headers.Authorization = `Bearer ${code}`;
@@ -32,6 +32,7 @@
         const values=[row.label||r.label||r.model||'Cohort model',r.coefficient.toFixed(4),Number.isFinite(r.se)?r.se.toFixed(4):'—',Array.isArray(r.ci95)?r.ci95.map(x=>x.toFixed(4)).join(' to '):'—',r.N?.toLocaleString()||'—',r.clusters?.toLocaleString()||'—'];
         for(const value of values){const td=document.createElement('td');td.textContent=value;tr.append(td);}body.append(tr);
       }table.append(body);wrap.append(table);box.append(wrap);
+      paragraph(box,'Coefficients are score points per unit of private enrollment share (0–1). For a 10-percentage-point increase, divide the coefficient and interval by 10.','context-note');
     }
     if(data.settings_summary)paragraph(box,data.settings_summary,'context-note');
     if(data.scope)paragraph(box,data.scope,'context-note');
@@ -44,9 +45,12 @@
     return box;
   }
   fetch('/api/chile/health').then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
-    $('agent-status').textContent=data.chat_available?'Ready. Ask about the cohort models and their interpretation.':'Conversation is awaiting activation.';
+    $('agent-status').textContent=data.chat_available?'Ready. Ask a research question or choose an example below.':'Conversation is awaiting activation.';
     $('agent-send').disabled=!data.chat_available;
   }).catch(()=>{$('agent-status').textContent='The research service is currently unavailable.';});
+  document.querySelectorAll('[data-question]').forEach(button=>button.addEventListener('click',()=>{
+    $('agent-question').value=button.dataset.question;$('agent-question').focus();
+  }));
   $('agent-chat-form').addEventListener('submit',async event=>{
     event.preventDefault();const button=$('agent-send');button.disabled=true;
     const question=$('agent-question').value.trim();const target=$('agent-conversation');

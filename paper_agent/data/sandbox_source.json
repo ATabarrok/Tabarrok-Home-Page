@@ -1,0 +1,24 @@
+{
+  "source_tree_sha256": "d09790b8d0a5d76f593714e8e71601bf3436e44a3f7816ea204f4ab71e3ddbd9",
+  "files": {
+    "validate.py": "09fa2975c91f1767f736f4803994cfcdf4b6a7ac40167a11a33035519f50523c",
+    "data/cohort_va.dta": "fb64d3b82cbb46f86ca5d4407797533df9353bfa745f6e25454e528067e5df95",
+    "scripts/00_setup.do": "876827d5cea981079cc85a08ff440bc9c13c4734216362ab8e9bafc7db10483e",
+    "scripts/16_paper_regressions_ordered.do": "f6d78eda4f3f83f2c8c68c5c4a4705bb1e9f4e6c1a362813639c6bd1dd754b28",
+    "scripts/20_effect_sizes.do": "9e88e82626e026b60dc3747748ab9b404bf7f7d87f7bdc96002570957b8597bc",
+    "scripts/21_robustness_pp_market.do": "b91d3a1591188619d0a27aafdf19eba14faab58aecc98fd8941fe5847e826eb6",
+    "scripts/25_va_flexible_baseline.do": "0ec0bdb8213c48e25265d0af0d2212f1efc65cd0c68aa9e4ba2916f6ee3bec2b"
+  },
+  "source_bindings": {
+    "estimator": "validate.py:18-71",
+    "baseline": "scripts/16_paper_regressions_ordered.do:425-465",
+    "geography": "scripts/21_robustness_pp_market.do:321-329",
+    "sensitivity": "scripts/25_va_flexible_baseline.do:52-98,127-129"
+  },
+  "new_author_requested_transformations": [
+    "Fixed earliest-cohort low/high commune grouping",
+    "Greater Santiago cohort exclusion",
+    "All-commune leave-one-out and joint influential exclusions"
+  ],
+  "independent_reference": "Native Stata reghdfe driver; 341 fits, exact samples and inference degrees of freedom; coefficient and SE absolute tolerance 1e-8."
+}
