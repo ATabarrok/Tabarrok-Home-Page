@@ -64,21 +64,6 @@
       "sourceColumn": 4
     },
     {
-      "id": "va-commune",
-      "label": "Cohort value added + commune fixed effects",
-      "short": "+ Commune FE",
-      "group": "cohort",
-      "b": 0.4,
-      "se": 4.39,
-      "n": null,
-      "clusters": null,
-      "stars": 0,
-      "source": "sources/va_commune_excerpt.txt",
-      "sourceFile": "Paper/Latex/findings.tex",
-      "sourceColumn": null,
-      "description": "Adds commune fixed effects to the cohort design. The near-zero estimate is imprecise. This removes persistent differences across communes and uses much less private-share variation. Observation and cluster counts are not reported in the source paragraph."
-    },
-    {
       "id": "panel",
       "label": "Panel: commune fixed effects",
       "short": "Commune FE",
