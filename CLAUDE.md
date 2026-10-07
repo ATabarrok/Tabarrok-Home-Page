@@ -12,10 +12,11 @@ This repository is `ATabarrok/Tabarrok-Home-Page`, and it builds
 
 There is a second, older repository, `ATabarrok/ATabarrok-github.io`: three
 hand-written files (`index.html`, `styles.css`, `README.md`), last touched in
-January 2026, superseded by this site and not deployed — its
-`atabarrok.github.io` URLs 404. Nothing there is current and nothing should be
-edited there. A session that opens in that repository is in the wrong place and
-should switch to this one before doing any work.
+January 2026, superseded by this site and never deployed — its
+`atabarrok.github.io` URLs 404. It was archived in October 2026, so it is
+read-only and a push to it will be rejected. Nothing there is current. A session
+that opens in that repository is in the wrong place and should switch to this one
+before doing any work.
 
 ## Deploying
 
