@@ -3,6 +3,28 @@
 # year. Optional: url, links, comment, abstract, citation. `id` must be
 # unique and is the slug for a future /research/<id>/ explainer page.
 
+- id: price-of-a-cure-luxturna-and-the-economic-dilemmas
+  title: "The Price of a Cure: Luxturna and the Economic Dilemmas of Precision Medicine"
+  url: https://doi.org/10.1017/jme.2026.10294
+  year: 2026
+  abstract: >-
+    The $850,000 price for the gene therapy Luxturna is often framed as a story of private
+    profiteering from publicly funded science. This paper challenges that narrative.
+    Pharmaceuticals are a hit-driven industry: most projects fail, so the few successes must earn
+    revenues well in excess of their own direct costs if the portfolio as a whole is to attract
+    investment. Precision medicine intensifies this logic through two core economic challenges:
+    (1) the “sticker shock” of one-time cures, which compress decades of value into a single
+    payment, creating a financing problem more than a value problem; and (2) the “targeting
+    dilemma,” in which precisely targeting drugs to smaller patient groups shrinks the market,
+    requiring higher rewards per treated patient to maintain incentives to innovate. Rather than
+    simply controlling prices, the paper proposes a policy toolkit that includes amortizing
+    payments over time, bundling diagnostics with drugs and insurance, and streamlining regulation
+    to lower development costs. The aim is to preserve innovation while expanding patient access.
+  citation: >-
+    Tabarrok, Alex. 2026. “The Price of a Cure: Luxturna and the Economic Dilemmas of Precision
+    Medicine.” Journal of Law, Medicine & Ethics, October 7.
+    [https://doi.org/10.1017/jme.2026.10294](https://doi.org/10.1017/jme.2026.10294).
+
 - id: breaking-ground-can-refund-bonuses-solve-the-holdout
   title: "JUE Insight: Breaking Ground: Can Refund Bonuses Solve the Holdout Problem?"
   url: https://doi.org/10.1016/j.jue.2026.103901
