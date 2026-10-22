@@ -12,6 +12,11 @@
       "source": "/cv/",
       "destination": "https://mason.gmu.edu/~atabarro/TabarrokCV.pdf",
       "permanent": true
+    },
+    {
+      "source": "/video/misallocation.mp4",
+      "destination": "https://youtu.be/jsg2iN8xHKw",
+      "permanent": false
     }
   ],
   "headers": [
