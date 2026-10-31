@@ -9,6 +9,28 @@
 # under `links` as "working paper version". Keep the id unchanged so any
 # explainer that points at it keeps working.
 
+- id: why-fda-withholds-drug-approval
+  title: "Why FDA Withholds Drug Approval: Evidence from 445 Publicly Released Complete Response Letters"
+  url: https://alextabarrok.com/papers/why-fda-withholds-drug-approval.pdf
+  year: 2026
+  links:
+    - label: Replication data and code (ZIP)
+      url: https://alextabarrok.com/research/fda-crl/complete_replication_v20260807_r20261031.zip
+  abstract: >-
+    This study analyzes 445 publicly released FDA Complete Response Letters covering
+    333 applications. Facility inspection is the most frequently assigned primary
+    deficiency, accounting for 41.3 percent of letters and 46.2 percent of letters
+    dated 2024 onward. Facility inspection remains primary in 42 of 50 consecutive
+    observed pairs that begin with it. Combining facility inspection and chemistry,
+    manufacturing, and controls reveals substantial recurrence within manufacturing
+    quality: 60 of 65 pairs remain in the combined category. The findings describe
+    the released corpus; incomplete disclosure limits generalization to all FDA
+    nonapproval actions. The replication archive includes the complete study data,
+    stored classifications, validation materials, and code.
+  citation: >-
+    Tabarrok, Alex. 2026. "Why FDA Withholds Drug Approval: Evidence from 445 Publicly
+    Released Complete Response Letters." Working paper, October.
+
 - id: how-much-redistribution-will-ai-require
   title: How Much Redistribution Will AI Require?
   url: https://alextabarrok.com/papers/how-much-redistribution-will-ai-require.pdf
