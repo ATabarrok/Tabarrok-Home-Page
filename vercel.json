@@ -22,6 +22,11 @@
       "source": "/video/modern-principles.mp4",
       "destination": "https://youtu.be/PxuJYaFNRoA",
       "permanent": false
+    },
+    {
+      "source": "/research/chile/:path*",
+      "destination": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6842996",
+      "permanent": false
     }
   ],
   "headers": [
@@ -37,18 +42,6 @@
           "value": "strict-origin-when-cross-origin"
         }
       ]
-    }
-  ],
-  "functions": {
-    "api/chile.py": {
-      "maxDuration": 180,
-      "excludeFiles": "{node_modules/**,public/**,dist/**,.git/**,src/**,scripts/**,tests/**}"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/chile/:path*/",
-      "destination": "/api/chile.py"
     }
   ]
 }
