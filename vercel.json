@@ -29,6 +29,16 @@
       "permanent": false
     },
     {
+      "source": "/research/chile",
+      "destination": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6842996",
+      "permanent": false
+    },
+    {
+      "source": "/research/chile/",
+      "destination": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6842996",
+      "permanent": false
+    },
+    {
       "source": "/research/chile/:path*",
       "destination": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6842996",
       "permanent": false
