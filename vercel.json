@@ -17,6 +17,11 @@
       "source": "/video/misallocation.mp4",
       "destination": "https://youtu.be/jsg2iN8xHKw",
       "permanent": false
+    },
+    {
+      "source": "/video/modern-principles.mp4",
+      "destination": "https://youtu.be/PxuJYaFNRoA",
+      "permanent": false
     }
   ],
   "headers": [
