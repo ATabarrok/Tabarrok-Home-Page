@@ -10,25 +10,25 @@
 # explainer that points at it keeps working.
 
 - id: why-fda-withholds-drug-approval
-  title: "Why FDA Withholds Drug Approval: Evidence from 445 Publicly Released Complete Response Letters"
+  title: "Why FDA Withholds Drug Approval: Evidence from 443 Publicly Released Complete Response Letters"
   url: https://alextabarrok.com/papers/why-fda-withholds-drug-approval.pdf
   year: 2026
   links:
     - label: Replication data and code (ZIP)
       url: https://alextabarrok.com/research/fda-crl/complete_replication_v20260807_r20261103.zip
   abstract: >-
-    This study analyzes 445 publicly released FDA Complete Response Letters covering
+    This study analyzes 443 publicly released FDA Complete Response Letters covering
     333 applications. Facility inspection is the leading initial reason for
     nonapproval, accounting for 36.3 percent of applications overall and 42.2 percent
-    of applications first observed from 2024 onward. Among applications with two
+    of applications first observed from 2024 onward. Among 250 applications with two
     years of potential follow-up, another rejection is observed for 28.6 percent
-    of initial facility cases, compared with 15.7 percent of other cases.
+    of initial facility cases, compared with 14.5 percent of other cases.
     Facility inspection remains the main reason in 28 of 33 first-to-second
     comparisons beginning with it (84.8 percent). Most facility findings concern
     inspections that occurred and found problems. The replication archive includes
     the complete study data, stored classifications, validation materials, and code.
   citation: >-
-    Tabarrok, Alex. 2026. "Why FDA Withholds Drug Approval: Evidence from 445 Publicly
+    Tabarrok, Alex. 2026. "Why FDA Withholds Drug Approval: Evidence from 443 Publicly
     Released Complete Response Letters." Working paper, November.
 
 - id: how-much-redistribution-will-ai-require
