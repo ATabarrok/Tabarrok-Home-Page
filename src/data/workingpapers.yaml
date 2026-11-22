@@ -88,6 +88,9 @@
   title: Private School Competition and Student Achievement in Chile
   url: https://alextabarrok.com/papers/private-school-competition-chile.pdf
   year: 2026
+  links:
+    - label: Replication code (ZIP)
+      url: https://alextabarrok.com/research/chile-replication/chile_replication_code_v20261122.zip
   abstract: >-
     Sorting pupils across private and public schools reshuffles a fixed population and cannot raise
     the population's average score. We use that fact to ask whether subsidized private schooling in
