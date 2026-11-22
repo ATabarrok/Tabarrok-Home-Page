@@ -92,15 +92,19 @@
     - label: "PDF"
       url: https://alextabarrok.com/papers/private-school-competition-chile.pdf
   abstract: >-
-    Using Chile's 2005–2024 SIMCE commune panel, this paper studies whether growth in subsidized
-    private-school enrollment raises achievement or mainly reflects cream skimming.
-    Cross-sectional diagnostics reject pure cream skimming but show stronger sorting at high
-    private-share levels. In commune fixed-effects regressions, a 10 percentage point increase
-    in subsidized private share is associated with a 0.85–1.06 point increase in commune mean
-    scores; cohort value-added estimates are slightly larger at 1.32–1.43 points. Controlling
-    for private-public socioeconomic separation barely changes the aggregate slope, but larger
-    SES gaps predict larger sector score gaps and weaker within-sector outcomes in more
-    segregated communes.
+    Sorting pupils across private and public schools reshuffles a fixed population and cannot raise
+    the population's average score. We use that fact to ask whether subsidized private schooling in
+    Chile raises achievement or only sorts. Defining ten cohorts by the local market in which pupils
+    started grade 4, we track over one million pupils to grade 10 wherever they enroll. Among
+    markets of the same region and size, holding each pupil's grade-4 score and parents' schooling
+    and income fixed, a ten-percentage-point higher cohort private share predicts 1.3 points more in
+    mathematics and 0.7 more in reading. Mathematics gains arise after grade 8 and are larger where
+    more pupils move into subsidized private schools on entering secondary school, with little sign
+    that pupils there were pulling ahead beforehand. Admission lotteries for three cohorts show that
+    attending a subsidized private secondary school raises mathematics scores by 8.1 points and has
+    no statistically significant effect on reading (1.6 points). That switcher gain alone implies a
+    0.8-point cohort increase per ten percentage points of private share; in the same cohorts the
+    observed gain is 1.4 points, suggesting that competition also benefits pupils who do not move.
   citation: >-
     Tabarrok, Alex. 2026. “Private School Competition and Student Achievement in Chile.” SSRN
     Working Paper 6842996.
