@@ -86,11 +86,8 @@
 
 - id: private-school-competition-and-student-achievement-in-chile
   title: Private School Competition and Student Achievement in Chile
-  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6842996
+  url: https://alextabarrok.com/papers/private-school-competition-chile.pdf
   year: 2026
-  links:
-    - label: "PDF"
-      url: https://alextabarrok.com/papers/private-school-competition-chile.pdf
   abstract: >-
     Sorting pupils across private and public schools reshuffles a fixed population and cannot raise
     the population's average score. We use that fact to ask whether subsidized private schooling in
@@ -106,9 +103,8 @@
     0.8-point cohort increase per ten percentage points of private share; in the same cohorts the
     observed gain is 1.4 points, suggesting that competition also benefits pupils who do not move.
   citation: >-
-    Tabarrok, Alex. 2026. “Private School Competition and Student Achievement in Chile.” SSRN
-    Working Paper 6842996.
-    [https://doi.org/10.2139/ssrn.6842996](https://doi.org/10.2139/ssrn.6842996).
+    Tabarrok, Alex. 2026. “Private School Competition and Student Achievement in Chile.” Working
+    paper, November.
 
 - id: norms-in-conflict-why-ai-advisors-fail-to-improve
   title: "Norms in Conflict: Why AI Advisors Fail to Improve Human Coordination"
